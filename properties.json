@@ -1,0 +1,1317 @@
+[
+  {
+    "location": "London",
+    "type": "Loft",
+    "capacity": 11,
+    "features": [
+      "Pool",
+      "Ocean View",
+      "Balcony",
+      "Pet Friendly",
+      "BBQ Grill"
+    ],
+    "price": 479.76
+  },
+  {
+    "location": "Vancouver",
+    "type": "Townhouse",
+    "capacity": 3,
+    "features": [
+      "BBQ Grill",
+      "Air Conditioning",
+      "Washer/Dryer",
+      "Pool",
+      "Hot Tub",
+      "Pet Friendly"
+    ],
+    "price": 311.06
+  },
+  {
+    "location": "Miami",
+    "type": "House",
+    "capacity": 3,
+    "features": [
+      "Washer/Dryer",
+      "Balcony",
+      "WiFi",
+      "Breakfast Included"
+    ],
+    "price": 532.79
+  },
+  {
+    "location": "London",
+    "type": "Studio",
+    "capacity": 4,
+    "features": [
+      "BBQ Grill",
+      "Pet Friendly",
+      "Garden",
+      "Pool",
+      "Fireplace"
+    ],
+    "price": 392.41
+  },
+  {
+    "location": "Toronto",
+    "type": "Condo",
+    "capacity": 1,
+    "features": [
+      "Pool",
+      "Garden",
+      "Balcony",
+      "Hot Tub",
+      "Air Conditioning",
+      "Breakfast Included",
+      "Fireplace"
+    ],
+    "price": 699.99
+  },
+  {
+    "location": "New York",
+    "type": "Townhouse",
+    "capacity": 8,
+    "features": [
+      "Fireplace",
+      "Washer/Dryer",
+      "Gym",
+      "BBQ Grill"
+    ],
+    "price": 793.14
+  },
+  {
+    "location": "Los Angeles",
+    "type": "Cottage",
+    "capacity": 11,
+    "features": [
+      "Washer/Dryer",
+      "BBQ Grill",
+      "Ocean View",
+      "Gym",
+      "Air Conditioning",
+      "Garden"
+    ],
+    "price": 360.75
+  },
+  {
+    "location": "Paris",
+    "type": "Apartment",
+    "capacity": 8,
+    "features": [
+      "Ocean View",
+      "BBQ Grill",
+      "Breakfast Included"
+    ],
+    "price": 922.44
+  },
+  {
+    "location": "Los Angeles",
+    "type": "Cottage",
+    "capacity": 1,
+    "features": [
+      "Fireplace",
+      "Breakfast Included",
+      "Washer/Dryer",
+      "Ocean View",
+      "Pet Friendly"
+    ],
+    "price": 813.14
+  },
+  {
+    "location": "Houston",
+    "type": "Studio",
+    "capacity": 1,
+    "features": [
+      "Breakfast Included",
+      "Air Conditioning",
+      "BBQ Grill",
+      "Ocean View",
+      "Fireplace",
+      "Gym",
+      "Hot Tub"
+    ],
+    "price": 999.83
+  },
+  {
+    "location": "Chicago",
+    "type": "House",
+    "capacity": 9,
+    "features": [
+      "Balcony",
+      "BBQ Grill",
+      "Parking",
+      "Air Conditioning",
+      "Washer/Dryer",
+      "WiFi"
+    ],
+    "price": 568.08
+  },
+  {
+    "location": "Chicago",
+    "type": "Apartment",
+    "capacity": 7,
+    "features": [
+      "Fireplace",
+      "Parking",
+      "Garden",
+      "Washer/Dryer"
+    ],
+    "price": 515.07
+  },
+  {
+    "location": "Miami",
+    "type": "Cottage",
+    "capacity": 4,
+    "features": [
+      "Air Conditioning",
+      "Balcony",
+      "BBQ Grill"
+    ],
+    "price": 504.51
+  },
+  {
+    "location": "Vancouver",
+    "type": "Loft",
+    "capacity": 3,
+    "features": [
+      "Balcony",
+      "Air Conditioning",
+      "Ocean View",
+      "Gym",
+      "Parking",
+      "Hot Tub"
+    ],
+    "price": 830.03
+  },
+  {
+    "location": "Houston",
+    "type": "Loft",
+    "capacity": 7,
+    "features": [
+      "BBQ Grill",
+      "Garden",
+      "WiFi",
+      "Parking",
+      "Breakfast Included",
+      "Pool",
+      "Pet Friendly"
+    ],
+    "price": 466.58
+  },
+  {
+    "location": "Paris",
+    "type": "Studio",
+    "capacity": 11,
+    "features": [
+      "Air Conditioning",
+      "Washer/Dryer",
+      "Balcony",
+      "Gym",
+      "Parking"
+    ],
+    "price": 202.4
+  },
+  {
+    "location": "London",
+    "type": "Cottage",
+    "capacity": 11,
+    "features": [
+      "Washer/Dryer",
+      "Parking",
+      "Pool",
+      "Gym",
+      "Hot Tub"
+    ],
+    "price": 141.38
+  },
+  {
+    "location": "Toronto",
+    "type": "Loft",
+    "capacity": 4,
+    "features": [
+      "Gym",
+      "WiFi",
+      "Parking",
+      "Breakfast Included",
+      "Hot Tub",
+      "Air Conditioning",
+      "Washer/Dryer"
+    ],
+    "price": 834.49
+  },
+  {
+    "location": "Paris",
+    "type": "Villa",
+    "capacity": 7,
+    "features": [
+      "Fireplace",
+      "WiFi",
+      "Balcony",
+      "Ocean View",
+      "Air Conditioning",
+      "BBQ Grill"
+    ],
+    "price": 786.28
+  },
+  {
+    "location": "Houston",
+    "type": "Villa",
+    "capacity": 10,
+    "features": [
+      "Washer/Dryer",
+      "Parking",
+      "Fireplace"
+    ],
+    "price": 872.59
+  },
+  {
+    "location": "New York",
+    "type": "Loft",
+    "capacity": 10,
+    "features": [
+      "WiFi",
+      "BBQ Grill",
+      "Pool",
+      "Garden"
+    ],
+    "price": 610.0
+  },
+  {
+    "location": "Houston",
+    "type": "Cottage",
+    "capacity": 11,
+    "features": [
+      "Gym",
+      "Air Conditioning",
+      "Fireplace",
+      "WiFi",
+      "Parking",
+      "Ocean View",
+      "Pool"
+    ],
+    "price": 265.97
+  },
+  {
+    "location": "Chicago",
+    "type": "Villa",
+    "capacity": 12,
+    "features": [
+      "Fireplace",
+      "Air Conditioning",
+      "Pet Friendly",
+      "Hot Tub"
+    ],
+    "price": 187.61
+  },
+  {
+    "location": "Miami",
+    "type": "Condo",
+    "capacity": 6,
+    "features": [
+      "Pool",
+      "WiFi",
+      "Ocean View",
+      "Air Conditioning",
+      "BBQ Grill"
+    ],
+    "price": 827.79
+  },
+  {
+    "location": "New York",
+    "type": "Studio",
+    "capacity": 12,
+    "features": [
+      "Air Conditioning",
+      "Parking",
+      "Ocean View",
+      "Pet Friendly",
+      "Gym",
+      "Garden",
+      "Pool"
+    ],
+    "price": 631.27
+  },
+  {
+    "location": "Houston",
+    "type": "Studio",
+    "capacity": 10,
+    "features": [
+      "Breakfast Included",
+      "Pet Friendly",
+      "Washer/Dryer",
+      "Pool"
+    ],
+    "price": 950.97
+  },
+  {
+    "location": "Paris",
+    "type": "Townhouse",
+    "capacity": 8,
+    "features": [
+      "Garden",
+      "Washer/Dryer",
+      "Gym",
+      "BBQ Grill",
+      "Fireplace",
+      "Ocean View"
+    ],
+    "price": 858.22
+  },
+  {
+    "location": "Los Angeles",
+    "type": "House",
+    "capacity": 7,
+    "features": [
+      "Balcony",
+      "Hot Tub",
+      "Fireplace"
+    ],
+    "price": 331.57
+  },
+  {
+    "location": "London",
+    "type": "House",
+    "capacity": 10,
+    "features": [
+      "Parking",
+      "Hot Tub",
+      "BBQ Grill",
+      "Air Conditioning",
+      "Gym"
+    ],
+    "price": 605.29
+  },
+  {
+    "location": "Montreal",
+    "type": "Condo",
+    "capacity": 11,
+    "features": [
+      "Ocean View",
+      "BBQ Grill",
+      "Parking",
+      "Washer/Dryer",
+      "Breakfast Included",
+      "Balcony",
+      "Pool"
+    ],
+    "price": 492.49
+  },
+  {
+    "location": "Miami",
+    "type": "Studio",
+    "capacity": 9,
+    "features": [
+      "Pet Friendly",
+      "BBQ Grill",
+      "Ocean View"
+    ],
+    "price": 471.35
+  },
+  {
+    "location": "Los Angeles",
+    "type": "Villa",
+    "capacity": 5,
+    "features": [
+      "BBQ Grill",
+      "Washer/Dryer",
+      "Fireplace",
+      "Ocean View"
+    ],
+    "price": 549.57
+  },
+  {
+    "location": "Paris",
+    "type": "Loft",
+    "capacity": 4,
+    "features": [
+      "Washer/Dryer",
+      "Garden",
+      "Fireplace",
+      "Balcony",
+      "Hot Tub",
+      "Ocean View",
+      "Pet Friendly"
+    ],
+    "price": 552.69
+  },
+  {
+    "location": "Montreal",
+    "type": "House",
+    "capacity": 8,
+    "features": [
+      "Hot Tub",
+      "Air Conditioning",
+      "BBQ Grill",
+      "Balcony",
+      "Breakfast Included",
+      "Fireplace",
+      "WiFi"
+    ],
+    "price": 973.66
+  },
+  {
+    "location": "Miami",
+    "type": "Villa",
+    "capacity": 5,
+    "features": [
+      "Hot Tub",
+      "Fireplace",
+      "WiFi",
+      "Balcony",
+      "BBQ Grill",
+      "Parking"
+    ],
+    "price": 765.91
+  },
+  {
+    "location": "Houston",
+    "type": "Townhouse",
+    "capacity": 10,
+    "features": [
+      "Ocean View",
+      "Air Conditioning",
+      "Pet Friendly"
+    ],
+    "price": 322.33
+  },
+  {
+    "location": "Toronto",
+    "type": "Cottage",
+    "capacity": 9,
+    "features": [
+      "Ocean View",
+      "BBQ Grill",
+      "Pool",
+      "Parking"
+    ],
+    "price": 466.65
+  },
+  {
+    "location": "London",
+    "type": "Cottage",
+    "capacity": 5,
+    "features": [
+      "Fireplace",
+      "Ocean View",
+      "WiFi",
+      "BBQ Grill",
+      "Breakfast Included",
+      "Balcony",
+      "Washer/Dryer"
+    ],
+    "price": 953.42
+  },
+  {
+    "location": "Toronto",
+    "type": "Townhouse",
+    "capacity": 9,
+    "features": [
+      "Fireplace",
+      "Washer/Dryer",
+      "Hot Tub",
+      "Pool",
+      "Pet Friendly"
+    ],
+    "price": 71.17
+  },
+  {
+    "location": "Montreal",
+    "type": "Apartment",
+    "capacity": 10,
+    "features": [
+      "BBQ Grill",
+      "Fireplace",
+      "Hot Tub",
+      "Pet Friendly"
+    ],
+    "price": 300.83
+  },
+  {
+    "location": "New York",
+    "type": "Loft",
+    "capacity": 8,
+    "features": [
+      "BBQ Grill",
+      "Gym",
+      "WiFi",
+      "Ocean View",
+      "Washer/Dryer",
+      "Fireplace",
+      "Breakfast Included"
+    ],
+    "price": 268.79
+  },
+  {
+    "location": "Toronto",
+    "type": "Townhouse",
+    "capacity": 12,
+    "features": [
+      "Ocean View",
+      "Gym",
+      "Washer/Dryer",
+      "WiFi",
+      "Balcony"
+    ],
+    "price": 424.14
+  },
+  {
+    "location": "Chicago",
+    "type": "Townhouse",
+    "capacity": 7,
+    "features": [
+      "Hot Tub",
+      "Garden",
+      "Ocean View"
+    ],
+    "price": 877.41
+  },
+  {
+    "location": "Toronto",
+    "type": "Villa",
+    "capacity": 8,
+    "features": [
+      "Balcony",
+      "Pool",
+      "Washer/Dryer",
+      "WiFi"
+    ],
+    "price": 904.29
+  },
+  {
+    "location": "Houston",
+    "type": "Condo",
+    "capacity": 12,
+    "features": [
+      "WiFi",
+      "BBQ Grill",
+      "Breakfast Included",
+      "Pet Friendly",
+      "Fireplace",
+      "Pool",
+      "Balcony"
+    ],
+    "price": 55.81
+  },
+  {
+    "location": "Paris",
+    "type": "Condo",
+    "capacity": 1,
+    "features": [
+      "Pet Friendly",
+      "Washer/Dryer",
+      "Air Conditioning",
+      "Fireplace",
+      "Hot Tub",
+      "Breakfast Included",
+      "Garden"
+    ],
+    "price": 905.42
+  },
+  {
+    "location": "London",
+    "type": "Condo",
+    "capacity": 11,
+    "features": [
+      "Garden",
+      "Ocean View",
+      "Air Conditioning",
+      "Balcony"
+    ],
+    "price": 982.11
+  },
+  {
+    "location": "Paris",
+    "type": "Studio",
+    "capacity": 6,
+    "features": [
+      "Gym",
+      "Parking",
+      "Balcony",
+      "BBQ Grill",
+      "Fireplace",
+      "Hot Tub"
+    ],
+    "price": 996.39
+  },
+  {
+    "location": "Los Angeles",
+    "type": "House",
+    "capacity": 5,
+    "features": [
+      "Gym",
+      "Fireplace",
+      "BBQ Grill",
+      "Pet Friendly"
+    ],
+    "price": 533.6
+  },
+  {
+    "location": "Montreal",
+    "type": "Cottage",
+    "capacity": 11,
+    "features": [
+      "WiFi",
+      "Hot Tub",
+      "Breakfast Included"
+    ],
+    "price": 920.32
+  },
+  {
+    "location": "London",
+    "type": "Studio",
+    "capacity": 3,
+    "features": [
+      "Hot Tub",
+      "Washer/Dryer",
+      "Balcony"
+    ],
+    "price": 561.5
+  },
+  {
+    "location": "Miami",
+    "type": "Apartment",
+    "capacity": 5,
+    "features": [
+      "BBQ Grill",
+      "Gym",
+      "Air Conditioning",
+      "Balcony",
+      "Pool",
+      "Fireplace"
+    ],
+    "price": 689.4
+  },
+  {
+    "location": "Miami",
+    "type": "Townhouse",
+    "capacity": 10,
+    "features": [
+      "WiFi",
+      "Gym",
+      "Pool",
+      "Pet Friendly"
+    ],
+    "price": 289.99
+  },
+  {
+    "location": "New York",
+    "type": "Apartment",
+    "capacity": 4,
+    "features": [
+      "Garden",
+      "Pet Friendly",
+      "Parking"
+    ],
+    "price": 304.19
+  },
+  {
+    "location": "Houston",
+    "type": "House",
+    "capacity": 3,
+    "features": [
+      "Pet Friendly",
+      "Fireplace",
+      "Balcony",
+      "WiFi",
+      "Air Conditioning"
+    ],
+    "price": 926.95
+  },
+  {
+    "location": "Montreal",
+    "type": "Condo",
+    "capacity": 5,
+    "features": [
+      "Parking",
+      "BBQ Grill",
+      "Garden",
+      "WiFi",
+      "Balcony",
+      "Fireplace",
+      "Pool"
+    ],
+    "price": 657.76
+  },
+  {
+    "location": "Toronto",
+    "type": "Apartment",
+    "capacity": 12,
+    "features": [
+      "Fireplace",
+      "Ocean View",
+      "Hot Tub",
+      "Pet Friendly",
+      "Pool",
+      "Breakfast Included",
+      "Garden"
+    ],
+    "price": 783.94
+  },
+  {
+    "location": "Toronto",
+    "type": "Cottage",
+    "capacity": 6,
+    "features": [
+      "Air Conditioning",
+      "Balcony",
+      "Fireplace",
+      "Gym",
+      "Pool",
+      "Garden"
+    ],
+    "price": 542.55
+  },
+  {
+    "location": "Toronto",
+    "type": "House",
+    "capacity": 7,
+    "features": [
+      "Ocean View",
+      "WiFi",
+      "Hot Tub",
+      "Pet Friendly",
+      "Pool",
+      "Parking",
+      "Air Conditioning"
+    ],
+    "price": 615.57
+  },
+  {
+    "location": "Paris",
+    "type": "Townhouse",
+    "capacity": 12,
+    "features": [
+      "Air Conditioning",
+      "BBQ Grill",
+      "Fireplace",
+      "Pet Friendly",
+      "Hot Tub",
+      "Parking",
+      "Balcony"
+    ],
+    "price": 428.07
+  },
+  {
+    "location": "Paris",
+    "type": "Condo",
+    "capacity": 3,
+    "features": [
+      "Parking",
+      "Breakfast Included",
+      "Pet Friendly",
+      "WiFi",
+      "Balcony"
+    ],
+    "price": 71.25
+  },
+  {
+    "location": "New York",
+    "type": "Villa",
+    "capacity": 6,
+    "features": [
+      "Garden",
+      "WiFi",
+      "Parking",
+      "Balcony",
+      "Fireplace"
+    ],
+    "price": 511.02
+  },
+  {
+    "location": "New York",
+    "type": "Apartment",
+    "capacity": 12,
+    "features": [
+      "Balcony",
+      "WiFi",
+      "Hot Tub"
+    ],
+    "price": 271.3
+  },
+  {
+    "location": "Paris",
+    "type": "Loft",
+    "capacity": 10,
+    "features": [
+      "WiFi",
+      "Air Conditioning",
+      "Breakfast Included",
+      "Hot Tub",
+      "Ocean View",
+      "Pool"
+    ],
+    "price": 756.15
+  },
+  {
+    "location": "Vancouver",
+    "type": "House",
+    "capacity": 3,
+    "features": [
+      "WiFi",
+      "BBQ Grill",
+      "Breakfast Included",
+      "Pool",
+      "Fireplace",
+      "Washer/Dryer"
+    ],
+    "price": 191.98
+  },
+  {
+    "location": "Vancouver",
+    "type": "Loft",
+    "capacity": 6,
+    "features": [
+      "Pool",
+      "Pet Friendly",
+      "Hot Tub"
+    ],
+    "price": 913.68
+  },
+  {
+    "location": "Vancouver",
+    "type": "Condo",
+    "capacity": 8,
+    "features": [
+      "Garden",
+      "Ocean View",
+      "Washer/Dryer",
+      "WiFi"
+    ],
+    "price": 990.79
+  },
+  {
+    "location": "New York",
+    "type": "Cottage",
+    "capacity": 9,
+    "features": [
+      "WiFi",
+      "Balcony",
+      "Garden",
+      "Parking",
+      "Washer/Dryer"
+    ],
+    "price": 690.11
+  },
+  {
+    "location": "Vancouver",
+    "type": "Cottage",
+    "capacity": 2,
+    "features": [
+      "Gym",
+      "Pet Friendly",
+      "Balcony"
+    ],
+    "price": 481.46
+  },
+  {
+    "location": "Houston",
+    "type": "Cottage",
+    "capacity": 8,
+    "features": [
+      "Parking",
+      "Breakfast Included",
+      "Air Conditioning",
+      "Washer/Dryer",
+      "Hot Tub"
+    ],
+    "price": 584.52
+  },
+  {
+    "location": "Los Angeles",
+    "type": "Villa",
+    "capacity": 11,
+    "features": [
+      "Fireplace",
+      "Pet Friendly",
+      "Parking",
+      "BBQ Grill",
+      "WiFi",
+      "Hot Tub"
+    ],
+    "price": 466.99
+  },
+  {
+    "location": "London",
+    "type": "Apartment",
+    "capacity": 6,
+    "features": [
+      "Parking",
+      "Fireplace",
+      "Air Conditioning",
+      "Breakfast Included",
+      "Washer/Dryer",
+      "Balcony",
+      "WiFi"
+    ],
+    "price": 849.42
+  },
+  {
+    "location": "Montreal",
+    "type": "Apartment",
+    "capacity": 9,
+    "features": [
+      "BBQ Grill",
+      "Balcony",
+      "Parking",
+      "Garden",
+      "Hot Tub",
+      "Breakfast Included",
+      "Gym"
+    ],
+    "price": 710.94
+  },
+  {
+    "location": "Vancouver",
+    "type": "Cottage",
+    "capacity": 5,
+    "features": [
+      "Breakfast Included",
+      "Air Conditioning",
+      "Garden",
+      "Hot Tub",
+      "Parking"
+    ],
+    "price": 987.33
+  },
+  {
+    "location": "Paris",
+    "type": "Condo",
+    "capacity": 4,
+    "features": [
+      "Hot Tub",
+      "Pet Friendly",
+      "Washer/Dryer"
+    ],
+    "price": 645.82
+  },
+  {
+    "location": "Paris",
+    "type": "Cottage",
+    "capacity": 3,
+    "features": [
+      "WiFi",
+      "Pool",
+      "BBQ Grill",
+      "Balcony"
+    ],
+    "price": 431.52
+  },
+  {
+    "location": "Miami",
+    "type": "Townhouse",
+    "capacity": 11,
+    "features": [
+      "Pet Friendly",
+      "Gym",
+      "Parking",
+      "BBQ Grill",
+      "Ocean View",
+      "Fireplace",
+      "Hot Tub"
+    ],
+    "price": 592.38
+  },
+  {
+    "location": "Los Angeles",
+    "type": "Apartment",
+    "capacity": 4,
+    "features": [
+      "Pool",
+      "Balcony",
+      "Breakfast Included"
+    ],
+    "price": 125.93
+  },
+  {
+    "location": "Montreal",
+    "type": "Loft",
+    "capacity": 10,
+    "features": [
+      "Pool",
+      "Pet Friendly",
+      "Ocean View",
+      "Fireplace",
+      "Breakfast Included",
+      "WiFi",
+      "Balcony"
+    ],
+    "price": 974.21
+  },
+  {
+    "location": "Houston",
+    "type": "Townhouse",
+    "capacity": 6,
+    "features": [
+      "Air Conditioning",
+      "Ocean View",
+      "Breakfast Included",
+      "Pet Friendly",
+      "Pool",
+      "Fireplace",
+      "Gym"
+    ],
+    "price": 831.41
+  },
+  {
+    "location": "Houston",
+    "type": "Apartment",
+    "capacity": 10,
+    "features": [
+      "Breakfast Included",
+      "Washer/Dryer",
+      "Hot Tub",
+      "Ocean View",
+      "Pool",
+      "Balcony",
+      "Pet Friendly"
+    ],
+    "price": 148.97
+  },
+  {
+    "location": "Miami",
+    "type": "Condo",
+    "capacity": 7,
+    "features": [
+      "BBQ Grill",
+      "Breakfast Included",
+      "Balcony",
+      "Fireplace",
+      "Pool",
+      "Washer/Dryer"
+    ],
+    "price": 895.9
+  },
+  {
+    "location": "Los Angeles",
+    "type": "Villa",
+    "capacity": 2,
+    "features": [
+      "Gym",
+      "Pool",
+      "Garden",
+      "Parking",
+      "BBQ Grill",
+      "Fireplace",
+      "Air Conditioning"
+    ],
+    "price": 884.93
+  },
+  {
+    "location": "Toronto",
+    "type": "Loft",
+    "capacity": 9,
+    "features": [
+      "Gym",
+      "Pool",
+      "WiFi"
+    ],
+    "price": 657.55
+  },
+  {
+    "location": "Miami",
+    "type": "Loft",
+    "capacity": 7,
+    "features": [
+      "Pool",
+      "Pet Friendly",
+      "WiFi",
+      "Washer/Dryer"
+    ],
+    "price": 638.22
+  },
+  {
+    "location": "Montreal",
+    "type": "Apartment",
+    "capacity": 6,
+    "features": [
+      "Pool",
+      "Gym",
+      "Garden",
+      "Fireplace",
+      "Hot Tub",
+      "Parking",
+      "BBQ Grill"
+    ],
+    "price": 102.53
+  },
+  {
+    "location": "Vancouver",
+    "type": "Villa",
+    "capacity": 5,
+    "features": [
+      "Fireplace",
+      "Parking",
+      "Washer/Dryer",
+      "Air Conditioning",
+      "WiFi",
+      "Pool"
+    ],
+    "price": 670.92
+  },
+  {
+    "location": "Houston",
+    "type": "Villa",
+    "capacity": 6,
+    "features": [
+      "Air Conditioning",
+      "Pool",
+      "BBQ Grill",
+      "Gym",
+      "Hot Tub"
+    ],
+    "price": 622.04
+  },
+  {
+    "location": "Los Angeles",
+    "type": "House",
+    "capacity": 9,
+    "features": [
+      "Pet Friendly",
+      "Ocean View",
+      "Balcony",
+      "Pool"
+    ],
+    "price": 79.45
+  },
+  {
+    "location": "Paris",
+    "type": "Loft",
+    "capacity": 1,
+    "features": [
+      "Fireplace",
+      "WiFi",
+      "Ocean View",
+      "Balcony",
+      "Pool",
+      "Gym"
+    ],
+    "price": 97.6
+  },
+  {
+    "location": "Paris",
+    "type": "House",
+    "capacity": 9,
+    "features": [
+      "Parking",
+      "Pet Friendly",
+      "WiFi",
+      "Washer/Dryer"
+    ],
+    "price": 356.72
+  },
+  {
+    "location": "Vancouver",
+    "type": "Villa",
+    "capacity": 10,
+    "features": [
+      "Pool",
+      "Hot Tub",
+      "Gym",
+      "Fireplace",
+      "Pet Friendly"
+    ],
+    "price": 798.85
+  },
+  {
+    "location": "London",
+    "type": "Townhouse",
+    "capacity": 7,
+    "features": [
+      "Garden",
+      "Balcony",
+      "Air Conditioning",
+      "Pool"
+    ],
+    "price": 680.59
+  },
+  {
+    "location": "Houston",
+    "type": "Townhouse",
+    "capacity": 12,
+    "features": [
+      "Fireplace",
+      "Pet Friendly",
+      "Garden",
+      "Pool"
+    ],
+    "price": 231.12
+  },
+  {
+    "location": "Toronto",
+    "type": "Cottage",
+    "capacity": 3,
+    "features": [
+      "Ocean View",
+      "Pool",
+      "WiFi",
+      "Washer/Dryer",
+      "BBQ Grill",
+      "Parking"
+    ],
+    "price": 659.21
+  },
+  {
+    "location": "Toronto",
+    "type": "Cottage",
+    "capacity": 5,
+    "features": [
+      "Garden",
+      "Breakfast Included",
+      "WiFi",
+      "Air Conditioning",
+      "Gym",
+      "BBQ Grill",
+      "Washer/Dryer"
+    ],
+    "price": 709.94
+  },
+  {
+    "location": "London",
+    "type": "Loft",
+    "capacity": 8,
+    "features": [
+      "Pet Friendly",
+      "Ocean View",
+      "Air Conditioning",
+      "Balcony",
+      "Gym"
+    ],
+    "price": 200.68
+  },
+  {
+    "location": "Montreal",
+    "type": "Studio",
+    "capacity": 4,
+    "features": [
+      "Hot Tub",
+      "WiFi",
+      "Washer/Dryer"
+    ],
+    "price": 375.9
+  },
+  {
+    "location": "Houston",
+    "type": "Condo",
+    "capacity": 9,
+    "features": [
+      "Fireplace",
+      "WiFi",
+      "Washer/Dryer"
+    ],
+    "price": 628.1
+  },
+  {
+    "location": "Montreal",
+    "type": "Cottage",
+    "capacity": 12,
+    "features": [
+      "Balcony",
+      "Pet Friendly",
+      "Ocean View",
+      "Parking",
+      "Washer/Dryer",
+      "Garden",
+      "Fireplace"
+    ],
+    "price": 450.37
+  }
+]
