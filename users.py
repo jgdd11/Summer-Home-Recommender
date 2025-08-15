@@ -59,22 +59,25 @@ class User:
 
 
 class UserManager:
-    FILE_PATH = "users.json"
-
+    
     def __init__(self):
-        self.userdb = self.load_users()
+        self.userdb = self.load_users()  # <- self.filename not yet defined
+        self.filename = "users.json"
 
     def load_users(self):
+        import json
         try:
-            with open(self.FILE_PATH, "r") as f:
+            with open(self.filename, "r") as f:
                 data = json.load(f)
-                return [User(**user) for user in data]
+                return [User(**u) for u in data]
         except FileNotFoundError:
             return []
 
     def save_users(self):
-        with open(self.FILE_PATH, "w") as f:
-            json.dump([user.__dict__ for user in self.userdb], f, indent=4)
+        import json
+        # convert all User objects to dicts
+        with open(self.filename, "w") as f:
+            json.dump([u.to_dict() for u in self.users], f, indent=4)
 
     def find_user(self, username):
         return next((user for user in self.userdb if user.username == username), None)
