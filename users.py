@@ -31,10 +31,10 @@ def create_user(userdb):
     name = input("Please enter your name: ")
     username = input("Please enter your desired username: ")
     while True:
-        password = pwinput.pwinput("Create a password with 8 characters, 1 capital letter, 1 number, and 1 special character: ", mask="*")
+        password = pwinput.pwinput("Create a password (8 chars, 1 capital, 1 number, 1 special): ", mask="*")
         password_confirm = pwinput.pwinput("Confirm your password: ", mask="*")
         if not is_strong_password(password):
-            print("Please ensure your password has at least 8 characters, 1 capital letter, 1 number, and 1 special character (!@#$%^&*(),.?\":|<> are special characters)")
+            print("Please ensure your password meets the requirements.")
             continue
         if password != password_confirm:
             print("Passwords do not match. Please try again.")
@@ -75,4 +75,3 @@ def login():
                 return userdata
             print("Incorrect password. Try again.")
 
-login()
