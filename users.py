@@ -46,6 +46,19 @@ class User:
         self.password = User.hash_password(password)
         print("Password successfully set.")
 
+    def set_username(self, userdb):
+        while True:
+            username = input("Enter your new username: ").strip()
+            if not username:
+                print("Username cannot be empty.")
+                continue
+            if any(u.username == username and u.email != self.email for u in userdb):
+                print("Username already in use by another user.")
+                continue
+            break
+        self.username = username
+        print("Username successfully updated.")
+
     def set_email(self, userdb):
         while True:
             email = input("Enter your new email: ")
@@ -71,6 +84,17 @@ class User:
             "reservations": self.reservations,
             "attempts": self.attempts,
         }
+    
+    def delete_user(self, user):
+        confirm = input(f"Are you sure you want to delete your account, {user.username}? (Y/N): ").strip().lower()
+        if confirm not in ("y", "yes"):
+            print("Account deletion cancelled.")
+            return False
+
+        self.userdb = [u for u in self.userdb if u.username != user.username]
+        self.save_users()
+        print(f"Account '{user.username}' deleted successfully.")
+        return True
 
 
 class UserManager:
@@ -96,15 +120,16 @@ class UserManager:
     def create_user(self):
         name = input("Enter your name: ")
 
-        # Ensure unique username
         while True:
-            username = input("Enter your desired username: ")
+            username = input("Enter your desired username: ").strip()
+            if not username:
+                print("Username cannot be empty.")
+                continue
             if self.find_user(username):
                 print("Username already taken. Try another.")
                 continue
             break
 
-        # Ensure unique email
         while True:
             email = input("Enter your email: ")
             if not User.is_valid_email(email):
