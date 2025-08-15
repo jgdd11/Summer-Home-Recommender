@@ -3,7 +3,6 @@ import json
 import hashlib
 import re
 
-
 class User:
     def __init__(self, username, password, name, email, reservations=None, attempts=0):
         self.username = username
@@ -47,13 +46,16 @@ class User:
         self.password = User.hash_password(password)
         print("Password successfully set.")
 
-    def set_email(self):
+    def set_email(self, userdb):
         while True:
-            email = input("Enter your email: ")
+            email = input("Enter your new email: ")
             if not User.is_valid_email(email):
                 print("Invalid email format.")
-            else:
-                break
+                continue
+            if any(u.email == email and u.username != self.username for u in userdb):
+                print("Email already in use by another user.")
+                continue
+            break
         self.email = email
         print("Email successfully updated.")
 
@@ -81,7 +83,7 @@ class UserManager:
             with open(self.filename, "r") as f:
                 data = json.load(f)
                 return [User(**u) for u in data]
-        except FileNotFoundError:
+        except (FileNotFoundError, json.JSONDecodeError):
             return []
 
     def save_users(self):
@@ -93,11 +95,25 @@ class UserManager:
 
     def create_user(self):
         name = input("Enter your name: ")
-        username = input("Enter your desired username: ")
-        email = input("Enter your email: ")
-        while not User.is_valid_email(email):
-            print("Invalid email format.")
+
+        # Ensure unique username
+        while True:
+            username = input("Enter your desired username: ")
+            if self.find_user(username):
+                print("Username already taken. Try another.")
+                continue
+            break
+
+        # Ensure unique email
+        while True:
             email = input("Enter your email: ")
+            if not User.is_valid_email(email):
+                print("Invalid email format.")
+                continue
+            if any(u.email == email for u in self.userdb):
+                print("Email already in use. Try another.")
+                continue
+            break
 
         user = User(username=username, password="", name=name, email=email)
         user.set_password()
@@ -151,10 +167,3 @@ class UserManager:
 
                 user.attempts += 1
                 print(f"Incorrect password. Attempts: {user.attempts}")
-
-
-# Usage
-if __name__ == "__main__":
-    manager = UserManager()
-    logged_in_user = manager.login()
-    print(f"Welcome, {logged_in_user.name}!")
