@@ -30,19 +30,24 @@ def is_strong_password(password):
 def set_password(username = None, userdb = None):
     while True:
         password = pwinput.pwinput("Create a password (8 chars, 1 capital, 1 number, 1 special): ", mask="*")
-        password_confirm = pwinput.pwinput("Confirm your password: ", mask="*")
         if not is_strong_password(password):
             print("Please ensure your password meets the requirements.")
             continue
+        password_confirm = pwinput.pwinput("Confirm your password: ", mask="*")
         if password != password_confirm:
             print("Passwords do not match. Please try again.")
             continue
         break
-    if username is not None:
-        userdb[username]["password"] = password
-        with open("users.json", "w") as f:
-            json.dump(userdb, f, indent=4)
-        print("Password successfully changed.")
+
+    if username is not None and userdb is not None:
+        user = next((u for u in userdb if u["username"] == username), None)
+        if user:
+            user["password"] = hash_password(password)
+            with open("users.json", "w") as f:
+                json.dump(userdb, f, indent=4)
+            print("Password successfully changed.")
+        else:
+            print(f"User '{username}' not found.")
     else:
         return password
 
@@ -57,10 +62,15 @@ def set_email(username = None, userdb = None):
             print("Please enter a valid email.")
         else:
             break
-    if username is not None:
-        userdb[username]["email"] = email
-        with open("users.json", "w") as f:
-            json.dump(userdb, f, indent=4) 
+    if username is not None and userdb is not None:
+        user = next((u for u in userdb if u["username"] == username), None)
+        if user:
+            user["email"] = email
+            with open("users.json", "w") as f:
+                json.dump(userdb, f, indent=4)
+            print("Email successfully updated.")
+        else:
+            print(f"User '{username}' not found.")
     else:
         return email
         
