@@ -3,23 +3,19 @@ from users import UserManager
 def main():
     manager = UserManager()
     logged_in_user = manager.login()
-
     if not logged_in_user:
         print("No user logged in.")
         return
 
-    print(f"Welcome, {logged_in_user.name}!")
-
     while True:
-        print("\nAccount Menu:")
-        print("1. Update Username")
-        print("2. Update Email")
-        print("3. Update Password")
-        print("4. Delete Account")
+        print(f"\nWelcome, {logged_in_user.name}!")
+        print("1. Change username")
+        print("2. Change email")
+        print("3. Change password")
+        print("4. Delete account")
         print("5. Logout")
 
-        choice = input("Enter your choice (1-5): ").strip()
-
+        choice = input("Choose an option: ").strip()
         if choice == "1":
             logged_in_user.set_username(manager.userdb)
             manager.save_users()
@@ -34,7 +30,7 @@ def main():
             if deleted:
                 break  # exit menu after deletion
         elif choice == "5":
-            print("Logging out... Have a great day!")
+            print("Logging out...")
             break
         else:
             print("Invalid choice. Try again.")

@@ -84,17 +84,6 @@ class User:
             "reservations": self.reservations,
             "attempts": self.attempts,
         }
-    
-    def delete_user(self, user):
-        confirm = input(f"Are you sure you want to delete your account, {user.username}? (Y/N): ").strip().lower()
-        if confirm not in ("y", "yes"):
-            print("Account deletion cancelled.")
-            return False
-
-        self.userdb = [u for u in self.userdb if u.username != user.username]
-        self.save_users()
-        print(f"Account '{user.username}' deleted successfully.")
-        return True
 
 
 class UserManager:
@@ -145,6 +134,17 @@ class UserManager:
         self.userdb.append(user)
         self.save_users()
         print(f"Account successfully created for '{username}'")
+
+    def delete_user(self, user):
+        confirm = input(f"Are you sure you want to delete your account, {user.username}? (Y/N): ").strip().lower()
+        if confirm not in ("y", "yes"):
+            print("Account deletion cancelled.")
+            return False
+
+        self.userdb = [u for u in self.userdb if u.username != user.username]
+        self.save_users()
+        print(f"Account '{user.username}' deleted successfully.")
+        return True
 
     def login(self):
         while True:
