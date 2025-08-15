@@ -3,10 +3,11 @@ import json
 import hashlib
 import re
 
+
 class User:
     def __init__(self, username, password, name, email, reservations=None, attempts=0):
         self.username = username
-        self.password = self.hash_password(password)
+        self.password = password if password else ""  # store hashed password later
         self.name = name
         self.email = email
         self.reservations = reservations if reservations is not None else []
@@ -32,7 +33,9 @@ class User:
 
     def set_password(self):
         while True:
-            password = pwinput.pwinput("Create a password (8 chars, 1 capital, 1 number, 1 special): ", mask="*")
+            password = pwinput.pwinput(
+                "Create a password (8 chars, 1 capital, 1 number, 1 special): ", mask="*"
+            )
             if not User.is_strong_password(password):
                 print("Password does not meet requirements.")
                 continue
@@ -57,15 +60,23 @@ class User:
     def check_password(self, password):
         return self.password == User.hash_password(password)
 
+    def to_dict(self):
+        return {
+            "username": self.username,
+            "password": self.password,
+            "name": self.name,
+            "email": self.email,
+            "reservations": self.reservations,
+            "attempts": self.attempts,
+        }
+
 
 class UserManager:
-    
     def __init__(self):
-        self.userdb = self.load_users()  # <- self.filename not yet defined
         self.filename = "users.json"
+        self.userdb = self.load_users()
 
     def load_users(self):
-        import json
         try:
             with open(self.filename, "r") as f:
                 data = json.load(f)
@@ -74,10 +85,8 @@ class UserManager:
             return []
 
     def save_users(self):
-        import json
-        # convert all User objects to dicts
         with open(self.filename, "w") as f:
-            json.dump([u.to_dict() for u in self.users], f, indent=4)
+            json.dump([u.to_dict() for u in self.userdb], f, indent=4)
 
     def find_user(self, username):
         return next((user for user in self.userdb if user.username == username), None)
@@ -128,7 +137,9 @@ class UserManager:
                         print("Incorrect email.")
                     continue
 
-                password = pwinput.pwinput("Enter your password or 1 to go back: ", mask="*")
+                password = pwinput.pwinput(
+                    "Enter your password or 1 to go back: ", mask="*"
+                )
                 if password == "1":
                     break
 
@@ -147,4 +158,3 @@ if __name__ == "__main__":
     manager = UserManager()
     logged_in_user = manager.login()
     print(f"Welcome, {logged_in_user.name}!")
-    
