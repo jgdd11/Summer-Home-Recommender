@@ -11,7 +11,12 @@ def load_userdb():
     except FileNotFoundError:
         return []
 
-# Hashcodes password for added security
+# Saves the user database back to users.json
+def save_userdb(userdb):
+    with open("users.json", "w") as f:
+        json.dump(userdb, f, indent=4)
+
+# Hashes a password for security
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
@@ -19,15 +24,22 @@ def hash_password(password):
 def is_strong_password(password):
     if len(password) < 8:
         return False
-
     has_upper = re.search(r"[A-Z]", password)
     has_number = re.search(r"\d", password)
     has_special = re.search(r"[!@#$%^&*(),.?\":{}|<>]", password)
-
     return all([has_upper, has_number, has_special])
 
-# User sets a password and follows the standard procedure to do so
-def set_password(username = None, userdb = None):
+# Updates a field in a user's record and saves the database
+def update_user(username, userdb, key, value):
+    user = next((u for u in userdb if u["username"] == username), None)
+    if not user:
+        return False
+    user[key] = value
+    save_userdb(userdb)
+    return True
+
+# Sets or updates a password
+def set_password(username=None, userdb=None):
     while True:
         password = pwinput.pwinput("Create a password (8 chars, 1 capital, 1 number, 1 special): ", mask="*")
         if not is_strong_password(password):
@@ -39,42 +51,38 @@ def set_password(username = None, userdb = None):
             continue
         break
 
-    if username is not None and userdb is not None:
-        user = next((u for u in userdb if u["username"] == username), None)
-        if user:
-            user["password"] = hash_password(password)
-            with open("users.json", "w") as f:
-                json.dump(userdb, f, indent=4)
+    hashed = hash_password(password)
+    if username and userdb:
+        if update_user(username, userdb, "password", hashed):
             print("Password successfully changed.")
         else:
             print(f"User '{username}' not found.")
     else:
-        return hash_password(password)
+        return hashed
 
+# Checks if an email is valid
 def is_valid_email(email):
     pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
     return re.match(pattern, email) is not None
 
-def set_email(username = None, userdb = None):
+# Sets or updates an email
+def set_email(username=None, userdb=None):
     while True:
         email = input("Please enter an email: ")
         if not is_valid_email(email):
             print("Please enter a valid email.")
         else:
             break
-    if username is not None and userdb is not None:
-        user = next((u for u in userdb if u["username"] == username), None)
-        if user:
-            user["email"] = email
-            with open("users.json", "w") as f:
-                json.dump(userdb, f, indent=4)
+
+    if username and userdb:
+        if update_user(username, userdb, "email", email):
             print("Email successfully updated.")
         else:
             print(f"User '{username}' not found.")
     else:
         return email
-        
-# Follows standard procedure to create user and add them to users.json
+
+# Creates a new user
 def create_user(userdb):
     name = input("Please enter your name: ")
     username = input("Please enter your desired username: ")
@@ -87,14 +95,13 @@ def create_user(userdb):
         "name": name,
         "email": email,
         "reservations": [],
+        "attempts": 0
     }
     userdb.append(new_user)
-    with open("users.json", "w") as f:
-        json.dump(userdb, f, indent=4) 
+    save_userdb(userdb)
     print(f"Account successfully created for '{username}'")
 
-# Allows a user to login and returns their info if they exist in the users.json, if not
-# prompts them to create a user
+# Handles user login
 def login():
     userdb = load_userdb()
     
@@ -127,15 +134,15 @@ def login():
                         print("Returning to login screen.")
                         break
                     if email == userdata["email"]:
-                        userdata["password"] = set_password(username, userdb)
+                        set_password(username, userdb)
                         userdata["attempts"] = 0
                         print("Password reset successful. Please log in again.")
                         break
                     else:
                         print("Incorrect email. Please try again or type 1 to return to login screen.")
-                break 
+                break
+
             password = pwinput.pwinput("Enter your password or type 1 to go back: ", mask="*")
-            
             if password == "1":
                 break
 
