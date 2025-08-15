@@ -31,7 +31,7 @@ def is_strong_password(password):
     return all([has_upper, has_number, has_special])
 
 def create_user(userdb):
-    name = input("Please enter your name")
+    name = input("Please enter your name: ")
     username = input("Please enter your desired username: ")
     while True:
         password = pwinput.pwinput("Create a password with 8 characters, 1 capital letter, 1 number, and 1 special character: ", mask="*")
@@ -58,6 +58,7 @@ def create_user(userdb):
 def login():
     userdb = load_userdb()
     while True:
+        print("Welcome to [INSERT COOL COMPANY NAME HERE]!")
         username = input("Enter your username: ")
         userdata = next((user for user in userdb if user["username"] == username), None)
 
