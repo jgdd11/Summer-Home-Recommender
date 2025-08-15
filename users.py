@@ -49,7 +49,7 @@ def set_password(username = None, userdb = None):
         else:
             print(f"User '{username}' not found.")
     else:
-        return password
+        return hash_password(password)
 
 def is_valid_email(email):
     pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
@@ -87,7 +87,6 @@ def create_user(userdb):
         "name": name,
         "email": email,
         "reservations": [],
-        "incorrect_attempts": 0
     }
     userdb.append(new_user)
     with open("users.json", "w") as f:
