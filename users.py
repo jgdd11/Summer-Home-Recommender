@@ -26,10 +26,8 @@ def is_strong_password(password):
 
     return all([has_upper, has_number, has_special])
 
-# Follows standard procedure to create user and add them to users.json
-def create_user(userdb):
-    name = input("Please enter your name: ")
-    username = input("Please enter your desired username: ")
+# User sets a password and follows the standard procedure to do so
+def set_password(username = None, userdb = None):
     while True:
         password = pwinput.pwinput("Create a password (8 chars, 1 capital, 1 number, 1 special): ", mask="*")
         password_confirm = pwinput.pwinput("Confirm your password: ", mask="*")
@@ -40,12 +38,46 @@ def create_user(userdb):
             print("Passwords do not match. Please try again.")
             continue
         break
+    if username is not None:
+        userdb[username]["password"] = password
+        with open("users.json", "w") as f:
+            json.dump(userdb, f, indent=4)
+        print("Password successfully changed.")
+    else:
+        return password
+
+def is_valid_email(email):
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    return re.match(pattern, email) is not None
+
+def set_email(username = None, userdb = None):
+    while True:
+        email = input("Please enter an email: ")
+        if not is_valid_email(email):
+            print("Please enter a valid email.")
+        else:
+            break
+    if username is not None:
+        userdb[username]["email"] = email
+        with open("users.json", "w") as f:
+            json.dump(userdb, f, indent=4) 
+    else:
+        return email
+        
+# Follows standard procedure to create user and add them to users.json
+def create_user(userdb):
+    name = input("Please enter your name: ")
+    username = input("Please enter your desired username: ")
+    email = set_email()
+    password = set_password()
 
     new_user = {
         "username": username,
         "password": hash_password(password),
         "name": name,
-        "reservations": []
+        "email": email,
+        "reservations": [],
+        "incorrect_attempts": 0
     }
     userdb.append(new_user)
     with open("users.json", "w") as f:
@@ -56,22 +88,54 @@ def create_user(userdb):
 # prompts them to create a user
 def login():
     userdb = load_userdb()
+    
     while True:
-        print("Welcome to [INSERT COOL COMPANY NAME HERE]!")
+        print("Welcome to [INSERT CLEVER APP NAME HERE]!")
         username = input("Enter your username: ")
         userdata = next((user for user in userdb if user["username"] == username), None)
 
         if not userdata:
-            print("Username not found. Please create account.")
-            create_user(userdb)
-            continue 
+            while True:
+                yesno = input("Username not found. Would you like to create an account? (Y or N) ").lower()
+                if yesno in ("y", "yes"):
+                    create_user(userdb)
+                    break
+                elif yesno in ("n", "no"):
+                    print("Returning to login screen.")
+                    break
+                else:
+                    print("Please enter Y or N.")
+            continue
+
+        userdata.setdefault("attempts", 0)
 
         while True:
-            password = pwinput.pwinput("Enter your password or type 1 to go back: ", mask="*")
-            if password == "1":
+            if userdata["attempts"] >= 5:
+                print("Exceeded password attempts.")
+                while True:
+                    email = input("Please enter your email to reset your password or type 1 to return to login screen: ")
+                    if email == "1":
+                        print("Returning to login screen.")
+                        break
+                    if email == userdata["email"]:
+                        userdata["password"] = set_password(username, userdb)
+                        userdata["attempts"] = 0
+                        print("Password reset successful. Please log in again.")
+                        break
+                    else:
+                        print("Incorrect email. Please try again or type 1 to return to login screen.")
                 break 
+            password = pwinput.pwinput("Enter your password or type 1 to go back: ", mask="*")
+            
+            if password == "1":
+                break
+
             if userdata["password"] == hash_password(password):
                 print("Login successful!")
+                userdata["attempts"] = 0
                 return userdata
-            print("Incorrect password. Try again.")
 
+            userdata["attempts"] += 1
+            print(f"Incorrect password. Attempts: {userdata['attempts']}")
+
+login()
