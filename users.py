@@ -3,6 +3,7 @@ import json
 import hashlib
 import re
 
+# Loads the users.json database
 def load_userdb():
     try:
         with open("users.json", "r") as f:
@@ -10,17 +11,12 @@ def load_userdb():
     except FileNotFoundError:
         return []
 
+# Hashcodes password for added security
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
+# Checks if a password meets desired criteria
 def is_strong_password(password):
-    """
-    Check if the password meets the following criteria:
-    - At least 8 characters
-    - At least 1 uppercase letter
-    - At least 1 number
-    - At least 1 special character
-    """
     if len(password) < 8:
         return False
 
@@ -30,6 +26,7 @@ def is_strong_password(password):
 
     return all([has_upper, has_number, has_special])
 
+# Follows standard procedure to create user and add them to users.json
 def create_user(userdb):
     name = input("Please enter your name: ")
     username = input("Please enter your desired username: ")
@@ -55,6 +52,8 @@ def create_user(userdb):
         json.dump(userdb, f, indent=4) 
     print(f"Account successfully created for '{username}'")
 
+# Allows a user to login and returns their info if they exist in the users.json, if not
+# prompts them to create a user
 def login():
     userdb = load_userdb()
     while True:
@@ -77,5 +76,3 @@ def login():
             print("Incorrect password. Try again.")
 
 login()
-
-    
