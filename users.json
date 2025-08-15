@@ -5,6 +5,6 @@
         "name": "John",
         "email": "john.dion@rotman.utoronto.ca",
         "reservations": [],
-        "attempts": 5
+        "attempts": 0
     }
 ]
