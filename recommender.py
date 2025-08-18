@@ -3,15 +3,15 @@ import pandas as pd
 def recommendation_logic(property_list,user_req):
     df = pd.DataFrame(property_list) #load property_list as dataframe
 
-    #assign location a score 1 if location matches, otherwise 0
+    #kill properties that are 
+    # 1) in the wrong location, 
+    # 2) capacity is below group size
+    # 3) unavailable
 
-    #assign capacity a score 1 if a property can hold that group size, otherwise 0
-    #group_size <= property capacity
+    
 
-    #assign availability a score 1 if the property is available during that period, otherwise 0
-
-    #assign price a score 1 if the price is at or below budget, otherwise 0
-    #price <= budget
+    #assign price a score 1 if the price matches, otherwise 0
+    #price falls within the budget range
 
     #assign environment a score 1 if environment matches, otherwise 0
 
