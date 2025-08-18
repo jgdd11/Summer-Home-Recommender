@@ -1,6 +1,14 @@
-def recommendation_logic(propety_list,user_req):
-    #function #1: assign properties a score 0 if 
-    # 1) location doesn't match, 
-    # 2) group size exceeds the number of people a property can hold
-    # 3) the property has unavailable dates
+import pandas as pd
+
+def recommendation_logic(property_list,user_req):
+    df = pd.DataFrame(property_list) #load property_list as dataframe
+
+    #function #1: assign location a score 1 if location matches, otherwise 0
+
+    #function #2: assign group_size a score 1 if a property can hold the number of people, otherwise 0
+    #group_size <= property capacity
+
+    #function #3: assign date a score 1 if the property is available during that period, otherwise 0
+
+
     pass
