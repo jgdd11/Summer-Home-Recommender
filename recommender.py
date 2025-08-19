@@ -1,5 +1,4 @@
 import pandas as pd
-
 def recommendation_logic(property_list,user_req):
     df = pd.DataFrame(property_list) #load property_list as dataframe
 

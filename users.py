@@ -74,6 +74,16 @@ class User:
 
     def check_password(self, password):
         return self.password == User.hash_password(password)
+    
+    def view_account_details(self):
+        print(f"Name: {self.name}")
+        print(f"Username: {self.username}")
+        print(f"Email: {self.email}")
+
+    def view_reservations(self):
+        for reservation in self.reservations:
+            print(reservation)
+        return self.reservations
 
     def to_dict(self):
         return {
