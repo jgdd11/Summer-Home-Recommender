@@ -87,12 +87,24 @@ class User:
             print(reservation)
         return self.reservations
     
-    def make_reservation(self):
+    def get_recommendations(self):
         input = llm_parse()
         recommended_properties = recommendation_logic(input)
+        print(recommended_properties)
+        #Prompt user to make reservation
+
+    def make_reservation(self):
         decision = input("Please enter the ID of the property you would like to reserve: ")
         recommended_property = recommended_properties[id == decision]
         self.reservations.append(decision)
+
+    def delete_reservation(self):
+        #self.reservations [{"id":int, "start":date, "end":date}]
+        #choose property id from list
+        #check if property id user entered is in list will either have to convert to string or int
+        #remove booked dates from properties.json - John will do
+        #remove reservation from self.reservations
+        pass
 
 
     def to_dict(self):

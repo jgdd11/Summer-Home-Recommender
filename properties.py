@@ -61,6 +61,9 @@ class PropertiesController:
             data = json.load(f)
             self.properties = [Property.from_dict(item) for item in data]
 
+    def update_properties(self):
+        stuff
+
     # get all properties in a list
     def get_all(self) -> List[Property]:
         return self.properties
