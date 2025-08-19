@@ -1,37 +1,33 @@
 # llm.py
 import requests
-import json
 from datetime import datetime, timedelta
 import getpass
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL = "deepseek/deepseek-chat"   # can override from main.py
+MODEL = "deepseek/deepseek-chat"
 
 SYSTEM_PROMPT = (
-    "You are a helpful assistant for an Airbnb-like vacation property search. "
-    "Parse a USER REQUEST into structured JSON fields. "
-    "Return ONLY JSON with these keys: "
-    " - 'location' (str, optional) "
-    " - 'price_max' (int, optional, budget ceiling in USD) "
-    " - 'price_min' (int, optional) "
-    " - 'features' (list[str], optional) "
-    " - 'tags' (list[str], optional) "
-    " - 'start_date' (str, YYYY-MM-DD, optional) "
-    " - 'end_date' (str, YYYY-MM-DD, optional). "
-    "Do NOT generate lists of dates yourself."
+    "You are an assistant for an Airbnb-like vacation property search. "
+    "Parse a USER REQUEST into Python dict fields: "
+    "- location (str, city or region), "
+    "- environment (str, e.g., mountains, beach, urban), "
+    "- group_size (int, number of guests), "
+    "- price_min (int, optional), "
+    "- price_max (int, optional), "
+    "- features (list[str], optional), "
+    "- tags (list[str], optional), "
+    "- start_date (str, YYYY-MM-DD, optional), "
+    "- end_date (str, YYYY-MM-DD, optional). "
+    "Return ONLY a Python dictionary, not a JSON string."
 )
 
 
-def llm_parse(model=MODEL, temperature=0.7):
-    """
-    Prompt the user for what they want, send it to the LLM, and return parsed JSON.
-    """
-    api_key = getpass.getpass("Enter your OpenRouter API key (input is hidden): ").strip()                    
+def llm_parse(api_key, model=MODEL, temperature=0.7):
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    
     user_prompt = input("Bot: What kind of property are you looking for? ").strip()
     if not user_prompt:
         return {"error": "No input provided"}
-
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
 
     payload = {
         "model": model,
@@ -48,27 +44,48 @@ def llm_parse(model=MODEL, temperature=0.7):
 
     data = r.json()
     content = (data.get("choices") or [{}])[0].get("message", {}).get("content")
-    if not content:
-        return {"error": "Empty response", "raw": data}
-
+    
+    # Try parsing LLM output to a dict
+    parsed = {}
     try:
-        return json.loads(content)
-    except json.JSONDecodeError:
-        # fallback: extract substring
-        s, e = content.find("{"), content.rfind("}")
-        if s != -1 and e != -1 and e > s:
-            try:
-                return json.loads(content[s:e+1])
-            except json.JSONDecodeError:
-                return {"error": "Non-JSON content", "raw": content}
-        return {"error": "Non-JSON content", "raw": content}
+        parsed = eval(content) if content else {}
+        if not isinstance(parsed, dict):
+            parsed = {}
+    except:
+        parsed = {}
+
+    # Required fields
+    required_fields = {
+        "location": "Please provide the city or region for your stay: ",
+        "environment": "What kind of environment do you prefer? (e.g., beach, mountains, urban): ",
+        "group_size": "How many guests will be staying? "
+    }
+    
+    for key, prompt_text in required_fields.items():
+        while key not in parsed or not parsed.get(key):
+            val = input(f"Bot: {prompt_text}").strip()
+            if key == "group_size":
+                try:
+                    val = int(val)
+                except ValueError:
+                    print("Bot: Please enter a valid number for group size.")
+                    continue
+            parsed[key] = val
+
+    # Booking dates
+    if "start_date" not in parsed or "end_date" not in parsed:
+        start = input("Bot: What is your start date? (YYYY-MM-DD): ").strip()
+        end = input("Bot: What is your end date? (YYYY-MM-DD): ").strip()
+        parsed["start_date"] = start
+        parsed["end_date"] = end
+
+    parsed["dates"] = expand_dates(parsed["start_date"], parsed["end_date"])
+    
+    return parsed  # <-- always a Python dict
 
 
 def expand_dates(start: str, end: str):
-    """
-    Expand a start and end date (YYYY-MM-DD) into a list of consecutive dates, inclusive.
-    """
     start_dt = datetime.strptime(start, "%Y-%m-%d")
     end_dt = datetime.strptime(end, "%Y-%m-%d")
     days = (end_dt - start_dt).days
-    return [(start_dt + timedelta(days=i)).strftime("%Y-%m-%d") for i in range(days+1)]
+    return [(start_dt + timedelta(days=i)) for i in range(days+1)]  # datetime objects

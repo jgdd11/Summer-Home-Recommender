@@ -2,6 +2,8 @@ import pwinput
 import json
 import hashlib
 import re
+from llm import llm_parse
+from recommender import recommendation_logic
 
 class User:
     def __init__(self, username, password, name, email, reservations=None, attempts=0):
@@ -84,6 +86,14 @@ class User:
         for reservation in self.reservations:
             print(reservation)
         return self.reservations
+    
+    def make_reservation(self):
+        input = llm_parse()
+        recommended_properties = recommendation_logic(input)
+        decision = input("Please enter the ID of the property you would like to reserve: ")
+        recommended_property = recommended_properties[id == decision]
+        self.reservations.append(decision)
+
 
     def to_dict(self):
         return {
@@ -138,9 +148,9 @@ class UserManager:
                 print("Email already in use. Try another.")
                 continue
             break
-
-        user = User(username=username, password="", name=name, email=email)
+        user = User(username=username, password="", name=name, email=email, preferences={})
         user.set_password()
+        user.set_preferences()
         self.userdb.append(user)
         self.save_users()
         print(f"Account successfully created for '{username}'")
