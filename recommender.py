@@ -62,3 +62,28 @@ def recommendation_logic(property_list,user_req):
 
     #display top N
     pass
+
+"""
+Recommendation Logic
+- input property_list: list[Property]
+- user_preferences: dict()
+- user_weights: list[int], default [0.2, 0.1, 0.2, 0.5]
+
+# hard filter: property has to match user requirement, drop otherwise
+
+# normalize weight
+# make sure weights add up to 1
+
+# assigning weight and score for user preferences
+for property in property_list:
+    property_score = 0
+    for item in (type, features, tags, environment):
+        num_match = number of keywords that property matches user preference
+        num_user_input = number of keywords from user inputs
+        tmp_score = num_match / num_user_input
+        property_score += tmp_score * weights[item]
+    property.score = property_score
+
+# sort by score and display top 5 properties
+# show attributes and score of each property
+"""
