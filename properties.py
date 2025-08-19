@@ -7,46 +7,49 @@ class Property:
                  id: int,
                  location: str,
                  type: str,
-                 price: float,
-                 capacity: int,
+                 price_per_night: float,
+                 environment: str,
                  features: List[str],
-                 tags: List[str]):
+                 tags: List[str],
+                 booked: List[dict]):
         self.id = id
         self.location = location
         self.type = type
-        self.price = price
-        self.capacity = capacity
+        self.price_per_night = price_per_night
+        self.environment = environment
         self.features = features
         self.tags = tags
+        self.booked = booked
 
-    # easy for printing, and debugging
-    def __repr__(self):
+   def __repr__(self):
         return (f"Property(id={self.id}, location='{self.location}', "
-                f"type='{self.type}', price={self.price}, capacity={self.capacity}, "
-                f"features={self.features}, tags={self.tags})")
+                f"type='{self.type}', price_per_night={self.price_per_night}, "
+                f"environment='{self.environment}', features={self.features}, "
+                f"tags={self.tags}, booked={self.booked})")
 
-    @classmethod
+     @classmethod
     def from_dict(cls, data: dict):
         return cls(
             id=data.get("id"),
             location=data.get("location"),
             type=data.get("type"),
-            price=data.get("price"),
-            capacity=data.get("capacity"),
+            price_per_night=data.get("price_per_night"),
+            environment=data.get("environment"),
             features=data.get("features", []),
-            tags=data.get("tags", [])
+            tags=data.get("tags", []),
+            booked=data.get("booked", [])
         )
 
-    # convert property object into a python dictionary
     def to_dict(self) -> dict:
         return {
             "id": self.id,
             "location": self.location,
             "type": self.type,
-            "price": self.price,
-            "capacity": self.capacity,
+            "price_per_night": self.price_per_night,
+            "environment": self.environment,
             "features": self.features,
-            "tags": self.tags
+            "tags": self.tags,
+            "booked": self.booked
         }
 
 
@@ -55,23 +58,16 @@ class PropertiesController:
         self.json_file = json_file
         self.properties: List[Property] = []
 
-    # load all properties from json_file which store record of all properties
     def load_properties(self):
-        with open(self.json_file, "r") as f:
+        with open(self.json_file, "r", encoding="utf-8") as f:
             data = json.load(f)
             self.properties = [Property.from_dict(item) for item in data]
 
-    def update_properties(self):
-        pass
-
-    # get all properties in a list
     def get_all(self) -> List[Property]:
         return self.properties
 
-    # select properties based on id
-    def find_by_id(self, property_id: int) -> Property | None:
+    def find_by_id(self, property_id: int) -> Optional[Property]:
         for prop in self.properties:
             if prop.id == property_id:
                 return prop
-        # if cannot find corresponding id, return None
         return None
