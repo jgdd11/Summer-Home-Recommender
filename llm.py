@@ -1,9 +1,11 @@
+# llm.py
 import requests
 import json
 from datetime import datetime, timedelta
+import getpass
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL = "deepseek/deepseek-chat"   # you can override in main.py
+MODEL = "deepseek/deepseek-chat"   # can override from main.py
 
 SYSTEM_PROMPT = (
     "You are a helpful assistant for an Airbnb-like vacation property search. "
@@ -20,10 +22,15 @@ SYSTEM_PROMPT = (
 )
 
 
-def llm_parse(user_prompt, api_key, model=MODEL, temperature=0.7):
+def llm_parse(model=MODEL, temperature=0.7):
     """
-    Query the LLM with a user request and return parsed JSON (location, price, tags, etc).
+    Prompt the user for what they want, send it to the LLM, and return parsed JSON.
     """
+    api_key = getpass.getpass("Enter your OpenRouter API key (input is hidden): ").strip()                    
+    user_prompt = input("Bot: What kind of property are you looking for? ").strip()
+    if not user_prompt:
+        return {"error": "No input provided"}
+
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
 
     payload = {

@@ -1,5 +1,6 @@
 from users import UserManager
 from properties import PropertiesController
+from llm import llm_parse
 
 def main():
     manager = UserManager()
@@ -18,21 +19,22 @@ def main():
             print("3. Logout")
             choice1 = input("Choose an option: ").strip()
             if choice1 == "1":
+                print("Here is a list of your current reservations:")
+                logged_in_user.view_reservations()
                 print("Please choose from the following options:")
                 print("1. Make reservation")
                 print("2. Delete Reservation")
-                print("3. View reservations")
-                print("4. Go Back")
-                print("5. Logout")
+                print("3. Go Back")
+                print("4. Logout")
 
                 choice2 = input("Choose an option: ").strip()
                 if choice2 == "1":
+                    logged_in_user.make_reservation()
                 elif choice2 == "2":
+                    logged_in_user.delete_reservation()
                 elif choice2 == "3":
-                    logged_in_user.view_reservations()
-                elif choice2 == "4":
                     break
-                elif choice2 == "5":
+                elif choice2 == "4":
                     print("Logging out...")
                     logout = True
                     break
