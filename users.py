@@ -95,7 +95,7 @@ class User:
 
     def make_reservation(self):
         decision = input("Please enter the ID of the property you would like to reserve: ")
-        recommended_property = recommended_properties[id == decision]
+        #recommended_property = recommended_properties[id == decision]
         self.reservations.append(decision)
 
     def delete_reservation(self):
