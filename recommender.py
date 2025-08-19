@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+from datetime import timedelta
 
 def recommendation_logic(property_list,user_req):
 
