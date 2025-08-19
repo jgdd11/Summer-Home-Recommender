@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "location": "Toronto Downtown",
+    "type": "condo",
+    "price": 309,
+    "capacity": 6,
+    "features": [
+      "hot tub",
+      "gym"
+    ],
+    "tags": [
+      "quiet",
+      "mountains"
+    ],
+    "preferred_environment": "city",
+    "start_date": "2025-06-01T00:00:00",
+    "end_date": "2025-07-28T00:00:00"
+  },
+  {
+    "id": 2,
+    "location": "Lake Muskoka",
+    "type": "condo",
+    "price": 143,
+    "capacity": 5,
+    "features": [
+      "ski-in",
+      "beach access"
+    ],
+    "tags": [
+      "mountains",
+      "pets"
+    ],
+    "preferred_environment": "lake",
+    "start_date": "2025-02-26T00:00:00",
+    "end_date": "2025-04-25T00:00:00"
+  },
+  {
+    "id": 3,
+    "location": "Halifax",
+    "type": "cottage",
+    "price": 327,
+    "capacity": 2,
+    "features": [
+      "kayak",
+      "patio"
+    ],
+    "tags": [
+      "luxury",
+      "family-friendly",
+      "pets"
+    ],
+    "preferred_environment": "city",
+    "start_date": "2025-01-27T00:00:00",
+    "end_date": "2025-03-03T00:00:00"
+  },
+  {
+    "id": 4,
+    "location": "Wasaga Beach",
+    "type": "condo",
+    "price": 211,
+    "capacity": 7,
+    "features": [
+      "fireplace",
+      "air conditioning",
+      "wifi",
+      "kayak"
+    ],
+    "tags": [
+      "mountains",
+      "beachfront",
+      "nightlife"
+    ],
+    "preferred_environment": "beach",
+    "start_date": "2025-05-22T00:00:00",
+    "end_date": "2025-07-09T00:00:00"
+  },
+  {
+    "id": 5,
+    "location": "Halifax",
+    "type": "cottage",
+    "price": 267,
+    "capacity": 5,
+    "features": [
+      "parking",
+      "wifi",
+      "canoe",
+      "hot tub"
+    ],
+    "tags": [
+      "beachfront",
+      "pets",
+      "nature"
+    ],
+    "preferred_environment": "city",
+    "start_date": "2025-03-13T00:00:00",
+    "end_date": "2025-05-11T00:00:00"
+  },
+  {
+    "id": 6,
+    "location": "Collingwood",
+    "type": "house",
+    "price": 214,
+    "capacity": 7,
+    "features": [
+      "canoe",
+      "fireplace"
+    ],
+    "tags": [
+      "romantic",
+      "quiet"
+    ],
+    "preferred_environment": "mountain",
+    "start_date": "2025-05-17T00:00:00",
+    "end_date": "2025-08-01T00:00:00"
+  },
+  {
+    "id": 7,
+    "location": "Niagara-on-the-Lake",
+    "type": "house",
+    "price": 238,
+    "capacity": 8,
+    "features": [
+      "dryer",
+      "canoe",
+      "kayak"
+    ],
+    "tags": [
+      "quiet",
+      "urban"
+    ],
+    "preferred_environment": "lake",
+    "start_date": "2025-02-28T00:00:00",
+    "end_date": "2025-05-21T00:00:00"
+  },
+  {
+    "id": 8,
+    "location": "Lake Muskoka",
+    "type": "cottage",
+    "price": 222,
+    "capacity": 6,
+    "features": [
+      "hot tub",
+      "beach access"
+    ],
+    "tags": [
+      "pets",
+      "quiet",
+      "business"
+    ],
+    "preferred_environment": "lake",
+    "start_date": "2025-06-14T00:00:00",
+    "end_date": "2025-08-12T00:00:00"
+  },
+  {
+    "id": 9,
+    "location": "Blue Mountain",
+    "type": "cottage",
+    "price": 155,
+    "capacity": 5,
+    "features": [
+      "ski-in",
+      "dryer",
+      "fireplace",
+      "kayak"
+    ],
+    "tags": [
+      "romantic",
+      "nightlife",
+      "urban"
+    ],
+    "preferred_environment": "mountain",
+    "start_date": "2025-02-05T00:00:00",
+    "end_date": "2025-04-08T00:00:00"
+  },
+  {
+    "id": 10,
+    "location": "Kingston",
+    "type": "condo",
+    "price": 313,
+    "capacity": 2,
+    "features": [
+      "gym",
+      "canoe"
+    ],
+    "tags": [
+      "quiet",
+      "nightlife"
+    ],
+    "preferred_environment": "city",
+    "start_date": "2025-04-09T00:00:00",
+    "end_date": "2025-06-02T00:00:00"
+  }
+]
