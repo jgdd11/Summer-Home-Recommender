@@ -28,19 +28,15 @@ def recommendation_logic(property_list,user_req):
 
     #drop properties that don't match location or group size
     df = df[df["location"] == user_location] 
-    df = df[df["capacity"] < group_size] 
+    df = df[df["capacity"] >= group_size] 
 
     
     
     #the following portion of the code doesn't work, need to debug
-    try:
-        drop_dates = set(pd.date_range(start_date, end_date))
-        df = df[~df["booked_dates"].apply(lambda lst: bool(set(lst) & drop_dates))]
-    except TypeError:
-        current_date = start_date
-        while current_date <= end_date:
-            df = df[~df["booked_dates"].apply(lambda lst: current_date in lst)]
-            current_date += timedelta(days=1)
+    df = df[df["unavailable_dates"].apply(
+    lambda u: set(u).isdisjoint(set(travel_dates))
+    )]
+    
 
     print(df.shape[0]) #print number of rows in the data frame again, number should be less than the original row num, showing some rows have been dropped
 
