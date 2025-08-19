@@ -1,6 +1,6 @@
 from users import UserManager
 from properties import PropertiesController
-from llm import llm_parse
+
 
 def main():
     manager = UserManager()
@@ -75,10 +75,13 @@ def main():
                     break
                 else:
                     print("Invalid choice. Try again.")
+            elif choice1 == "3":
+                break
             else:
                 print("Invalid choice. Try again.")
         if logout:
             break
+    
 
 if __name__ == "__main__":
     main()

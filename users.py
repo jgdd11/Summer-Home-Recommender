@@ -148,9 +148,8 @@ class UserManager:
                 print("Email already in use. Try another.")
                 continue
             break
-        user = User(username=username, password="", name=name, email=email, preferences={})
+        user = User(username=username, password="", name=name, email=email)
         user.set_password()
-        user.set_preferences()
         self.userdb.append(user)
         self.save_users()
         print(f"Account successfully created for '{username}'")

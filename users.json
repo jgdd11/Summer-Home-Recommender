@@ -6,5 +6,13 @@
         "email": "john.dion@rotman.utoronto.ca",
         "reservations": [],
         "attempts": 0
+    },
+    {
+        "username": "AnnieF",
+        "password": "ded521449bb9ef3ad6a66f67926db08e760f7e1ee1812be7414793bdf9005ce9",
+        "name": "Annie",
+        "email": "annie.f@1.com",
+        "reservations": [],
+        "attempts": 0
     }
 ]
