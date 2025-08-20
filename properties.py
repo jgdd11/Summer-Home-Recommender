@@ -8,7 +8,8 @@ class Property:
                  id: int,
                  location: str,
                  type: str,
-                 price_per_night: float,
+                 price: float,
+                 capacity: int,
                  environment: str,
                  features: List[str],
                  tags: List[str],
@@ -16,7 +17,8 @@ class Property:
         self.id = id
         self.location = location
         self.type = type
-        self.price_per_night = price_per_night
+        self.price = price
+        self.capacity = capacity
         self.environment = environment
         self.features = features
         self.tags = tags
@@ -24,7 +26,7 @@ class Property:
 
     def __repr__(self):
         return (f"Property(id={self.id}, location='{self.location}', "
-                f"type='{self.type}', price_per_night={self.price_per_night}, "
+                f"type='{self.type}', price={self.price}, capacity={self.capacity}"
                 f"environment='{self.environment}', features={self.features}, "
                 f"tags={self.tags}, booked={self.booked})")
 
@@ -34,7 +36,8 @@ class Property:
             "id": self.id,
             "location": self.location,
             "type": self.type,
-            "price_per_night": self.price_per_night,
+            "price": self.price,
+            "capacity": self.capacity,
             "environment": self.environment,
             "features": self.features,
             "tags": self.tags,
@@ -68,10 +71,12 @@ class PropertiesController:
         self.properties = self.load_properties()
     
     def load_properties(self):
-        with open(self.json_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            self.properties = [Property.from_dict(item) for item in data]
-            return self.properties
+        try:
+            with open(self.json_file, "r") as f:
+                data = json.load(f)
+                return [Property(**p) for p in data]
+        except (FileNotFoundError, json.JSONDecodeError):
+            return []
 
     def get_all(self) -> List[Property]:
         return self.properties
