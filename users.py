@@ -99,24 +99,11 @@ class User:
         self.reservations.append(decision)
 
     def delete_reservation(self):
-        if self.reservations==[]:
-            print("No reservations were made.")
-        else:
-            print("You have made the following reservations:")
-            for reservation in self.reservations:
-                print(reservation)
-            # choose property id from list
-            ID_to_cancel=int(input("Enter the ID of the property you would like to cancel: ").strip())
-            # check if property id user entered is in list will either have to convert to string or int
-            if (not isinstance(ID_to_cancel,int)) or (not any(r["ID"]==ID_to_cancel for r in self.reservations)):
-                print("Invalid ID.")
-            else:
-                print(f"Are you sure you want to cancel the reservation with Property ID {ID_to_cancel}?")
-                # remove reservation from self.reservations
-                self.reservations.remove(r for r in self.reservations if r["ID"]==ID_to_cancel)
-
+        #self.reservations [{"id":int, "start":date, "end":date}]
+        #choose property id from list
+        #check if property id user entered is in list will either have to convert to string or int
         #remove booked dates from properties.json - John will do
-
+        #remove reservation from self.reservations
         pass
 
 
@@ -173,8 +160,9 @@ class UserManager:
                 print("Email already in use. Try another.")
                 continue
             break
-        user = User(username=username, password="", name=name, email=email)
+        user = User(username=username, password="", name=name, email=email) #add a dictionary of weights
         user.set_password()
+        #user.set_preferences()
         self.userdb.append(user)
         self.save_users()
         print(f"Account successfully created for '{username}'")
