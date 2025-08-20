@@ -146,6 +146,7 @@ class User:
         print("Bot: Recommended properties based on your preferences:")
         print(properties[:5])
         
+        
         while True:
             reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
             if reserve in {"y", "n", "yes", "no"}:
