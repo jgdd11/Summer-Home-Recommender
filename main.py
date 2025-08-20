@@ -47,9 +47,10 @@ def main():
                 print("2. Change username")
                 print("3. Change email")
                 print("4. Change password")
-                print("5. Delete account")
-                print("6. Go Back")
-                print("7. Logout")
+                print("5. Change preferences")
+                print("6. Delete account")
+                print("7. Go Back")
+                print("8. Logout")
 
                 choice3 = input("Choose an option: ").strip()
                 if choice3 == "1":
@@ -64,12 +65,15 @@ def main():
                     logged_in_user.set_password()
                     manager.save_users()
                 elif choice3 == "5":
+                    logged_in_user.set_preferences()
+                    manager.save_users
+                elif choice3 == "6":
                     deleted = manager.delete_user(logged_in_user)
                     if deleted:
                         break
-                elif choice3 == "6":
-                    break
                 elif choice3 == "7":
+                    break
+                elif choice3 == "8":
                     print("Logging out...")
                     logout = True
                     break

@@ -1,5 +1,6 @@
 from typing import List, Optional
 import json
+from datetime import date, timedelta
 
 
 class Property:
@@ -51,6 +52,25 @@ class Property:
             "tags": self.tags,
             "booked": self.booked
         }
+    
+    def add_dates(self, start_date: date, end_date: date):
+        """Add all dates from start_date to end_date to self.booked."""
+        for i in range((end_date - start_date).days + 1):
+            day = start_date + timedelta(days=i)
+            if day not in self.booked:
+                self.booked.append(day)
+        print(f"Booked dates added: {[start_date + timedelta(days=i) for i in range((end_date - start_date).days + 1)]}")
+
+    def delete_dates(self, start_date: date, end_date: date):
+        """Remove all dates in the given range from self.booked."""
+        dates_to_remove = [start_date + timedelta(days=i) for i in range((end_date - start_date).days + 1)]
+        removed_dates = [d for d in dates_to_remove if d in self.booked]
+        self.booked = [d for d in self.booked if d not in dates_to_remove]
+
+        if removed_dates:
+            print(f"Booked dates removed: {removed_dates}")
+        else:
+            print("No matching booked dates to remove.")
 
 
 class PropertiesController:
@@ -71,3 +91,8 @@ class PropertiesController:
             if prop.id == property_id:
                 return prop
         return None
+
+    def save_properties(self):
+        with open(self.json_file, "w", encoding="utf-8") as f:
+            json.dump([prop.to_dict() for prop in self.properties], f, indent=4)
+

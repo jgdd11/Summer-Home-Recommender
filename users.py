@@ -4,6 +4,7 @@ import hashlib
 import re
 from llm import llm_parse
 from recommender import recommendation_logic
+from properties import PropertiesController
 
 class User:
     def __init__(self, username, password, name, email, reservations=None, preferences=None, attempts=0):
@@ -139,15 +140,47 @@ class User:
         print("Bot: Recommended properties based on your preferences:")
         print(recommended_properties)
         
-        # Optional: Prompt user to make a reservation
-        #reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
-        #if reserve == 'y':
-        #    self.make_reservation(recommended_properties)
+        reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
+        while True:
+            reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
+            if reserve in {"y", "n", "yes", "no"}:
+                break
+            print("Bot: Please enter Y, N, Yes, or No.")
 
-    def make_reservation(self):
-        decision = input("Please enter the ID of the property you would like to reserve: ")
-        #recommended_property = recommended_properties[id == decision]
-        self.reservations.append(decision)
+        if reserve in {"y", "yes"}:
+            self.make_reservation(recommended_properties, llm_output["start_date"], llm_output["end_date"])
+        return
+
+    def make_reservation(self, recommended_properties: list, start_date: str, end_date: str, controller: PropertiesController):
+        decision = input("Please enter the ID of the property you would like to reserve: ").strip()
+        try:
+            decision = int(decision)
+        except ValueError:
+            print("Bot: Invalid ID. Reservation cancelled.")
+            return
+
+        # Find property in recommended_properties
+        recommended_property = next((p for p in recommended_properties if p.id == decision), None)
+        if not recommended_property:
+            print("Bot: No property found with that ID. Reservation cancelled.")
+            return
+
+        # Add reservation to user
+        self.reservations.append({"id": recommended_property.id, "start": start_date, "end": end_date})
+
+        # Find property in controller and add booked dates
+        prop = controller.find_by_id(decision)
+        if not prop:
+            print("Bot: Could not find property in master list. Reservation cancelled.")
+            return
+
+        # Use the Property method to add dates
+        prop.add_dates(start_date, end_date)
+
+        # Save updated properties back to JSON
+        controller.save_properties()
+        print(f"Bot: Property {prop.id} successfully reserved from {start_date} to {end_date}.")
+
 
 
     def delete_reservation(self):
@@ -165,7 +198,7 @@ class User:
             return
 
         # find the one to delete
-        to_remove = next((r for r in self.reservations if r.get("ID") == id_to_cancel), None)
+        to_remove = next((r for r in self.reservations if r.get("id") == id_to_cancel), None)
         if not to_remove:
             print("No reservation with that ID.")
             return
@@ -176,7 +209,12 @@ class User:
 
         if confirm == 'y':
             self.reservations.remove(to_remove)
-            print("Reservation cancelled.")
+
+            start_date = to_remove.get("start_date")
+            end_date = to_remove.get("end_date")
+            if start_date and end_date:
+                self.delete_dates(start_date, end_date)
+                print("Reservation cancelled.")
         elif confirm == 'n':
             print("Cancellation aborted.")
             return
