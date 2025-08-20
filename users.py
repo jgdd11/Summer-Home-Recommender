@@ -5,6 +5,7 @@ import re
 from llm import llm_parse
 from recommender import recommendation_logic
 from properties import PropertiesController
+from datetime import date
 
 class User:
     def __init__(self, username, password, name, email, reservations=None, preferences=None, attempts=0):
@@ -135,12 +136,12 @@ class User:
         combined_input = {**llm_output, **self.preferences}
         print(combined_input)
         # Get recommendations
-        recommended_properties = recommendation_logic(combined_input)
-        
+        #recommended_properties = recommendation_logic(combined_input)
+        pc = PropertiesController()
+        properties = pc.load_properties()
         print("Bot: Recommended properties based on your preferences:")
-        print(recommended_properties)
+        print(properties[:5])
         
-        reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
         while True:
             reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
             if reserve in {"y", "n", "yes", "no"}:
@@ -148,10 +149,10 @@ class User:
             print("Bot: Please enter Y, N, Yes, or No.")
 
         if reserve in {"y", "yes"}:
-            self.make_reservation(recommended_properties, llm_output["start_date"], llm_output["end_date"])
+            self.make_reservation(properties, llm_output["start_date"], llm_output["end_date"], pc)
         return
 
-    def make_reservation(self, recommended_properties: list, start_date: str, end_date: str, controller: PropertiesController):
+    def make_reservation(self, recommended_properties, start_date, end_date, controller: PropertiesController):
         decision = input("Please enter the ID of the property you would like to reserve: ").strip()
         try:
             decision = int(decision)
@@ -175,6 +176,8 @@ class User:
             return
 
         # Use the Property method to add dates
+        start_date = date.fromisoformat(start_date)
+        end_date = date.fromisoformat(end_date)
         prop.add_dates(start_date, end_date)
 
         # Save updated properties back to JSON

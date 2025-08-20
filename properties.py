@@ -29,19 +29,7 @@ class Property:
                 f"tags={self.tags}, booked={self.booked})")
 
     @classmethod
-    def from_dict(cls, data: dict):
-        return cls(
-            id=data.get("id"),
-            location=data.get("location"),
-            type=data.get("type"),
-            price_per_night=data.get("price_per_night"),
-            environment=data.get("environment"),
-            features=data.get("features", []),
-            tags=data.get("tags", []),
-            booked=data.get("booked", [])
-        )
-
-    def to_dict(self) -> dict:
+    def to_dict(self):
         return {
             "id": self.id,
             "location": self.location,
@@ -50,7 +38,8 @@ class Property:
             "environment": self.environment,
             "features": self.features,
             "tags": self.tags,
-            "booked": self.booked
+            # convert each date to ISO string
+            "booked": [d.isoformat() for d in self.booked]
         }
     
     def add_dates(self, start_date: date, end_date: date):
@@ -74,14 +63,15 @@ class Property:
 
 
 class PropertiesController:
-    def __init__(self, json_file: str):
-        self.json_file = json_file
-        self.properties: List[Property] = []
+    def __init__(self):
+        self.json_file = "properties.json"
+        self.properties = self.load_properties()
     
     def load_properties(self):
         with open(self.json_file, "r", encoding="utf-8") as f:
             data = json.load(f)
             self.properties = [Property.from_dict(item) for item in data]
+            return self.properties
 
     def get_all(self) -> List[Property]:
         return self.properties
