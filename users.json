@@ -1,3 +1,16 @@
 [
-    
+    {
+        "username": "jgdd11",
+        "password": "c7a5b0dc26bd713dd067d356efb3a776f3e11e5e29e1c39134e3c039a7b58c43",
+        "name": "John",
+        "email": "jdion@email.com",
+        "reservations": [],
+        "preferences": {
+            "budget_wt": 0.3448275862068966,
+            "enviro_wt": 0.20689655172413793,
+            "feature_wt": 0.2413793103448276,
+            "tags_wt": 0.20689655172413793
+        },
+        "attempts": 0
+    }
 ]

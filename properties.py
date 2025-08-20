@@ -57,7 +57,7 @@ class PropertiesController:
     def __init__(self, json_file: str):
         self.json_file = json_file
         self.properties: List[Property] = []
-
+    
     def load_properties(self):
         with open(self.json_file, "r", encoding="utf-8") as f:
             data = json.load(f)

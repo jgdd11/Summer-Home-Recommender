@@ -29,7 +29,7 @@ def main():
 
                 choice2 = input("Choose an option: ").strip()
                 if choice2 == "1":
-                    logged_in_user.make_reservation()
+                    logged_in_user.get_recommendations()
                 elif choice2 == "2":
                     logged_in_user.delete_reservation()
                 elif choice2 == "3":

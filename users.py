@@ -6,12 +6,13 @@ from llm import llm_parse
 from recommender import recommendation_logic
 
 class User:
-    def __init__(self, username, password, name, email, reservations=None, attempts=0):
+    def __init__(self, username, password, name, email, reservations=None, preferences=None, attempts=0):
         self.username = username
         self.password = password if password else ""  # store hashed password later
         self.name = name
         self.email = email
         self.reservations = reservations if reservations is not None else []
+        self.preferences = preferences or {}
         self.attempts = attempts
 
     @staticmethod
@@ -126,10 +127,22 @@ class User:
         return self.reservations
     
     def get_recommendations(self):
-        input = {llm_parse(), self.preferences}
-        recommended_properties = recommendation_logic(input)
+        # Get LLM output
+        llm_output = llm_parse()
+        
+        # Merge with user preferences
+        combined_input = {**llm_output, **self.preferences}
+        print(combined_input)
+        # Get recommendations
+        recommended_properties = recommendation_logic(combined_input)
+        
+        print("Bot: Recommended properties based on your preferences:")
         print(recommended_properties)
-        #Prompt user to make reservation
+        
+        # Optional: Prompt user to make a reservation
+        #reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
+        #if reserve == 'y':
+        #    self.make_reservation(recommended_properties)
 
     def make_reservation(self):
         decision = input("Please enter the ID of the property you would like to reserve: ")
@@ -186,7 +199,7 @@ class UserManager:
     def __init__(self):
         self.filename = "users.json"
         self.userdb = self.load_users()
-
+    
     def load_users(self):
         try:
             with open(self.filename, "r") as f:
@@ -224,9 +237,9 @@ class UserManager:
                 print("Email already in use. Try another.")
                 continue
             break
-        user = User(username=username, password="", name=name, email=email) #add a dictionary of weights
+        user = User(username=username, password="", name=name, email=email, preferences={}) #add a dictionary of weights
         user.set_password()
-        #user.set_preferences()
+        user.set_preferences()
         self.userdb.append(user)
         self.save_users()
         print(f"Account successfully created for '{username}'")

@@ -14,7 +14,8 @@ def recommendation_logic(user_req):
     """
 
     # preferrably, dates need to load as date object, same for properties and user_req
-    df = pd.DataFrame(PropertiesController.load_properties()) #load property_list as dataframe
+    controller = PropertiesController("properties.json")
+    df = pd.DataFrame(controller.load_properties())
     print(f"There are {df.shape[0]} properties in the database.") #print number of rows in the data frame, can be used to check if properties that don't match have been removed
 
     #load user requirement
@@ -87,6 +88,24 @@ def recommendation_logic(user_req):
     #display top 10
     print(df.head(10))
 
+user_req = {'location': 'Charlottetown PEI', 
+            'environment': 'beach', 
+            'group_size': 7, 
+            'budget': 500, 
+            'features': ['balcony'], 
+            'start_date': '2023-08-20', 
+            'end_date': '2023-08-23', 
+            'dates': ['2023-08-20', 
+                      '2023-08-21', 
+                      '2023-08-22', 
+                      '2023-08-23'], 
+            'tags': [], 
+            'price_max': 500, 
+            'price_min': 0, 
+            'budget_wt': 0.3448275862068966, 
+            'enviro_wt': 0.20689655172413793, 
+            'feature_wt': 0.2413793103448276, 
+            'tags_wt': 0.20689655172413793}
 
 # below is for testing
 # if __name__ == "__main__":
