@@ -1,6 +1,6 @@
 from typing import List, Optional
 import json
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 
 class Property:
@@ -13,7 +13,7 @@ class Property:
                  environment: str,
                  features: List[str],
                  tags: List[str],
-                 booked: List[dict]):
+                 booked: List[date] = None):
         self.id = id
         self.location = location
         self.type = type
@@ -22,16 +22,16 @@ class Property:
         self.environment = environment
         self.features = features
         self.tags = tags
-        self.booked = booked
+        self.booked = booked or []
 
     def __repr__(self):
         return (f"Property(id={self.id}, location='{self.location}', "
-                f"type='{self.type}', price={self.price}, capacity={self.capacity}"
+                f"type='{self.type}', price={self.price}, capacity={self.capacity}, "
                 f"environment='{self.environment}', features={self.features}, "
                 f"tags={self.tags}, booked={self.booked})")
 
-    @classmethod
     def to_dict(self):
+        """Convert to dict for JSON serialization."""
         return {
             "id": self.id,
             "location": self.location,
@@ -41,10 +41,25 @@ class Property:
             "environment": self.environment,
             "features": self.features,
             "tags": self.tags,
-            # convert each date to ISO string
             "booked": [d.isoformat() for d in self.booked]
         }
-    
+
+    @classmethod
+    def from_dict(cls, data):
+        """Create Property instance from dict (JSON load)."""
+        booked_dates = [datetime.fromisoformat(d).date() for d in data.get("booked", [])]
+        return cls(
+            id=data["id"],
+            location=data["location"],
+            type=data["type"],
+            price=data["price"],
+            capacity=data["capacity"],
+            environment=data["environment"],
+            features=data.get("features", []),
+            tags=data.get("tags", []),
+            booked=booked_dates
+        )
+
     def add_dates(self, start_date: date, end_date: date):
         """Add all dates from start_date to end_date to self.booked."""
         for i in range((end_date - start_date).days + 1):
@@ -69,12 +84,12 @@ class PropertiesController:
     def __init__(self):
         self.json_file = "properties.json"
         self.properties = self.load_properties()
-    
-    def load_properties(self):
+
+    def load_properties(self) -> List[Property]:
         try:
-            with open(self.json_file, "r") as f:
+            with open(self.json_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
-                return [Property(**p) for p in data]
+                return [Property.from_dict(p) for p in data]
         except (FileNotFoundError, json.JSONDecodeError):
             return []
 
@@ -90,4 +105,3 @@ class PropertiesController:
     def save_properties(self):
         with open(self.json_file, "w", encoding="utf-8") as f:
             json.dump([prop.to_dict() for prop in self.properties], f, indent=4)
-
