@@ -98,13 +98,40 @@ class User:
         #recommended_property = recommended_properties[id == decision]
         self.reservations.append(decision)
 
-    def delete_reservation(self):
-        #self.reservations [{"id":int, "start":date, "end":date}]
-        #choose property id from list
-        #check if property id user entered is in list will either have to convert to string or int
-        #remove booked dates from properties.json - John will do
-        #remove reservation from self.reservations
-        pass
+ def delete_reservation(self):
+    if not self.reservations:
+        print("No reservations were made.")
+        return
+
+    print("You have made the following reservations:")
+    for r in self.reservations:
+        print(r)
+
+    try:
+        id_to_cancel = int(input("Enter the ID of the property you would like to cancel: ").strip())
+    except ValueError:
+        print("Invalid ID (must be an integer).")
+        return
+
+    # find the one to delete
+    to_remove = next((r for r in self.reservations if r.get("ID") == id_to_cancel), None)
+    if not to_remove:
+        print("No reservation with that ID.")
+        return
+
+    confirm = input(
+        f"Are you sure you want to cancel the reservation with Property ID {id_to_cancel}? (Y/N): "
+    ).strip().lower()
+
+    if confirm == 'y':
+        self.reservations.remove(to_remove)
+        print("Reservation cancelled.")
+    elif confirm == 'n':
+        print("Cancellation aborted.")
+        return
+    else:
+        print("Invalid answer (enter Y or N).")
+
 
 
     def to_dict(self):
