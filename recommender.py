@@ -8,14 +8,13 @@ def daterange(start_date: date, end_date: date):
     for n in range(days):
         yield start_date + timedelta(n)
 
-def recommendation_logic(user_req):
+def recommendation_logic(properties,user_req):
     """
     Recommendation logic
     """
 
-    # preferrably, dates need to load as date object, same for properties and user_req
-    controller = PropertiesController("properties.json")
-    df = pd.DataFrame(controller.load_properties())
+   
+    df = pd.DataFrame(properties)
     print(f"There are {df.shape[0]} properties in the database.") #print number of rows in the data frame, can be used to check if properties that don't match have been removed
 
     #load user requirement
