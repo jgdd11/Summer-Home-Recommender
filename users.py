@@ -6,6 +6,7 @@ from llm import llm_parse
 from recommender import recommendation_logic
 from properties import PropertiesController
 from datetime import date
+import json
 
 class User:
     def __init__(self, username, password, name, email, reservations=None, preferences=None, attempts=0):
@@ -124,19 +125,22 @@ class User:
         print(f"Preferences: {self.preferences}")
 
     def view_reservations(self):
+        if not self.reservations:
+            print("No reservations made yet.")
+            return []
         for reservation in self.reservations:
             print(reservation)
         return self.reservations
     
-    def get_recommendations(self):
+    def get_recommendations(self, user_manager):
         # Get LLM output
         llm_output = llm_parse()
         
         # Merge with user preferences
         combined_input = {**llm_output, **self.preferences}
-        print(combined_input)
-        # Get recommendations
-        #recommended_properties = recommendation_logic(combined_input)
+        print("Bot: Combined input for recommendations:", combined_input)
+        
+        # Get recommended properties
         pc = PropertiesController()
         properties = pc.load_properties()
         print("Bot: Recommended properties based on your preferences:")
@@ -149,10 +153,9 @@ class User:
             print("Bot: Please enter Y, N, Yes, or No.")
 
         if reserve in {"y", "yes"}:
-            self.make_reservation(properties, llm_output["start_date"], llm_output["end_date"], pc)
-        return
+            self.make_reservation(properties, llm_output["start_date"], llm_output["end_date"], pc, user_manager)
 
-    def make_reservation(self, recommended_properties, start_date, end_date, controller: PropertiesController):
+    def make_reservation(self, recommended_properties, start_date, end_date, controller: PropertiesController, user_manager):
         decision = input("Please enter the ID of the property you would like to reserve: ").strip()
         try:
             decision = int(decision)
@@ -160,7 +163,6 @@ class User:
             print("Bot: Invalid ID. Reservation cancelled.")
             return
 
-        # Find property in recommended_properties
         recommended_property = next((p for p in recommended_properties if p.id == decision), None)
         if not recommended_property:
             print("Bot: No property found with that ID. Reservation cancelled.")
@@ -169,24 +171,24 @@ class User:
         # Add reservation to user
         self.reservations.append({"id": recommended_property.id, "start": start_date, "end": end_date})
 
-        # Find property in controller and add booked dates
+        # Update property booked dates
         prop = controller.find_by_id(decision)
         if not prop:
             print("Bot: Could not find property in master list. Reservation cancelled.")
             return
 
-        # Use the Property method to add dates
-        start_date = date.fromisoformat(start_date)
-        end_date = date.fromisoformat(end_date)
-        prop.add_dates(start_date, end_date)
+        start_date_obj = date.fromisoformat(start_date)
+        end_date_obj = date.fromisoformat(end_date)
+        prop.add_dates(start_date_obj, end_date_obj)
 
-        # Save updated properties back to JSON
+        # Save updated properties and users
         controller.save_properties()
+        user_manager.save_users()
+
         print(f"Bot: Property {prop.id} successfully reserved from {start_date} to {end_date}.")
 
 
-
-    def delete_reservation(self):
+    def delete_reservation(self, user_manager):
         if not self.reservations:
             print("No reservations were made.")
             return
@@ -200,7 +202,6 @@ class User:
             print("Invalid ID (must be an integer).")
             return
 
-        # find the one to delete
         to_remove = next((r for r in self.reservations if r.get("id") == id_to_cancel), None)
         if not to_remove:
             print("No reservation with that ID.")
@@ -210,19 +211,45 @@ class User:
             f"Are you sure you want to cancel the reservation with Property ID {id_to_cancel}? (Y/N): "
         ).strip().lower()
 
-        if confirm == 'y':
-            self.reservations.remove(to_remove)
-
-            start_date = to_remove.get("start_date")
-            end_date = to_remove.get("end_date")
-            if start_date and end_date:
-                self.delete_dates(start_date, end_date)
-                print("Reservation cancelled.")
-        elif confirm == 'n':
+        if confirm != 'y':
             print("Cancellation aborted.")
             return
-        else:
-            print("Invalid answer (enter Y or N).")
+
+        # Remove reservation from user's list
+        self.reservations.remove(to_remove)
+
+        # Load properties.json
+        with open("properties.json", "r") as f:
+            properties = json.load(f)
+
+        # Find the property and remove booked dates
+        property_to_update = next((p for p in properties if p["id"] == id_to_cancel), None)
+        if property_to_update:
+            # Assuming reservation has 'start_date' and 'end_date' in "YYYY-MM-DD" format
+            from datetime import datetime, timedelta
+
+            start_date = datetime.strptime(to_remove["start"], "%Y-%m-%d")
+            end_date = datetime.strptime(to_remove["end"], "%Y-%m-%d")
+
+            # Generate all dates in the range
+            dates_to_remove = [
+                (start_date + timedelta(days=i)).strftime("%Y-%m-%d")
+                for i in range((end_date - start_date).days + 1)
+            ]
+
+            # Remove booked dates
+            property_to_update["booked"] = [
+                d for d in property_to_update.get("booked", []) if d not in dates_to_remove
+            ]
+
+            # Save updated properties back to JSON
+            with open("properties.json", "w") as f:
+                json.dump(properties, f, indent=4)
+
+        # Save updated user data
+        user_manager.save_users()
+        print("Reservation cancelled and property dates freed.")
+
 
     def to_dict(self):
         return {
@@ -267,40 +294,14 @@ class UserManager:
             if self.find_user(username):
                 print("Username already taken. Try another.")
                 continue
-            break
-
-        while True:
-            email = input("Enter your email: ")
-            if not User.is_valid_email(email):
-                print("Invalid email format.")
-                continue
-            if any(u.email == email for u in self.userdb):
-                print("Email already in use. Try another.")
-                continue
-            break
-        user = User(username=username, password="", name=name, email=email, preferences={}) #add a dictionary of weights
-        user.set_password()
-        user.set_preferences()
-        self.userdb.append(user)
-        self.save_users()
-        print(f"Account successfully created for '{username}'")
-
-    def delete_user(self, user):
-        confirm = input(f"Are you sure you want to delete your account, {user.username}? (Y/N): ").strip().lower()
-        if confirm not in ("y", "yes"):
-            print("Account deletion cancelled.")
-            return False
-
-        self.userdb = [u for u in self.userdb if u.username != user.username]
-        self.save_users()
-        print(f"Account '{user.username}' deleted successfully.")
-        return True
-
+    
     def login(self):
+        print("Welcome to [INSERT CLEVER APP NAME HERE]!")
+        
         while True:
-            print("Welcome to [INSERT CLEVER APP NAME HERE]!")
-            username = input("Enter your username: ")
+            username = input("Enter your username: ").strip()
             user = self.find_user(username)
+            
             if not user:
                 choice = input("Username not found. Create account? (Y/N): ").lower()
                 if choice in ("y", "yes"):
@@ -309,13 +310,13 @@ class UserManager:
                 else:
                     print("Returning to login screen.")
                     continue
-
+            
             user.attempts = getattr(user, "attempts", 0)
-
+            
             while True:
                 if user.attempts >= 5:
                     print("Exceeded password attempts.")
-                    email = input("Enter your email to reset password or 1 to return: ")
+                    email = input("Enter your email to reset password or 1 to return: ").strip()
                     if email == "1":
                         break
                     if email == user.email:
@@ -326,19 +327,17 @@ class UserManager:
                         break
                     else:
                         print("Incorrect email.")
-                    continue
-
-                password = pwinput.pwinput(
-                    "Enter your password or 1 to go back: ", mask="*"
-                )
+                        continue
+                
+                password = pwinput.pwinput("Enter your password or 1 to go back: ", mask="*").strip()
                 if password == "1":
                     break
-
+                
                 if user.check_password(password):
-                    print("Login successful!")
+                    print(f"Login successful! Welcome, {user.name}.")
                     user.attempts = 0
                     self.save_users()
                     return user
-
+                
                 user.attempts += 1
                 print(f"Incorrect password. Attempts: {user.attempts}")

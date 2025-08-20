@@ -29,9 +29,9 @@ def main():
 
                 choice2 = input("Choose an option: ").strip()
                 if choice2 == "1":
-                    logged_in_user.get_recommendations()
+                    logged_in_user.get_recommendations(manager)
                 elif choice2 == "2":
-                    logged_in_user.delete_reservation()
+                    logged_in_user.delete_reservation(manager)
                 elif choice2 == "3":
                     break
                 elif choice2 == "4":
@@ -80,6 +80,7 @@ def main():
                 else:
                     print("Invalid choice. Try again.")
             elif choice1 == "3":
+                logout = True
                 break
             else:
                 print("Invalid choice. Try again.")
