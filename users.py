@@ -74,6 +74,42 @@ class User:
         self.email = email
         print("Email successfully updated.")
 
+    def set_preferences(self):
+        def get_weight(prompt):
+            while True:
+                try:
+                    value = float(input(prompt))
+                    if 0 <= value <= 10:
+                        return value
+                    else:
+                        print("Please enter a number between 0 and 10.")
+                except ValueError:
+                    print("Invalid input. Please enter a number between 0 and 10.")
+
+        print("We're just going to ask a few questions to get to know you better.")
+        print("Please enter a number, 0-10, for how important each feature is.")
+        print("0 means not important at all and 10 means this preference is a must-have.")
+
+        budget = get_weight("How important is budget to you? ")
+        enviro = get_weight("How important is environment to you? ")
+        feature = get_weight("How important is it that you get your desired features? ")
+        tag = get_weight("How important is it that the property has the tags you've requested? ")
+
+        total = budget + enviro + feature + tag
+        if total == 0:
+            print("All preferences were zero, setting equal importance to each category.")
+            total = 4
+            budget = enviro = feature = tag = 1
+
+        self.preferences = {
+            "budget_wt": budget / total,
+            "enviro_wt": enviro / total,
+            "feature_wt": feature / total,
+            "tags_wt": tag / total
+        }
+
+        print("Preferences set.")
+
     def check_password(self, password):
         return self.password == User.hash_password(password)
     
@@ -81,6 +117,8 @@ class User:
         print(f"Name: {self.name}")
         print(f"Username: {self.username}")
         print(f"Email: {self.email}")
+        print(f"Reservations: {self.reservations}")
+        print(f"Preferences: {self.preferences}")
 
     def view_reservations(self):
         for reservation in self.reservations:
@@ -88,7 +126,7 @@ class User:
         return self.reservations
     
     def get_recommendations(self):
-        input = llm_parse()
+        input = {llm_parse(), self.preferences}
         recommended_properties = recommendation_logic(input)
         print(recommended_properties)
         #Prompt user to make reservation
@@ -98,41 +136,39 @@ class User:
         #recommended_property = recommended_properties[id == decision]
         self.reservations.append(decision)
 
- def delete_reservation(self):
-    if not self.reservations:
-        print("No reservations were made.")
-        return
 
-    print("You have made the following reservations:")
-    for r in self.reservations:
-        print(r)
+    def delete_reservation(self):
+        if not self.reservations:
+            print("No reservations were made.")
+            return
 
-    try:
-        id_to_cancel = int(input("Enter the ID of the property you would like to cancel: ").strip())
-    except ValueError:
-        print("Invalid ID (must be an integer).")
-        return
+        print("You have made the following reservations:")
+        self.view_reservations()
 
-    # find the one to delete
-    to_remove = next((r for r in self.reservations if r.get("ID") == id_to_cancel), None)
-    if not to_remove:
-        print("No reservation with that ID.")
-        return
+        try:
+            id_to_cancel = int(input("Enter the ID of the property you would like to cancel: ").strip())
+        except ValueError:
+            print("Invalid ID (must be an integer).")
+            return
 
-    confirm = input(
-        f"Are you sure you want to cancel the reservation with Property ID {id_to_cancel}? (Y/N): "
-    ).strip().lower()
+        # find the one to delete
+        to_remove = next((r for r in self.reservations if r.get("ID") == id_to_cancel), None)
+        if not to_remove:
+            print("No reservation with that ID.")
+            return
 
-    if confirm == 'y':
-        self.reservations.remove(to_remove)
-        print("Reservation cancelled.")
-    elif confirm == 'n':
-        print("Cancellation aborted.")
-        return
-    else:
-        print("Invalid answer (enter Y or N).")
+        confirm = input(
+            f"Are you sure you want to cancel the reservation with Property ID {id_to_cancel}? (Y/N): "
+        ).strip().lower()
 
-
+        if confirm == 'y':
+            self.reservations.remove(to_remove)
+            print("Reservation cancelled.")
+        elif confirm == 'n':
+            print("Cancellation aborted.")
+            return
+        else:
+            print("Invalid answer (enter Y or N).")
 
     def to_dict(self):
         return {
@@ -141,6 +177,7 @@ class User:
             "name": self.name,
             "email": self.email,
             "reservations": self.reservations,
+            "preferences": self.preferences,
             "attempts": self.attempts,
         }
 

@@ -1,5 +1,6 @@
 import pandas as pd
 from datetime import date, timedelta
+from properties import PropertiesController
 
 # create date range generator
 def daterange(start_date: date, end_date: date):
@@ -7,13 +8,13 @@ def daterange(start_date: date, end_date: date):
     for n in range(days):
         yield start_date + timedelta(n)
 
-def recommendation_logic(property_list, user_req):
+def recommendation_logic(user_req):
     """
     Recommendation logic
     """
 
     # preferrably, dates need to load as date object, same for properties and user_req
-    df = pd.DataFrame(property_list) #load property_list as dataframe
+    df = pd.DataFrame(PropertiesController.load_properties()) #load property_list as dataframe
     print(f"There are {df.shape[0]} properties in the database.") #print number of rows in the data frame, can be used to check if properties that don't match have been removed
 
     #load user requirement
