@@ -1,13 +1,20 @@
 import pandas as pd
-import numpy as np
-from datetime import timedelta
+from datetime import date, timedelta
 
-def recommendation_logic(property_list,user_req):
+# create date range generator
+def daterange(start_date: date, end_date: date):
+    days = int((end_date - start_date).days)
+    for n in range(days):
+        yield start_date + timedelta(n)
 
-    #preferrably, dates need to load as date object, same for properties and user_req
+def recommendation_logic(property_list, user_req):
+    """
+    Recommendation logic
+    """
 
+    # preferrably, dates need to load as date object, same for properties and user_req
     df = pd.DataFrame(property_list) #load property_list as dataframe
-    print(df.head(10)) 
+    print(df.head(10))
     print(df.shape[0]) #print number of rows in the data frame, can be used to check if properties that don't match have been removed
 
     #load user requirement
@@ -15,71 +22,87 @@ def recommendation_logic(property_list,user_req):
     group_size = user_req["group_size"]
     start_date = user_req["start_date"] 
     end_date = user_req["end_date"]
-    budget_low = user_req["budget_low"]
-    budget_high = user_req["budget_high"]
+    budget = user_req["budget"]
     user_features = user_req["features"]
     user_environment = user_req["environment"]
     user_tags = user_req["tags"]
-    budget_wt = user_req["budget_wt"]
-    enviro_wt = user_req["enviro_wt"]
-    feature_wt = user_req["feature_wt"]
-    tags_wt = user_req["tags_wt"]
 
+    #load and normalize weights of each attribute
+    total_wt = user_req["budget_wt"] + user_req["enviro_wt"] + user_req["feature_wt"] + user_req["tags_wt"]
+    norm_budget_wt = user_req["budget_wt"] / total_wt
+    norm_enviro_wt = user_req["enviro_wt"] / total_wt
+    norm_feature_wt = user_req["feature_wt"] / total_wt
+    norm_tag_wt = user_req["tags_wt"] / total_wt
 
-    #drop properties that don't match location or group size
+    # drop properties that don't match location or group size
     df = df[df["location"] == user_location] 
     df = df[df["capacity"] >= group_size] 
 
+    # get days that need to be booked
+    travel_dates = []
+    for day in daterange(start_date, end_date):
+        travel_dates.append(day)
     
-    
-    #the following portion of the code doesn't work, need to debug
+    # drop rows that are unavailable during the travel_dates
     df = df[df["unavailable_dates"].apply(
-    lambda u: set(u).isdisjoint(set(travel_dates))
+        lambda u: set(u).isdisjoint(set(travel_dates))
     )]
-    
 
-    print(df.shape[0]) #print number of rows in the data frame again, number should be less than the original row num, showing some rows have been dropped
+    # print number of rows in the data frame again, number should be less than the original row num, showing some rows have been dropped
+    print(df.shape[0])
 
+    # calculate property score
+    for idx, row in df.iterrows():
+        score = 0
 
-    
+        if row["price_per_night"] <= budget:
+            score += 1 * norm_budget_wt
+        if row["environment"] == user_environment:
+            score += 1 * norm_enviro_wt
+        
+        if len(user_features) > 0:
+            user_features_lower = {f.lower() for f in user_features}
+            property_features_lower = {f.lower() for f in row["features"]}
+            feature_score = len(user_features_lower.intersection(property_features_lower)) / len(user_features)
+            score += feature_score * norm_feature_wt
+        else: 
+            score += 1 * norm_feature_wt
 
-    #assign price a score 1 if the price matches, otherwise 0
-    #price falls within the budget range
+        if len(user_tags) > 0:
+            user_tags_lower = {f.lower() for f in user_tags}
+            property_tags_lower = {f.lower() for f in row["tags"]}
+            tag_score = len(user_tags_lower.intersection(property_tags_lower)) / len(user_tags)
+            score += tag_score * norm_tag_wt
+        else: 
+            score += 1 * norm_tag_wt
 
-    #assign environment a score 1 if environment matches, otherwise 0
-
-    #assign feature a score 1 if feature matches, otherwise 0
-
-    #assign property scoe 0 if location, capacity or availability is 0
-
-    #calculate property score using weighted average
+        df.at[idx, "score"] = score
 
     #rank property by property score
+    df = df.sort_values(by="score", ascending=False)
 
-    #display top N
-    pass
+    df = df[["id", "score", "price_per_night", "features", "environment", "tags"]]
+    df = df.reset_index(drop=True)
 
-"""
-Recommendation Logic
-- input property_list: list[Property]
-- user_preferences: dict()
-- user_weights: list[int], default [0.2, 0.1, 0.2, 0.5]
+    #display top 10
+    print(df.head(10))
 
-# hard filter: property has to match user requirement, drop otherwise
 
-# normalize weight
-# make sure weights add up to 1
-
-# assigning weight and score for user preferences
-for property in property_list:
-    property_score = 0
-    for item in (type, features, tags, environment):
-        num_match = number of keywords that property matches user preference
-        num_user_input = number of keywords from user inputs
-        tmp_score = num_match / num_user_input
-        property_score += tmp_score * weights[item]
-    property.score = property_score
-
-# sort by score and display top 5 properties
-# show attributes and score of each property
-"""
+# below is for testing
+# if __name__ == "__main__":
+#     df = pd.read_json("properties.json")
+#     user_req = {
+#         "location": "New York City",
+#         "group_size": 4,
+#         "start_date": date(2023, 6, 1),
+#         "end_date": date(2023, 6, 10),
+#         "budget": 3000,
+#         "features": ["pool", "wifi"],
+#         "environment": "urban",
+#         "tags": ["family", "luxury"],
+#         "budget_wt": 0.4,
+#         "enviro_wt": 0.3,
+#         "feature_wt": 0.2,
+#         "tags_wt": 0.1
+#     }
+#     recommendation_logic(df, user_req)
