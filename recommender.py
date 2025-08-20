@@ -14,8 +14,7 @@ def recommendation_logic(property_list, user_req):
 
     # preferrably, dates need to load as date object, same for properties and user_req
     df = pd.DataFrame(property_list) #load property_list as dataframe
-    print(df.head(10))
-    print(df.shape[0]) #print number of rows in the data frame, can be used to check if properties that don't match have been removed
+    print(f"There are {df.shape[0]} properties in the database.") #print number of rows in the data frame, can be used to check if properties that don't match have been removed
 
     #load user requirement
     user_location = user_req["location"]
@@ -49,7 +48,7 @@ def recommendation_logic(property_list, user_req):
     )]
 
     # print number of rows in the data frame again, number should be less than the original row num, showing some rows have been dropped
-    print(df.shape[0])
+    print(f"There are {df.shape[0]} properties that match your travel location, group size, and travel dates.")
 
     # calculate property score
     for idx, row in df.iterrows():
