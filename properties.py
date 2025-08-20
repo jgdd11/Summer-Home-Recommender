@@ -21,13 +21,13 @@ class Property:
         self.tags = tags
         self.booked = booked
 
-   def __repr__(self):
+    def __repr__(self):
         return (f"Property(id={self.id}, location='{self.location}', "
                 f"type='{self.type}', price_per_night={self.price_per_night}, "
                 f"environment='{self.environment}', features={self.features}, "
                 f"tags={self.tags}, booked={self.booked})")
 
-     @classmethod
+    @classmethod
     def from_dict(cls, data: dict):
         return cls(
             id=data.get("id"),

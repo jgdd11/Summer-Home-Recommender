@@ -1,3672 +1,3879 @@
 [
   {
     "id": 1,
-    "location": "New York City",
-    "type": "studio",
-    "price_per_night": 677,
-    "environment": "urban",
+    "location": "Charlottetown, PEI",
+    "type": "House",
+    "price": 422,
+    "capacity": 6,
+    "environment": "coastal",
     "features": [
-      "wifi",
-      "pool"
+      "balcony",
+      "dryer"
     ],
     "tags": [
-      "family-friendly",
-      "central location"
+      "beach access",
+      "eco-friendly",
+      "romantic"
     ],
     "booked": []
   },
   {
     "id": 2,
-    "location": "Rome",
-    "type": "studio",
-    "price_per_night": 637,
+    "location": "Winnipeg, MB",
+    "type": "Lakehouse",
+    "price": 156,
+    "capacity": 3,
     "environment": "urban",
     "features": [
-      "gym",
+      "dryer",
       "kitchen",
-      "hot tub"
+      "deck",
+      "workspace"
     ],
     "tags": [
-      "family-friendly",
-      "modern",
-      "romantic",
-      "central location",
-      "luxury"
+      "lakefront",
+      "spacious",
+      "budget",
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 3,
-    "location": "Zurich",
-    "type": "apartment",
-    "price_per_night": 865,
-    "environment": "mountain",
+    "location": "Calgary, AB",
+    "type": "Cottage",
+    "price": 314,
+    "capacity": 8,
+    "environment": "urban",
     "features": [
-      "parking",
-      "pool",
-      "gym",
-      "wifi"
+      "washer",
+      "workspace",
+      "gym"
     ],
     "tags": [
-      "romantic",
-      "quiet",
-      "luxury",
-      "budget",
+      "historic",
       "modern"
     ],
     "booked": []
   },
   {
     "id": 4,
-    "location": "Toronto",
-    "type": "condo",
-    "price_per_night": 172,
-    "environment": "urban",
+    "location": "Muskoka, ON",
+    "type": "Cottage",
+    "price": 477,
+    "capacity": 7,
+    "environment": "lake",
     "features": [
-      "hot tub",
-      "wifi",
-      "pool",
-      "kitchen"
+      "air conditioning",
+      "workspace"
     ],
     "tags": [
+      "remote",
+      "modern",
       "romantic",
-      "quiet",
-      "budget",
-      "luxury",
-      "central location"
+      "city view"
     ],
     "booked": []
   },
   {
     "id": 5,
-    "location": "Paris",
-    "type": "loft",
-    "price_per_night": 299,
-    "environment": "urban",
+    "location": "Whistler, BC",
+    "type": "Villa",
+    "price": 266,
+    "capacity": 4,
+    "environment": "mountain",
     "features": [
-      "wifi",
-      "kitchen",
-      "parking"
+      "heating",
+      "workspace"
     ],
     "tags": [
-      "budget",
-      "central location",
-      "romantic",
-      "scenic views",
-      "luxury"
+      "modern",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 6,
-    "location": "Vancouver",
-    "type": "loft",
-    "price_per_night": 870,
+    "location": "Vancouver, BC",
+    "type": "House",
+    "price": 391,
+    "capacity": 6,
     "environment": "urban",
     "features": [
-      "fireplace",
-      "balcony",
-      "gym"
+      "mountain view",
+      "gym",
+      "heating",
+      "balcony"
     ],
     "tags": [
-      "romantic",
-      "quiet",
-      "luxury"
+      "family friendly",
+      "pet friendly",
+      "city view"
     ],
     "booked": []
   },
   {
     "id": 7,
-    "location": "Zurich",
-    "type": "apartment",
-    "price_per_night": 427,
-    "environment": "mountain",
+    "location": "Quebec City, QC",
+    "type": "Loft",
+    "price": 86,
+    "capacity": 3,
+    "environment": "historic",
     "features": [
-      "pool",
-      "hot tub",
-      "kitchen",
-      "fireplace"
+      "workspace",
+      "free parking",
+      "washer",
+      "gym"
     ],
     "tags": [
-      "romantic",
+      "family friendly",
+      "pet friendly",
       "modern",
-      "family-friendly"
+      "quiet retreat",
+      "eco-friendly"
     ],
     "booked": []
   },
   {
     "id": 8,
-    "location": "Zurich",
-    "type": "loft",
-    "price_per_night": 191,
-    "environment": "mountain",
+    "location": "Tofino, BC",
+    "type": "Lakehouse",
+    "price": 129,
+    "capacity": 10,
+    "environment": "coastal",
     "features": [
-      "balcony",
-      "kitchen",
+      "fireplace",
       "wifi"
     ],
     "tags": [
-      "modern",
-      "family-friendly",
-      "romantic",
-      "luxury",
-      "scenic views"
+      "remote",
+      "spacious",
+      "historic",
+      "pet friendly"
     ],
     "booked": []
   },
   {
     "id": 9,
-    "location": "Austin",
-    "type": "condo",
-    "price_per_night": 248,
-    "environment": "urban",
+    "location": "Charlottetown, PEI",
+    "type": "Guesthouse",
+    "price": 272,
+    "capacity": 3,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "kitchen",
-      "pool",
+      "balcony",
       "hot tub"
     ],
     "tags": [
       "budget",
+      "skiing",
       "modern",
-      "central location",
-      "family-friendly",
-      "romantic"
+      "remote",
+      "pet friendly"
     ],
     "booked": []
   },
   {
     "id": 10,
-    "location": "Vancouver",
-    "type": "cabin",
-    "price_per_night": 937,
+    "location": "Ottawa, ON",
+    "type": "Cottage",
+    "price": 152,
+    "capacity": 8,
     "environment": "urban",
     "features": [
-      "parking",
-      "wifi"
+      "deck",
+      "gym",
+      "heating"
     ],
     "tags": [
-      "budget",
-      "romantic",
-      "quiet",
-      "luxury",
-      "scenic views"
+      "remote",
+      "pet friendly"
     ],
     "booked": []
   },
   {
     "id": 11,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 483,
+    "location": "Saskatoon, SK",
+    "type": "Bungalow",
+    "price": 332,
+    "capacity": 4,
     "environment": "urban",
     "features": [
-      "kitchen",
-      "fireplace",
-      "pool"
+      "pool",
+      "wifi",
+      "air conditioning"
     ],
     "tags": [
-      "romantic",
-      "scenic views"
+      "remote",
+      "central location",
+      "budget",
+      "quiet retreat"
     ],
     "booked": []
   },
   {
     "id": 12,
-    "location": "New York City",
-    "type": "apartment",
-    "price_per_night": 437,
-    "environment": "urban",
+    "location": "Banff, AB",
+    "type": "Guesthouse",
+    "price": 310,
+    "capacity": 2,
+    "environment": "mountain",
     "features": [
-      "balcony",
-      "pool",
-      "kitchen"
+      "tv",
+      "fireplace"
     ],
     "tags": [
-      "luxury",
-      "quiet",
-      "budget"
+      "hiking",
+      "modern"
     ],
     "booked": []
   },
   {
     "id": 13,
-    "location": "Vancouver",
-    "type": "apartment",
-    "price_per_night": 865,
-    "environment": "urban",
+    "location": "St. John\u2019s, NL",
+    "type": "Lakehouse",
+    "price": 79,
+    "capacity": 5,
+    "environment": "coastal",
     "features": [
-      "kitchen",
-      "wifi",
-      "pool",
-      "gym"
+      "workspace",
+      "pet friendly",
+      "air conditioning",
+      "washer"
     ],
     "tags": [
-      "central location",
-      "romantic",
-      "budget",
-      "scenic views"
+      "beach access",
+      "rustic",
+      "budget"
     ],
     "booked": []
   },
   {
     "id": 14,
-    "location": "Santorini",
-    "type": "studio",
-    "price_per_night": 570,
-    "environment": "beach",
+    "location": "Muskoka, ON",
+    "type": "Lakehouse",
+    "price": 409,
+    "capacity": 3,
+    "environment": "lake",
     "features": [
-      "kitchen",
-      "wifi",
+      "dryer",
       "pool",
-      "balcony"
+      "tv"
     ],
     "tags": [
+      "city view",
+      "beach access",
+      "rustic",
       "modern",
-      "central location",
-      "quiet"
+      "pet friendly"
     ],
     "booked": []
   },
   {
     "id": 15,
-    "location": "Zurich",
-    "type": "apartment",
-    "price_per_night": 172,
-    "environment": "mountain",
+    "location": "Niagara, ON",
+    "type": "Guesthouse",
+    "price": 382,
+    "capacity": 9,
+    "environment": "rural",
     "features": [
+      "free parking",
       "pool",
-      "kitchen"
+      "wifi"
     ],
     "tags": [
-      "family-friendly",
-      "central location",
-      "romantic",
-      "luxury"
+      "family friendly",
+      "modern",
+      "eco-friendly"
     ],
     "booked": []
   },
   {
     "id": 16,
-    "location": "Zurich",
-    "type": "loft",
-    "price_per_night": 80,
-    "environment": "mountain",
+    "location": "Kelowna, BC",
+    "type": "House",
+    "price": 134,
+    "capacity": 8,
+    "environment": "lake",
     "features": [
-      "kitchen",
-      "gym",
-      "hot tub",
-      "wifi"
+      "heating",
+      "pet friendly"
     ],
     "tags": [
-      "family-friendly",
-      "central location",
-      "scenic views"
+      "historic",
+      "pet friendly",
+      "quiet retreat",
+      "beach access",
+      "romantic"
     ],
     "booked": []
   },
   {
     "id": 17,
-    "location": "Hawaii",
-    "type": "villa",
-    "price_per_night": 811,
-    "environment": "beach",
+    "location": "Tofino, BC",
+    "type": "Villa",
+    "price": 402,
+    "capacity": 8,
+    "environment": "coastal",
     "features": [
       "balcony",
-      "hot tub"
+      "pool",
+      "mountain view"
     ],
     "tags": [
-      "budget",
-      "luxury",
-      "family-friendly"
+      "spacious",
+      "eco-friendly",
+      "central location"
     ],
     "booked": []
   },
   {
     "id": 18,
-    "location": "Reykjavik",
-    "type": "cabin",
-    "price_per_night": 563,
-    "environment": "mountain",
+    "location": "Winnipeg, MB",
+    "type": "Bungalow",
+    "price": 341,
+    "capacity": 8,
+    "environment": "urban",
     "features": [
+      "workspace",
       "hot tub",
-      "gym",
-      "wifi"
+      "pet friendly"
     ],
     "tags": [
-      "quiet",
-      "central location",
-      "romantic",
-      "modern",
-      "budget"
+      "spacious",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 19,
-    "location": "Reykjavik",
-    "type": "chalet",
-    "price_per_night": 935,
-    "environment": "mountain",
+    "location": "Tofino, BC",
+    "type": "Bungalow",
+    "price": 151,
+    "capacity": 3,
+    "environment": "coastal",
     "features": [
-      "gym",
-      "kitchen"
+      "kitchen",
+      "fireplace",
+      "pet friendly"
     ],
     "tags": [
-      "family-friendly",
-      "central location"
+      "hiking",
+      "lakefront",
+      "luxury"
     ],
     "booked": []
   },
   {
     "id": 20,
-    "location": "Santorini",
-    "type": "cottage",
-    "price_per_night": 961,
-    "environment": "beach",
+    "location": "St. John\u2019s, NL",
+    "type": "Villa",
+    "price": 212,
+    "capacity": 8,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "hot tub"
+      "balcony",
+      "heating",
+      "deck",
+      "kitchen"
     ],
     "tags": [
-      "luxury",
+      "modern",
+      "quiet retreat",
       "central location",
-      "family-friendly",
-      "romantic"
+      "lakefront",
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 21,
-    "location": "Paris",
-    "type": "studio",
-    "price_per_night": 344,
-    "environment": "urban",
+    "location": "Mont-Tremblant, QC",
+    "type": "Bungalow",
+    "price": 584,
+    "capacity": 10,
+    "environment": "mountain",
     "features": [
-      "kitchen",
-      "hot tub",
-      "pool"
+      "pool",
+      "pet friendly"
     ],
     "tags": [
-      "romantic",
-      "luxury"
+      "city view",
+      "eco-friendly",
+      "luxury",
+      "lakefront"
     ],
     "booked": []
   },
   {
     "id": 22,
-    "location": "Seattle",
-    "type": "apartment",
-    "price_per_night": 74,
-    "environment": "urban",
+    "location": "Quebec City, QC",
+    "type": "Bungalow",
+    "price": 512,
+    "capacity": 8,
+    "environment": "historic",
     "features": [
-      "fireplace",
-      "balcony",
-      "hot tub",
-      "gym"
-    ],
-    "tags": [
-      "luxury",
-      "romantic",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 23,
-    "location": "Paris",
-    "type": "studio",
-    "price_per_night": 671,
-    "environment": "urban",
-    "features": [
-      "wifi",
-      "balcony"
-    ],
-    "tags": [
-      "family-friendly",
-      "central location",
-      "scenic views",
-      "modern",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 24,
-    "location": "Los Angeles",
-    "type": "apartment",
-    "price_per_night": 780,
-    "environment": "urban",
-    "features": [
-      "fireplace",
-      "kitchen"
-    ],
-    "tags": [
-      "modern",
-      "luxury",
-      "central location",
-      "romantic",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 25,
-    "location": "Aspen",
-    "type": "villa",
-    "price_per_night": 890,
-    "environment": "mountain",
-    "features": [
-      "pool",
-      "kitchen",
-      "parking",
-      "fireplace"
-    ],
-    "tags": [
-      "romantic",
-      "luxury"
-    ],
-    "booked": []
-  },
-  {
-    "id": 26,
-    "location": "Paris",
-    "type": "studio",
-    "price_per_night": 662,
-    "environment": "urban",
-    "features": [
-      "gym",
-      "parking",
-      "balcony"
-    ],
-    "tags": [
-      "central location",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 27,
-    "location": "Zurich",
-    "type": "loft",
-    "price_per_night": 854,
-    "environment": "mountain",
-    "features": [
-      "parking",
-      "kitchen"
-    ],
-    "tags": [
-      "scenic views",
-      "budget",
-      "luxury",
-      "modern"
-    ],
-    "booked": []
-  },
-  {
-    "id": 28,
-    "location": "Aspen",
-    "type": "villa",
-    "price_per_night": 616,
-    "environment": "mountain",
-    "features": [
-      "wifi",
-      "gym",
-      "fireplace"
-    ],
-    "tags": [
-      "central location",
-      "budget",
-      "modern",
-      "luxury"
-    ],
-    "booked": []
-  },
-  {
-    "id": 29,
-    "location": "Vancouver",
-    "type": "loft",
-    "price_per_night": 205,
-    "environment": "urban",
-    "features": [
-      "balcony",
-      "kitchen"
-    ],
-    "tags": [
-      "central location",
-      "family-friendly",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 30,
-    "location": "San Francisco",
-    "type": "apartment",
-    "price_per_night": 790,
-    "environment": "urban",
-    "features": [
-      "fireplace",
-      "gym"
-    ],
-    "tags": [
-      "budget",
-      "quiet",
-      "modern",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 31,
-    "location": "Hawaii",
-    "type": "bungalow",
-    "price_per_night": 469,
-    "environment": "beach",
-    "features": [
-      "fireplace",
-      "parking",
-      "hot tub",
+      "air conditioning",
       "pool"
     ],
     "tags": [
-      "quiet",
-      "modern"
-    ],
-    "booked": []
-  },
-  {
-    "id": 32,
-    "location": "Paris",
-    "type": "loft",
-    "price_per_night": 220,
-    "environment": "urban",
-    "features": [
-      "fireplace",
-      "gym",
-      "wifi",
-      "hot tub"
-    ],
-    "tags": [
-      "scenic views",
-      "quiet",
+      "cozy",
+      "remote",
       "budget"
     ],
     "booked": []
   },
   {
-    "id": 33,
-    "location": "Denver",
-    "type": "cabin",
-    "price_per_night": 781,
+    "id": 23,
+    "location": "Jasper, AB",
+    "type": "House",
+    "price": 94,
+    "capacity": 6,
     "environment": "mountain",
     "features": [
-      "gym",
-      "parking",
-      "kitchen"
+      "tv",
+      "air conditioning",
+      "bbq grill"
     ],
     "tags": [
-      "scenic views",
-      "family-friendly",
-      "budget",
-      "modern",
-      "romantic"
+      "rustic",
+      "remote"
     ],
     "booked": []
   },
   {
-    "id": 34,
-    "location": "Santorini",
-    "type": "studio",
-    "price_per_night": 803,
-    "environment": "beach",
+    "id": 24,
+    "location": "Kelowna, BC",
+    "type": "House",
+    "price": 424,
+    "capacity": 7,
+    "environment": "lake",
     "features": [
-      "wifi",
-      "hot tub",
-      "gym"
+      "deck",
+      "hot tub"
     ],
     "tags": [
-      "family-friendly",
-      "budget",
-      "modern",
-      "quiet"
+      "rustic",
+      "eco-friendly",
+      "historic",
+      "beach access"
     ],
     "booked": []
   },
   {
-    "id": 35,
-    "location": "Austin",
-    "type": "condo",
-    "price_per_night": 737,
+    "id": 25,
+    "location": "Tofino, BC",
+    "type": "Bungalow",
+    "price": 499,
+    "capacity": 7,
+    "environment": "coastal",
+    "features": [
+      "fireplace",
+      "heating",
+      "balcony",
+      "hot tub"
+    ],
+    "tags": [
+      "quiet retreat",
+      "city view",
+      "historic",
+      "budget",
+      "rustic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 26,
+    "location": "Montreal, QC",
+    "type": "Bungalow",
+    "price": 241,
+    "capacity": 9,
     "environment": "urban",
     "features": [
-      "parking",
-      "balcony"
+      "pet friendly",
+      "bbq grill",
+      "ocean view",
+      "workspace"
     ],
     "tags": [
-      "scenic views",
-      "family-friendly",
-      "central location",
+      "hiking",
+      "beach access",
+      "cozy"
+    ],
+    "booked": []
+  },
+  {
+    "id": 27,
+    "location": "Mont-Tremblant, QC",
+    "type": "Bungalow",
+    "price": 97,
+    "capacity": 5,
+    "environment": "mountain",
+    "features": [
+      "washer",
+      "pet friendly",
+      "heating"
+    ],
+    "tags": [
+      "nightlife",
+      "spacious"
+    ],
+    "booked": []
+  },
+  {
+    "id": 28,
+    "location": "Muskoka, ON",
+    "type": "Condo",
+    "price": 194,
+    "capacity": 2,
+    "environment": "lake",
+    "features": [
+      "air conditioning",
+      "wifi",
+      "pet friendly",
+      "game room"
+    ],
+    "tags": [
+      "historic",
       "romantic",
       "modern"
     ],
     "booked": []
   },
   {
-    "id": 36,
-    "location": "Denver",
-    "type": "loft",
-    "price_per_night": 662,
-    "environment": "mountain",
+    "id": 29,
+    "location": "Saskatoon, SK",
+    "type": "Condo",
+    "price": 302,
+    "capacity": 2,
+    "environment": "urban",
     "features": [
+      "washer",
+      "wifi",
+      "hot tub"
+    ],
+    "tags": [
+      "rustic",
+      "modern"
+    ],
+    "booked": []
+  },
+  {
+    "id": 30,
+    "location": "St. John\u2019s, NL",
+    "type": "Lakehouse",
+    "price": 425,
+    "capacity": 10,
+    "environment": "coastal",
+    "features": [
+      "wifi",
       "kitchen",
-      "gym",
-      "fireplace",
-      "wifi"
+      "balcony",
+      "gym"
+    ],
+    "tags": [
+      "family friendly",
+      "remote"
+    ],
+    "booked": []
+  },
+  {
+    "id": 31,
+    "location": "Quebec City, QC",
+    "type": "Guesthouse",
+    "price": 357,
+    "capacity": 8,
+    "environment": "historic",
+    "features": [
+      "bbq grill",
+      "balcony"
     ],
     "tags": [
       "modern",
+      "city view",
+      "cozy"
+    ],
+    "booked": []
+  },
+  {
+    "id": 32,
+    "location": "Mont-Tremblant, QC",
+    "type": "Cottage",
+    "price": 96,
+    "capacity": 8,
+    "environment": "mountain",
+    "features": [
+      "free parking",
+      "game room",
+      "dryer",
+      "ocean view"
+    ],
+    "tags": [
+      "nightlife",
+      "remote"
+    ],
+    "booked": []
+  },
+  {
+    "id": 33,
+    "location": "Whistler, BC",
+    "type": "Loft",
+    "price": 107,
+    "capacity": 4,
+    "environment": "mountain",
+    "features": [
+      "air conditioning",
+      "game room",
+      "heating",
+      "free parking"
+    ],
+    "tags": [
+      "nightlife",
+      "remote",
+      "lakefront"
+    ],
+    "booked": []
+  },
+  {
+    "id": 34,
+    "location": "Ottawa, ON",
+    "type": "Villa",
+    "price": 386,
+    "capacity": 5,
+    "environment": "urban",
+    "features": [
+      "game room",
+      "heating",
+      "dryer",
+      "mountain view"
+    ],
+    "tags": [
+      "skiing",
+      "modern",
+      "rustic",
+      "hiking"
+    ],
+    "booked": []
+  },
+  {
+    "id": 35,
+    "location": "Saskatoon, SK",
+    "type": "Bungalow",
+    "price": 70,
+    "capacity": 5,
+    "environment": "urban",
+    "features": [
+      "tv",
+      "ocean view",
+      "kitchen"
+    ],
+    "tags": [
+      "lakefront",
+      "rustic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 36,
+    "location": "Banff, AB",
+    "type": "Apartment",
+    "price": 493,
+    "capacity": 5,
+    "environment": "mountain",
+    "features": [
+      "fireplace",
+      "gym",
+      "heating"
+    ],
+    "tags": [
       "romantic",
-      "scenic views",
-      "central location",
-      "luxury"
+      "eco-friendly"
     ],
     "booked": []
   },
   {
     "id": 37,
-    "location": "Paris",
-    "type": "studio",
-    "price_per_night": 111,
+    "location": "Ottawa, ON",
+    "type": "House",
+    "price": 551,
+    "capacity": 4,
     "environment": "urban",
     "features": [
-      "fireplace",
-      "balcony",
-      "gym"
+      "game room",
+      "fireplace"
     ],
     "tags": [
-      "quiet",
-      "family-friendly",
-      "scenic views"
+      "luxury",
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 38,
-    "location": "Denver",
-    "type": "loft",
-    "price_per_night": 532,
+    "location": "Jasper, AB",
+    "type": "House",
+    "price": 124,
+    "capacity": 3,
     "environment": "mountain",
     "features": [
-      "parking",
-      "pool",
-      "wifi",
-      "fireplace"
+      "tv",
+      "workspace",
+      "air conditioning"
     ],
     "tags": [
-      "quiet",
-      "central location",
-      "family-friendly",
-      "budget",
-      "scenic views"
+      "skiing",
+      "pet friendly"
     ],
     "booked": []
   },
   {
     "id": 39,
-    "location": "Santorini",
-    "type": "cottage",
-    "price_per_night": 204,
-    "environment": "beach",
+    "location": "Jasper, AB",
+    "type": "Condo",
+    "price": 116,
+    "capacity": 2,
+    "environment": "mountain",
     "features": [
-      "parking",
+      "deck",
+      "dryer",
       "wifi"
     ],
     "tags": [
-      "central location",
-      "modern",
-      "luxury",
-      "romantic"
+      "pet friendly",
+      "beach access",
+      "modern"
     ],
     "booked": []
   },
   {
     "id": 40,
-    "location": "New York City",
-    "type": "apartment",
-    "price_per_night": 787,
+    "location": "Saskatoon, SK",
+    "type": "Apartment",
+    "price": 136,
+    "capacity": 8,
     "environment": "urban",
     "features": [
-      "pool",
-      "hot tub",
-      "gym",
-      "kitchen"
+      "air conditioning",
+      "kitchen",
+      "workspace"
     ],
     "tags": [
-      "romantic",
-      "budget",
-      "quiet",
-      "central location",
-      "luxury"
+      "nightlife",
+      "modern"
     ],
     "booked": []
   },
   {
     "id": 41,
-    "location": "Hawaii",
-    "type": "bungalow",
-    "price_per_night": 975,
-    "environment": "beach",
+    "location": "Winnipeg, MB",
+    "type": "House",
+    "price": 85,
+    "capacity": 7,
+    "environment": "urban",
     "features": [
-      "wifi",
-      "parking"
+      "hot tub",
+      "free parking"
     ],
     "tags": [
-      "family-friendly",
-      "quiet",
+      "skiing",
+      "romantic",
       "budget",
-      "central location"
+      "historic"
     ],
     "booked": []
   },
   {
     "id": 42,
-    "location": "Seattle",
-    "type": "cabin",
-    "price_per_night": 523,
+    "location": "Saskatoon, SK",
+    "type": "Loft",
+    "price": 100,
+    "capacity": 9,
     "environment": "urban",
     "features": [
-      "fireplace",
-      "hot tub"
+      "bbq grill",
+      "gym"
     ],
     "tags": [
-      "romantic",
-      "budget",
-      "family-friendly",
-      "luxury"
+      "spacious",
+      "nightlife",
+      "rustic",
+      "cozy",
+      "lakefront"
     ],
     "booked": []
   },
   {
     "id": 43,
-    "location": "Paris",
-    "type": "loft",
-    "price_per_night": 944,
-    "environment": "urban",
+    "location": "Muskoka, ON",
+    "type": "Villa",
+    "price": 129,
+    "capacity": 4,
+    "environment": "lake",
     "features": [
-      "parking",
-      "gym",
-      "balcony"
+      "deck",
+      "heating",
+      "mountain view"
     ],
     "tags": [
-      "modern",
-      "luxury",
-      "romantic",
-      "scenic views"
+      "spacious",
+      "quiet retreat",
+      "beach access"
     ],
     "booked": []
   },
   {
     "id": 44,
-    "location": "Los Angeles",
-    "type": "condo",
-    "price_per_night": 165,
-    "environment": "urban",
+    "location": "Tofino, BC",
+    "type": "Guesthouse",
+    "price": 193,
+    "capacity": 6,
+    "environment": "coastal",
     "features": [
-      "fireplace",
-      "gym"
+      "workspace",
+      "free parking"
     ],
     "tags": [
-      "family-friendly",
-      "scenic views"
+      "nightlife",
+      "hiking",
+      "lakefront",
+      "quiet retreat",
+      "spacious"
     ],
     "booked": []
   },
   {
     "id": 45,
-    "location": "Zurich",
-    "type": "apartment",
-    "price_per_night": 316,
+    "location": "Jasper, AB",
+    "type": "House",
+    "price": 250,
+    "capacity": 7,
     "environment": "mountain",
     "features": [
-      "hot tub",
-      "gym",
-      "wifi",
-      "balcony"
+      "kitchen",
+      "air conditioning",
+      "balcony",
+      "game room"
     ],
     "tags": [
-      "romantic",
-      "budget",
-      "scenic views"
+      "beach access",
+      "nightlife",
+      "remote",
+      "spacious"
     ],
     "booked": []
   },
   {
     "id": 46,
-    "location": "Austin",
-    "type": "condo",
-    "price_per_night": 953,
+    "location": "Calgary, AB",
+    "type": "Lakehouse",
+    "price": 169,
+    "capacity": 6,
     "environment": "urban",
     "features": [
+      "deck",
       "balcony",
-      "wifi"
+      "game room"
     ],
     "tags": [
+      "remote",
+      "family friendly",
       "budget",
-      "romantic",
-      "family-friendly"
+      "modern",
+      "skiing"
     ],
     "booked": []
   },
   {
     "id": 47,
-    "location": "Hawaii",
-    "type": "cottage",
-    "price_per_night": 372,
-    "environment": "beach",
+    "location": "Kelowna, BC",
+    "type": "Lakehouse",
+    "price": 582,
+    "capacity": 6,
+    "environment": "lake",
     "features": [
-      "kitchen",
-      "balcony"
+      "pet friendly",
+      "deck",
+      "free parking",
+      "kitchen"
     ],
     "tags": [
-      "romantic",
-      "scenic views",
-      "budget",
-      "family-friendly",
+      "pet friendly",
       "modern"
     ],
     "booked": []
   },
   {
     "id": 48,
-    "location": "Santorini",
-    "type": "studio",
-    "price_per_night": 997,
-    "environment": "beach",
+    "location": "Tofino, BC",
+    "type": "Lakehouse",
+    "price": 379,
+    "capacity": 4,
+    "environment": "coastal",
     "features": [
-      "balcony",
-      "gym",
       "hot tub",
-      "parking"
+      "mountain view",
+      "ocean view",
+      "deck"
     ],
     "tags": [
-      "budget",
-      "central location",
-      "romantic",
-      "scenic views"
+      "skiing",
+      "spacious",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 49,
-    "location": "Reykjavik",
-    "type": "apartment",
-    "price_per_night": 752,
-    "environment": "mountain",
+    "location": "Quebec City, QC",
+    "type": "Cabin",
+    "price": 588,
+    "capacity": 6,
+    "environment": "historic",
     "features": [
-      "pool",
-      "parking",
-      "balcony"
+      "fireplace",
+      "mountain view",
+      "gym",
+      "pet friendly"
     ],
     "tags": [
-      "family-friendly",
-      "central location",
-      "modern",
-      "romantic",
-      "quiet"
+      "quiet retreat",
+      "eco-friendly"
     ],
     "booked": []
   },
   {
     "id": 50,
-    "location": "San Francisco",
-    "type": "loft",
-    "price_per_night": 687,
+    "location": "Edmonton, AB",
+    "type": "Villa",
+    "price": 582,
+    "capacity": 4,
     "environment": "urban",
     "features": [
-      "hot tub",
-      "parking",
-      "balcony"
+      "gym",
+      "ocean view",
+      "air conditioning"
     ],
     "tags": [
-      "family-friendly",
-      "modern",
-      "budget"
+      "rustic",
+      "city view",
+      "beach access",
+      "romantic",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 51,
-    "location": "Reykjavik",
-    "type": "chalet",
-    "price_per_night": 237,
-    "environment": "mountain",
+    "location": "Halifax, NS",
+    "type": "Cabin",
+    "price": 299,
+    "capacity": 6,
+    "environment": "coastal",
     "features": [
-      "wifi",
-      "hot tub"
+      "ocean view",
+      "washer",
+      "kitchen",
+      "bbq grill"
     ],
     "tags": [
-      "luxury",
-      "family-friendly",
-      "budget",
-      "quiet"
+      "historic",
+      "modern",
+      "romantic",
+      "quiet retreat"
     ],
     "booked": []
   },
   {
     "id": 52,
-    "location": "Aspen",
-    "type": "cabin",
-    "price_per_night": 334,
-    "environment": "mountain",
+    "location": "Halifax, NS",
+    "type": "Cabin",
+    "price": 535,
+    "capacity": 8,
+    "environment": "coastal",
     "features": [
-      "pool",
-      "hot tub",
-      "wifi"
+      "tv",
+      "balcony",
+      "deck"
     ],
     "tags": [
-      "central location",
-      "romantic",
-      "family-friendly",
-      "modern",
-      "scenic views"
+      "luxury",
+      "cozy"
     ],
     "booked": []
   },
   {
     "id": 53,
-    "location": "Vancouver",
-    "type": "loft",
-    "price_per_night": 799,
-    "environment": "urban",
+    "location": "St. John\u2019s, NL",
+    "type": "Loft",
+    "price": 263,
+    "capacity": 2,
+    "environment": "coastal",
     "features": [
       "hot tub",
-      "parking",
+      "pool",
+      "gym",
       "wifi"
     ],
     "tags": [
-      "modern",
       "budget",
-      "luxury"
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 54,
-    "location": "Austin",
-    "type": "apartment",
-    "price_per_night": 407,
-    "environment": "urban",
+    "location": "Whistler, BC",
+    "type": "Lakehouse",
+    "price": 497,
+    "capacity": 3,
+    "environment": "mountain",
     "features": [
-      "wifi",
-      "kitchen",
-      "balcony",
-      "pool"
+      "heating",
+      "ocean view",
+      "wifi"
     ],
     "tags": [
-      "luxury",
-      "romantic"
+      "romantic",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 55,
-    "location": "Zurich",
-    "type": "chalet",
-    "price_per_night": 330,
-    "environment": "mountain",
+    "location": "St. John\u2019s, NL",
+    "type": "Cabin",
+    "price": 568,
+    "capacity": 8,
+    "environment": "coastal",
     "features": [
+      "deck",
       "balcony",
-      "pool",
-      "gym",
-      "kitchen"
+      "air conditioning"
     ],
     "tags": [
-      "budget",
-      "modern",
-      "scenic views",
-      "luxury"
+      "remote",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 56,
-    "location": "Santorini",
-    "type": "studio",
-    "price_per_night": 274,
-    "environment": "beach",
+    "location": "Edmonton, AB",
+    "type": "Loft",
+    "price": 591,
+    "capacity": 6,
+    "environment": "urban",
     "features": [
-      "fireplace",
-      "gym",
       "balcony",
-      "wifi"
+      "fireplace",
+      "washer",
+      "air conditioning"
     ],
     "tags": [
-      "budget",
+      "rustic",
+      "family friendly",
+      "skiing",
       "romantic",
-      "quiet",
-      "scenic views",
-      "modern"
+      "quiet retreat"
     ],
     "booked": []
   },
   {
     "id": 57,
-    "location": "Aspen",
-    "type": "chalet",
-    "price_per_night": 599,
-    "environment": "mountain",
+    "location": "Muskoka, ON",
+    "type": "Guesthouse",
+    "price": 65,
+    "capacity": 4,
+    "environment": "lake",
     "features": [
-      "hot tub",
-      "balcony",
-      "gym",
-      "wifi"
+      "mountain view",
+      "tv",
+      "ocean view",
+      "heating"
     ],
     "tags": [
-      "romantic",
-      "family-friendly",
-      "modern"
+      "remote",
+      "nightlife",
+      "city view"
     ],
     "booked": []
   },
   {
     "id": 58,
-    "location": "Seattle",
-    "type": "apartment",
-    "price_per_night": 921,
-    "environment": "urban",
+    "location": "St. John\u2019s, NL",
+    "type": "Lakehouse",
+    "price": 493,
+    "capacity": 7,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "gym",
-      "pool",
-      "wifi"
+      "game room",
+      "workspace",
+      "pet friendly"
     ],
     "tags": [
-      "scenic views",
+      "beach access",
       "budget",
-      "romantic",
-      "modern"
-    ],
-    "booked": []
-  },
-  {
-    "id": 59,
-    "location": "Paris",
-    "type": "apartment",
-    "price_per_night": 329,
-    "environment": "urban",
-    "features": [
-      "wifi",
-      "parking",
-      "fireplace",
-      "hot tub"
-    ],
-    "tags": [
-      "family-friendly",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 60,
-    "location": "Seattle",
-    "type": "loft",
-    "price_per_night": 867,
-    "environment": "urban",
-    "features": [
-      "gym",
-      "wifi"
-    ],
-    "tags": [
-      "luxury",
+      "historic",
+      "city view",
       "central location"
     ],
     "booked": []
   },
   {
-    "id": 61,
-    "location": "Reykjavik",
-    "type": "chalet",
-    "price_per_night": 971,
+    "id": 59,
+    "location": "Whistler, BC",
+    "type": "Cottage",
+    "price": 506,
+    "capacity": 5,
     "environment": "mountain",
     "features": [
-      "hot tub",
-      "balcony",
-      "wifi"
+      "tv",
+      "bbq grill",
+      "pool"
     ],
     "tags": [
-      "quiet",
-      "budget",
-      "scenic views"
+      "rustic",
+      "pet friendly",
+      "central location",
+      "family friendly",
+      "beach access"
+    ],
+    "booked": []
+  },
+  {
+    "id": 60,
+    "location": "Toronto, ON",
+    "type": "Lakehouse",
+    "price": 287,
+    "capacity": 8,
+    "environment": "urban",
+    "features": [
+      "hot tub",
+      "heating",
+      "kitchen",
+      "dryer"
+    ],
+    "tags": [
+      "rustic",
+      "hiking",
+      "romantic",
+      "nightlife"
+    ],
+    "booked": []
+  },
+  {
+    "id": 61,
+    "location": "Ottawa, ON",
+    "type": "Condo",
+    "price": 422,
+    "capacity": 9,
+    "environment": "urban",
+    "features": [
+      "gym",
+      "fireplace"
+    ],
+    "tags": [
+      "romantic",
+      "hiking",
+      "beach access",
+      "pet friendly",
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 62,
-    "location": "Reykjavik",
-    "type": "apartment",
-    "price_per_night": 821,
-    "environment": "mountain",
+    "location": "Calgary, AB",
+    "type": "Lakehouse",
+    "price": 498,
+    "capacity": 10,
+    "environment": "urban",
     "features": [
-      "pool",
-      "hot tub",
-      "wifi"
+      "gym",
+      "free parking",
+      "balcony",
+      "mountain view"
     ],
     "tags": [
-      "luxury",
-      "family-friendly",
-      "budget"
+      "city view",
+      "historic",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 63,
-    "location": "Santorini",
-    "type": "studio",
-    "price_per_night": 603,
-    "environment": "beach",
+    "location": "Jasper, AB",
+    "type": "Villa",
+    "price": 176,
+    "capacity": 6,
+    "environment": "mountain",
     "features": [
-      "parking",
-      "balcony"
+      "balcony",
+      "deck",
+      "workspace",
+      "bbq grill"
     ],
     "tags": [
-      "luxury",
-      "romantic",
-      "budget"
+      "modern",
+      "skiing",
+      "city view",
+      "nightlife",
+      "beach access"
     ],
     "booked": []
   },
   {
     "id": 64,
-    "location": "Los Angeles",
-    "type": "condo",
-    "price_per_night": 665,
-    "environment": "urban",
+    "location": "Banff, AB",
+    "type": "House",
+    "price": 295,
+    "capacity": 4,
+    "environment": "mountain",
     "features": [
-      "wifi",
-      "fireplace",
-      "kitchen",
-      "balcony"
+      "bbq grill",
+      "washer"
     ],
     "tags": [
-      "scenic views",
-      "romantic",
-      "quiet",
-      "modern"
+      "hiking",
+      "luxury"
     ],
     "booked": []
   },
   {
     "id": 65,
-    "location": "Seattle",
-    "type": "cabin",
-    "price_per_night": 951,
-    "environment": "urban",
+    "location": "St. John\u2019s, NL",
+    "type": "House",
+    "price": 65,
+    "capacity": 5,
+    "environment": "coastal",
     "features": [
-      "gym",
-      "fireplace"
+      "deck",
+      "free parking",
+      "dryer"
     ],
     "tags": [
-      "central location",
-      "family-friendly",
-      "scenic views",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 66,
-    "location": "Austin",
-    "type": "apartment",
-    "price_per_night": 793,
-    "environment": "urban",
-    "features": [
-      "kitchen",
-      "parking"
-    ],
-    "tags": [
-      "modern",
-      "central location",
-      "budget",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 67,
-    "location": "Toronto",
-    "type": "apartment",
-    "price_per_night": 148,
-    "environment": "urban",
-    "features": [
-      "kitchen",
-      "parking",
-      "fireplace"
-    ],
-    "tags": [
-      "luxury",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 68,
-    "location": "Toronto",
-    "type": "loft",
-    "price_per_night": 63,
-    "environment": "urban",
-    "features": [
-      "balcony",
-      "gym",
-      "pool",
-      "wifi"
-    ],
-    "tags": [
-      "budget",
-      "modern",
-      "romantic",
-      "quiet",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 69,
-    "location": "Vancouver",
-    "type": "cabin",
-    "price_per_night": 600,
-    "environment": "urban",
-    "features": [
-      "fireplace",
-      "pool",
-      "kitchen",
-      "hot tub"
-    ],
-    "tags": [
-      "central location",
+      "spacious",
+      "remote",
       "budget"
     ],
     "booked": []
   },
   {
-    "id": 70,
-    "location": "Rome",
-    "type": "studio",
-    "price_per_night": 67,
+    "id": 66,
+    "location": "Calgary, AB",
+    "type": "House",
+    "price": 392,
+    "capacity": 2,
     "environment": "urban",
     "features": [
-      "pool",
-      "gym"
+      "air conditioning",
+      "ocean view",
+      "balcony"
     ],
     "tags": [
-      "quiet",
+      "quiet retreat",
+      "central location",
       "budget",
-      "scenic views",
-      "luxury",
-      "family-friendly"
+      "lakefront",
+      "historic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 67,
+    "location": "Edmonton, AB",
+    "type": "Loft",
+    "price": 318,
+    "capacity": 4,
+    "environment": "urban",
+    "features": [
+      "ocean view",
+      "fireplace",
+      "hot tub"
+    ],
+    "tags": [
+      "spacious",
+      "modern",
+      "nightlife",
+      "cozy",
+      "hiking"
+    ],
+    "booked": []
+  },
+  {
+    "id": 68,
+    "location": "St. John\u2019s, NL",
+    "type": "Cabin",
+    "price": 467,
+    "capacity": 9,
+    "environment": "coastal",
+    "features": [
+      "kitchen",
+      "washer",
+      "free parking"
+    ],
+    "tags": [
+      "skiing",
+      "rustic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 69,
+    "location": "Charlottetown, PEI",
+    "type": "Cabin",
+    "price": 225,
+    "capacity": 9,
+    "environment": "coastal",
+    "features": [
+      "balcony",
+      "mountain view",
+      "washer"
+    ],
+    "tags": [
+      "budget",
+      "romantic",
+      "central location",
+      "modern"
+    ],
+    "booked": []
+  },
+  {
+    "id": 70,
+    "location": "Niagara, ON",
+    "type": "Villa",
+    "price": 587,
+    "capacity": 6,
+    "environment": "rural",
+    "features": [
+      "kitchen",
+      "balcony"
+    ],
+    "tags": [
+      "spacious",
+      "budget",
+      "family friendly",
+      "romantic",
+      "skiing"
     ],
     "booked": []
   },
   {
     "id": 71,
-    "location": "Santorini",
-    "type": "villa",
-    "price_per_night": 278,
-    "environment": "beach",
+    "location": "Winnipeg, MB",
+    "type": "Cabin",
+    "price": 532,
+    "capacity": 3,
+    "environment": "urban",
     "features": [
-      "wifi",
-      "fireplace",
-      "hot tub",
-      "gym"
+      "ocean view",
+      "balcony"
     ],
     "tags": [
-      "romantic",
-      "budget",
-      "family-friendly",
+      "nightlife",
       "luxury"
     ],
     "booked": []
   },
   {
     "id": 72,
-    "location": "Reykjavik",
-    "type": "apartment",
-    "price_per_night": 287,
-    "environment": "mountain",
+    "location": "Muskoka, ON",
+    "type": "Apartment",
+    "price": 520,
+    "capacity": 6,
+    "environment": "lake",
     "features": [
-      "gym",
-      "wifi"
+      "mountain view",
+      "balcony",
+      "ocean view"
     ],
     "tags": [
       "luxury",
-      "quiet",
-      "romantic"
+      "historic"
     ],
     "booked": []
   },
   {
     "id": 73,
-    "location": "New York City",
-    "type": "loft",
-    "price_per_night": 350,
-    "environment": "urban",
+    "location": "Quebec City, QC",
+    "type": "House",
+    "price": 191,
+    "capacity": 5,
+    "environment": "historic",
     "features": [
-      "pool",
-      "fireplace"
+      "deck",
+      "washer"
     ],
     "tags": [
-      "central location",
-      "luxury",
-      "quiet",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 74,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 858,
-    "environment": "urban",
-    "features": [
-      "parking",
-      "fireplace",
-      "kitchen",
-      "pool"
-    ],
-    "tags": [
-      "quiet",
-      "budget",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 75,
-    "location": "Santorini",
-    "type": "villa",
-    "price_per_night": 288,
-    "environment": "beach",
-    "features": [
-      "kitchen",
-      "gym",
-      "pool",
-      "balcony"
-    ],
-    "tags": [
-      "quiet",
-      "romantic",
-      "scenic views",
+      "historic",
+      "skiing",
       "modern"
     ],
     "booked": []
   },
   {
-    "id": 76,
-    "location": "Zurich",
-    "type": "loft",
-    "price_per_night": 385,
-    "environment": "mountain",
+    "id": 74,
+    "location": "Edmonton, AB",
+    "type": "Guesthouse",
+    "price": 522,
+    "capacity": 5,
+    "environment": "urban",
     "features": [
-      "gym",
-      "hot tub"
+      "washer",
+      "dryer"
     ],
     "tags": [
-      "scenic views",
-      "family-friendly",
+      "quiet retreat",
+      "eco-friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 75,
+    "location": "Edmonton, AB",
+    "type": "Guesthouse",
+    "price": 575,
+    "capacity": 8,
+    "environment": "urban",
+    "features": [
+      "air conditioning",
+      "mountain view"
+    ],
+    "tags": [
       "romantic",
-      "quiet",
-      "budget"
+      "cozy",
+      "quiet retreat"
+    ],
+    "booked": []
+  },
+  {
+    "id": 76,
+    "location": "Tofino, BC",
+    "type": "Bungalow",
+    "price": 399,
+    "capacity": 4,
+    "environment": "coastal",
+    "features": [
+      "gym",
+      "hot tub",
+      "free parking"
+    ],
+    "tags": [
+      "eco-friendly",
+      "pet friendly",
+      "luxury"
     ],
     "booked": []
   },
   {
     "id": 77,
-    "location": "Los Angeles",
-    "type": "apartment",
-    "price_per_night": 612,
+    "location": "Saskatoon, SK",
+    "type": "Cottage",
+    "price": 496,
+    "capacity": 4,
     "environment": "urban",
     "features": [
-      "kitchen",
-      "pool",
-      "hot tub"
+      "workspace",
+      "game room",
+      "bbq grill"
     ],
     "tags": [
-      "family-friendly",
-      "modern",
-      "central location"
+      "budget",
+      "cozy",
+      "city view",
+      "modern"
     ],
     "booked": []
   },
   {
     "id": 78,
-    "location": "San Francisco",
-    "type": "condo",
-    "price_per_night": 772,
+    "location": "Edmonton, AB",
+    "type": "Cabin",
+    "price": 343,
+    "capacity": 6,
     "environment": "urban",
     "features": [
-      "balcony",
-      "parking"
+      "kitchen",
+      "heating",
+      "workspace",
+      "ocean view"
     ],
     "tags": [
-      "central location",
-      "quiet",
-      "romantic",
-      "family-friendly"
+      "cozy",
+      "skiing",
+      "lakefront"
     ],
     "booked": []
   },
   {
     "id": 79,
-    "location": "San Francisco",
-    "type": "loft",
-    "price_per_night": 506,
-    "environment": "urban",
+    "location": "St. John\u2019s, NL",
+    "type": "House",
+    "price": 432,
+    "capacity": 9,
+    "environment": "coastal",
     "features": [
-      "gym",
-      "parking"
+      "workspace",
+      "washer"
     ],
     "tags": [
-      "budget",
-      "modern",
-      "quiet"
+      "lakefront",
+      "hiking",
+      "spacious"
     ],
     "booked": []
   },
   {
     "id": 80,
-    "location": "Aspen",
-    "type": "cabin",
-    "price_per_night": 951,
-    "environment": "mountain",
+    "location": "Montreal, QC",
+    "type": "Loft",
+    "price": 178,
+    "capacity": 8,
+    "environment": "urban",
     "features": [
-      "hot tub",
-      "kitchen"
+      "kitchen",
+      "pool",
+      "pet friendly",
+      "heating"
     ],
     "tags": [
-      "budget",
-      "quiet"
+      "romantic",
+      "skiing",
+      "cozy",
+      "lakefront"
     ],
     "booked": []
   },
   {
     "id": 81,
-    "location": "Miami",
-    "type": "villa",
-    "price_per_night": 660,
-    "environment": "beach",
+    "location": "Quebec City, QC",
+    "type": "Bungalow",
+    "price": 581,
+    "capacity": 6,
+    "environment": "historic",
     "features": [
-      "pool",
-      "fireplace"
+      "balcony",
+      "heating",
+      "tv"
     ],
     "tags": [
-      "budget",
-      "luxury",
-      "family-friendly",
-      "romantic"
+      "spacious",
+      "historic",
+      "beach access",
+      "luxury"
     ],
     "booked": []
   },
   {
     "id": 82,
-    "location": "Aspen",
-    "type": "cabin",
-    "price_per_night": 167,
+    "location": "Jasper, AB",
+    "type": "Condo",
+    "price": 433,
+    "capacity": 6,
     "environment": "mountain",
     "features": [
-      "parking",
-      "gym",
-      "wifi",
-      "balcony"
+      "balcony",
+      "pool"
     ],
     "tags": [
-      "luxury",
-      "quiet"
+      "pet friendly",
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 83,
-    "location": "San Francisco",
-    "type": "apartment",
-    "price_per_night": 867,
-    "environment": "urban",
+    "location": "Quebec City, QC",
+    "type": "Loft",
+    "price": 143,
+    "capacity": 9,
+    "environment": "historic",
     "features": [
-      "parking",
-      "balcony"
+      "mountain view",
+      "washer"
     ],
     "tags": [
-      "luxury",
-      "central location"
+      "budget",
+      "spacious"
     ],
     "booked": []
   },
   {
     "id": 84,
-    "location": "Paris",
-    "type": "apartment",
-    "price_per_night": 686,
-    "environment": "urban",
+    "location": "Niagara, ON",
+    "type": "Guesthouse",
+    "price": 193,
+    "capacity": 6,
+    "environment": "rural",
     "features": [
-      "kitchen",
-      "parking",
-      "hot tub",
-      "pool"
+      "workspace",
+      "gym",
+      "heating"
     ],
     "tags": [
-      "luxury",
-      "central location",
-      "quiet",
+      "skiing",
+      "eco-friendly",
       "romantic"
     ],
     "booked": []
   },
   {
     "id": 85,
-    "location": "Denver",
-    "type": "loft",
-    "price_per_night": 490,
-    "environment": "mountain",
+    "location": "Kelowna, BC",
+    "type": "Loft",
+    "price": 347,
+    "capacity": 8,
+    "environment": "lake",
     "features": [
-      "pool",
-      "parking"
+      "washer",
+      "bbq grill"
     ],
     "tags": [
+      "skiing",
+      "city view",
+      "luxury",
       "budget",
-      "quiet",
-      "central location",
-      "scenic views"
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 86,
-    "location": "Reykjavik",
-    "type": "cabin",
-    "price_per_night": 654,
-    "environment": "mountain",
+    "location": "Winnipeg, MB",
+    "type": "Cottage",
+    "price": 240,
+    "capacity": 9,
+    "environment": "urban",
     "features": [
-      "pool",
-      "kitchen",
-      "hot tub",
-      "balcony"
+      "workspace",
+      "air conditioning",
+      "dryer"
     ],
     "tags": [
-      "modern",
-      "quiet",
-      "central location"
+      "remote",
+      "budget"
     ],
     "booked": []
   },
   {
     "id": 87,
-    "location": "Toronto",
-    "type": "apartment",
-    "price_per_night": 779,
-    "environment": "urban",
+    "location": "Muskoka, ON",
+    "type": "Cottage",
+    "price": 86,
+    "capacity": 2,
+    "environment": "lake",
     "features": [
-      "kitchen",
-      "fireplace"
+      "wifi",
+      "balcony",
+      "free parking"
     ],
     "tags": [
-      "scenic views",
       "modern",
-      "luxury"
+      "eco-friendly",
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 88,
-    "location": "Vancouver",
-    "type": "apartment",
-    "price_per_night": 465,
+    "location": "Vancouver, BC",
+    "type": "House",
+    "price": 395,
+    "capacity": 4,
     "environment": "urban",
     "features": [
-      "hot tub",
-      "balcony"
+      "fireplace",
+      "pool",
+      "free parking"
     ],
     "tags": [
-      "family-friendly",
-      "romantic",
-      "quiet",
-      "modern",
-      "luxury"
+      "city view",
+      "luxury",
+      "remote",
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 89,
-    "location": "San Francisco",
-    "type": "loft",
-    "price_per_night": 912,
+    "location": "Ottawa, ON",
+    "type": "Villa",
+    "price": 527,
+    "capacity": 2,
     "environment": "urban",
     "features": [
-      "wifi",
-      "gym",
-      "balcony"
+      "heating",
+      "dryer",
+      "kitchen",
+      "hot tub"
     ],
     "tags": [
-      "budget",
-      "modern"
+      "lakefront",
+      "rustic",
+      "spacious",
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 90,
-    "location": "San Francisco",
-    "type": "apartment",
-    "price_per_night": 353,
-    "environment": "urban",
+    "location": "Kelowna, BC",
+    "type": "Cottage",
+    "price": 63,
+    "capacity": 7,
+    "environment": "lake",
     "features": [
-      "parking",
-      "pool"
+      "mountain view",
+      "bbq grill",
+      "washer",
+      "tv"
     ],
     "tags": [
-      "central location",
-      "scenic views"
+      "cozy",
+      "skiing",
+      "eco-friendly",
+      "city view"
     ],
     "booked": []
   },
   {
     "id": 91,
-    "location": "Reykjavik",
-    "type": "cabin",
-    "price_per_night": 76,
-    "environment": "mountain",
+    "location": "Charlottetown, PEI",
+    "type": "Lakehouse",
+    "price": 279,
+    "capacity": 6,
+    "environment": "coastal",
     "features": [
+      "pool",
+      "tv",
       "gym",
-      "wifi"
+      "mountain view"
     ],
     "tags": [
-      "modern",
-      "scenic views",
-      "central location"
+      "rustic",
+      "historic"
     ],
     "booked": []
   },
   {
     "id": 92,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 290,
-    "environment": "urban",
+    "location": "Kelowna, BC",
+    "type": "Condo",
+    "price": 339,
+    "capacity": 7,
+    "environment": "lake",
     "features": [
-      "parking",
-      "pool"
+      "pet friendly",
+      "fireplace",
+      "workspace",
+      "wifi"
     ],
     "tags": [
-      "quiet",
-      "central location",
-      "budget"
+      "nightlife",
+      "romantic",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 93,
-    "location": "Rome",
-    "type": "apartment",
-    "price_per_night": 313,
+    "location": "Calgary, AB",
+    "type": "House",
+    "price": 110,
+    "capacity": 9,
     "environment": "urban",
     "features": [
-      "parking",
       "kitchen",
-      "fireplace",
+      "pool",
       "hot tub"
     ],
     "tags": [
-      "quiet",
-      "scenic views",
-      "family-friendly",
-      "budget"
+      "historic",
+      "central location",
+      "skiing",
+      "beach access"
     ],
     "booked": []
   },
   {
     "id": 94,
-    "location": "San Francisco",
-    "type": "condo",
-    "price_per_night": 557,
-    "environment": "urban",
+    "location": "Halifax, NS",
+    "type": "Cottage",
+    "price": 323,
+    "capacity": 7,
+    "environment": "coastal",
     "features": [
-      "pool",
-      "kitchen",
-      "gym"
+      "balcony",
+      "washer",
+      "gym",
+      "free parking"
     ],
     "tags": [
-      "quiet",
-      "family-friendly",
-      "modern",
       "central location",
-      "luxury"
+      "historic",
+      "skiing",
+      "lakefront",
+      "quiet retreat"
     ],
     "booked": []
   },
   {
     "id": 95,
-    "location": "Seattle",
-    "type": "cabin",
-    "price_per_night": 160,
-    "environment": "urban",
+    "location": "Banff, AB",
+    "type": "Loft",
+    "price": 470,
+    "capacity": 8,
+    "environment": "mountain",
     "features": [
-      "pool",
-      "wifi",
-      "gym"
+      "air conditioning",
+      "bbq grill"
     ],
     "tags": [
-      "quiet",
-      "budget"
+      "historic",
+      "family friendly",
+      "pet friendly",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 96,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 506,
+    "location": "Montreal, QC",
+    "type": "House",
+    "price": 100,
+    "capacity": 3,
     "environment": "urban",
     "features": [
-      "parking",
-      "wifi"
+      "fireplace",
+      "tv",
+      "free parking"
     ],
     "tags": [
-      "romantic",
-      "quiet",
-      "luxury"
+      "quiet retreat",
+      "lakefront",
+      "historic",
+      "romantic"
     ],
     "booked": []
   },
   {
     "id": 97,
-    "location": "Los Angeles",
-    "type": "apartment",
-    "price_per_night": 517,
-    "environment": "urban",
+    "location": "Halifax, NS",
+    "type": "Loft",
+    "price": 243,
+    "capacity": 5,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "balcony",
+      "workspace",
       "fireplace"
     ],
     "tags": [
-      "quiet",
       "modern",
-      "budget"
+      "city view",
+      "romantic",
+      "budget",
+      "skiing"
     ],
     "booked": []
   },
   {
     "id": 98,
-    "location": "Aspen",
-    "type": "villa",
-    "price_per_night": 839,
-    "environment": "mountain",
+    "location": "Niagara, ON",
+    "type": "House",
+    "price": 504,
+    "capacity": 8,
+    "environment": "rural",
     "features": [
-      "fireplace",
-      "gym",
-      "hot tub",
-      "parking"
+      "heating",
+      "ocean view",
+      "dryer"
     ],
     "tags": [
-      "family-friendly",
-      "modern",
-      "romantic",
-      "quiet",
-      "budget"
+      "cozy",
+      "beach access",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 99,
-    "location": "New York City",
-    "type": "studio",
-    "price_per_night": 794,
-    "environment": "urban",
+    "location": "Quebec City, QC",
+    "type": "Villa",
+    "price": 82,
+    "capacity": 7,
+    "environment": "historic",
     "features": [
-      "wifi",
-      "parking"
+      "free parking",
+      "ocean view",
+      "bbq grill",
+      "pool"
     ],
     "tags": [
-      "luxury",
-      "modern",
-      "family-friendly"
+      "quiet retreat",
+      "historic",
+      "romantic",
+      "central location"
     ],
     "booked": []
   },
   {
     "id": 100,
-    "location": "Austin",
-    "type": "condo",
-    "price_per_night": 455,
+    "location": "Ottawa, ON",
+    "type": "Loft",
+    "price": 454,
+    "capacity": 6,
     "environment": "urban",
     "features": [
-      "wifi",
-      "gym",
-      "parking",
-      "fireplace"
+      "air conditioning",
+      "dryer",
+      "deck",
+      "bbq grill"
     ],
     "tags": [
-      "luxury",
-      "quiet",
       "budget",
-      "central location"
+      "luxury"
     ],
     "booked": []
   },
   {
     "id": 101,
-    "location": "Hawaii",
-    "type": "villa",
-    "price_per_night": 414,
-    "environment": "beach",
+    "location": "Edmonton, AB",
+    "type": "Apartment",
+    "price": 305,
+    "capacity": 8,
+    "environment": "urban",
     "features": [
-      "hot tub",
       "fireplace",
-      "wifi",
-      "pool"
+      "bbq grill",
+      "mountain view"
     ],
     "tags": [
-      "family-friendly",
-      "modern",
-      "central location"
+      "central location",
+      "pet friendly",
+      "cozy",
+      "beach access",
+      "quiet retreat"
     ],
     "booked": []
   },
   {
     "id": 102,
-    "location": "Reykjavik",
-    "type": "cabin",
-    "price_per_night": 635,
+    "location": "Whistler, BC",
+    "type": "Lakehouse",
+    "price": 429,
+    "capacity": 8,
     "environment": "mountain",
     "features": [
+      "workspace",
       "hot tub",
-      "wifi"
+      "deck"
     ],
     "tags": [
-      "family-friendly",
-      "modern",
-      "budget"
+      "eco-friendly",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 103,
-    "location": "Aspen",
-    "type": "chalet",
-    "price_per_night": 848,
-    "environment": "mountain",
+    "location": "Quebec City, QC",
+    "type": "Villa",
+    "price": 291,
+    "capacity": 3,
+    "environment": "historic",
     "features": [
-      "parking",
       "kitchen",
       "hot tub"
     ],
     "tags": [
-      "luxury",
-      "romantic"
+      "beach access",
+      "lakefront",
+      "historic",
+      "quiet retreat"
     ],
     "booked": []
   },
   {
     "id": 104,
-    "location": "Reykjavik",
-    "type": "cabin",
-    "price_per_night": 971,
+    "location": "Whistler, BC",
+    "type": "Cabin",
+    "price": 340,
+    "capacity": 2,
     "environment": "mountain",
     "features": [
-      "hot tub",
-      "gym"
+      "gym",
+      "ocean view"
     ],
     "tags": [
-      "scenic views",
-      "quiet"
+      "modern",
+      "central location",
+      "luxury",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 105,
-    "location": "New York City",
-    "type": "loft",
-    "price_per_night": 576,
+    "location": "Edmonton, AB",
+    "type": "Apartment",
+    "price": 352,
+    "capacity": 8,
     "environment": "urban",
     "features": [
-      "balcony",
-      "fireplace",
-      "wifi"
+      "pool",
+      "ocean view",
+      "free parking"
     ],
     "tags": [
-      "romantic",
-      "luxury",
-      "quiet",
-      "modern"
+      "spacious",
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 106,
-    "location": "San Francisco",
-    "type": "loft",
-    "price_per_night": 651,
-    "environment": "urban",
+    "location": "Halifax, NS",
+    "type": "Apartment",
+    "price": 373,
+    "capacity": 5,
+    "environment": "coastal",
     "features": [
-      "wifi",
-      "hot tub",
-      "kitchen"
+      "heating",
+      "pool"
     ],
     "tags": [
-      "luxury",
-      "central location",
-      "modern"
+      "budget",
+      "remote",
+      "romantic",
+      "quiet retreat"
     ],
     "booked": []
   },
   {
     "id": 107,
-    "location": "Paris",
-    "type": "loft",
-    "price_per_night": 326,
-    "environment": "urban",
+    "location": "Quebec City, QC",
+    "type": "Cottage",
+    "price": 432,
+    "capacity": 6,
+    "environment": "historic",
     "features": [
-      "pool",
-      "kitchen",
-      "balcony",
-      "gym"
+      "fireplace",
+      "free parking",
+      "mountain view"
     ],
     "tags": [
-      "romantic",
-      "central location"
+      "nightlife",
+      "beach access"
     ],
     "booked": []
   },
   {
     "id": 108,
-    "location": "Santorini",
-    "type": "villa",
-    "price_per_night": 581,
-    "environment": "beach",
+    "location": "Toronto, ON",
+    "type": "Cabin",
+    "price": 295,
+    "capacity": 2,
+    "environment": "urban",
     "features": [
-      "wifi",
-      "kitchen",
-      "gym"
+      "fireplace",
+      "game room",
+      "mountain view"
     ],
     "tags": [
-      "budget",
-      "scenic views",
-      "modern"
+      "pet friendly",
+      "hiking",
+      "modern",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 109,
-    "location": "Rome",
-    "type": "studio",
-    "price_per_night": 290,
+    "location": "Edmonton, AB",
+    "type": "Lakehouse",
+    "price": 249,
+    "capacity": 8,
     "environment": "urban",
     "features": [
-      "kitchen",
-      "parking",
+      "washer",
       "balcony"
     ],
     "tags": [
-      "scenic views",
-      "quiet"
+      "budget",
+      "spacious",
+      "skiing",
+      "central location",
+      "cozy"
     ],
     "booked": []
   },
   {
     "id": 110,
-    "location": "Miami",
-    "type": "villa",
-    "price_per_night": 494,
-    "environment": "beach",
+    "location": "Niagara, ON",
+    "type": "House",
+    "price": 92,
+    "capacity": 5,
+    "environment": "rural",
     "features": [
-      "parking",
-      "pool",
-      "wifi"
+      "tv",
+      "mountain view",
+      "pool"
     ],
     "tags": [
       "modern",
-      "luxury"
+      "cozy"
     ],
     "booked": []
   },
   {
     "id": 111,
-    "location": "Rome",
-    "type": "studio",
-    "price_per_night": 116,
-    "environment": "urban",
+    "location": "Niagara, ON",
+    "type": "Condo",
+    "price": 197,
+    "capacity": 5,
+    "environment": "rural",
     "features": [
-      "pool",
-      "kitchen",
-      "wifi"
+      "wifi",
+      "bbq grill"
     ],
     "tags": [
-      "luxury",
-      "family-friendly",
-      "central location",
-      "modern"
+      "remote",
+      "beach access"
     ],
     "booked": []
   },
   {
     "id": 112,
-    "location": "Santorini",
-    "type": "studio",
-    "price_per_night": 649,
-    "environment": "beach",
+    "location": "Vancouver, BC",
+    "type": "Cottage",
+    "price": 139,
+    "capacity": 4,
+    "environment": "urban",
     "features": [
-      "gym",
-      "fireplace",
-      "kitchen",
-      "balcony"
+      "hot tub",
+      "game room"
     ],
     "tags": [
-      "scenic views",
-      "luxury",
-      "central location"
+      "hiking",
+      "historic"
     ],
     "booked": []
   },
   {
     "id": 113,
-    "location": "Denver",
-    "type": "loft",
-    "price_per_night": 953,
-    "environment": "mountain",
+    "location": "Charlottetown, PEI",
+    "type": "Cabin",
+    "price": 230,
+    "capacity": 4,
+    "environment": "coastal",
     "features": [
-      "gym",
-      "wifi",
-      "pool",
-      "parking"
+      "fireplace",
+      "pet friendly",
+      "air conditioning"
     ],
     "tags": [
-      "modern",
-      "budget",
-      "family-friendly",
-      "luxury"
+      "eco-friendly",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 114,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 728,
+    "location": "Montreal, QC",
+    "type": "Apartment",
+    "price": 392,
+    "capacity": 6,
     "environment": "urban",
     "features": [
-      "hot tub",
-      "kitchen",
-      "pool"
-    ],
-    "tags": [
-      "modern",
-      "romantic",
-      "central location"
-    ],
-    "booked": []
-  },
-  {
-    "id": 115,
-    "location": "Austin",
-    "type": "apartment",
-    "price_per_night": 113,
-    "environment": "urban",
-    "features": [
-      "parking",
-      "kitchen",
-      "hot tub"
-    ],
-    "tags": [
-      "modern",
-      "central location",
-      "budget",
-      "scenic views",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 116,
-    "location": "Austin",
-    "type": "apartment",
-    "price_per_night": 993,
-    "environment": "urban",
-    "features": [
-      "wifi",
-      "pool",
-      "kitchen",
+      "air conditioning",
       "gym"
     ],
     "tags": [
       "luxury",
-      "budget",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 117,
-    "location": "Toronto",
-    "type": "condo",
-    "price_per_night": 224,
-    "environment": "urban",
-    "features": [
-      "gym",
-      "pool",
-      "hot tub",
-      "balcony"
-    ],
-    "tags": [
-      "modern",
-      "scenic views",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 118,
-    "location": "Paris",
-    "type": "studio",
-    "price_per_night": 223,
-    "environment": "urban",
-    "features": [
-      "hot tub",
-      "gym"
-    ],
-    "tags": [
-      "luxury",
-      "family-friendly",
-      "budget"
-    ],
-    "booked": []
-  },
-  {
-    "id": 119,
-    "location": "San Francisco",
-    "type": "apartment",
-    "price_per_night": 197,
-    "environment": "urban",
-    "features": [
-      "gym",
-      "kitchen"
-    ],
-    "tags": [
-      "luxury",
-      "budget",
-      "central location",
-      "family-friendly",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 120,
-    "location": "Hawaii",
-    "type": "bungalow",
-    "price_per_night": 930,
-    "environment": "beach",
-    "features": [
-      "kitchen",
-      "balcony"
-    ],
-    "tags": [
-      "modern",
-      "scenic views",
-      "family-friendly",
-      "central location"
-    ],
-    "booked": []
-  },
-  {
-    "id": 121,
-    "location": "Denver",
-    "type": "apartment",
-    "price_per_night": 925,
-    "environment": "mountain",
-    "features": [
-      "pool",
-      "hot tub",
-      "wifi"
-    ],
-    "tags": [
-      "quiet",
-      "budget",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 122,
-    "location": "Hawaii",
-    "type": "cottage",
-    "price_per_night": 155,
-    "environment": "beach",
-    "features": [
-      "kitchen",
-      "wifi"
-    ],
-    "tags": [
-      "quiet",
-      "romantic",
+      "skiing",
+      "beach access",
       "modern"
     ],
     "booked": []
   },
   {
-    "id": 123,
-    "location": "Hawaii",
-    "type": "bungalow",
-    "price_per_night": 428,
-    "environment": "beach",
+    "id": 115,
+    "location": "Charlottetown, PEI",
+    "type": "House",
+    "price": 474,
+    "capacity": 9,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "fireplace"
+      "hot tub",
+      "bbq grill",
+      "deck"
+    ],
+    "tags": [
+      "pet friendly",
+      "historic",
+      "rustic",
+      "beach access"
+    ],
+    "booked": []
+  },
+  {
+    "id": 116,
+    "location": "Tofino, BC",
+    "type": "Villa",
+    "price": 233,
+    "capacity": 3,
+    "environment": "coastal",
+    "features": [
+      "workspace",
+      "ocean view",
+      "pet friendly"
+    ],
+    "tags": [
+      "lakefront",
+      "remote",
+      "rustic",
+      "skiing",
+      "nightlife"
+    ],
+    "booked": []
+  },
+  {
+    "id": 117,
+    "location": "Kelowna, BC",
+    "type": "Cabin",
+    "price": 158,
+    "capacity": 4,
+    "environment": "lake",
+    "features": [
+      "balcony",
+      "game room"
+    ],
+    "tags": [
+      "beach access",
+      "rustic",
+      "lakefront",
+      "historic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 118,
+    "location": "Winnipeg, MB",
+    "type": "Villa",
+    "price": 252,
+    "capacity": 8,
+    "environment": "urban",
+    "features": [
+      "pet friendly",
+      "mountain view",
+      "hot tub",
+      "deck"
     ],
     "tags": [
       "romantic",
+      "historic",
+      "rustic",
+      "spacious",
+      "modern"
+    ],
+    "booked": []
+  },
+  {
+    "id": 119,
+    "location": "Halifax, NS",
+    "type": "Apartment",
+    "price": 568,
+    "capacity": 10,
+    "environment": "coastal",
+    "features": [
+      "gym",
+      "pet friendly",
+      "pool"
+    ],
+    "tags": [
+      "luxury",
       "budget",
-      "quiet"
+      "central location",
+      "eco-friendly",
+      "skiing"
+    ],
+    "booked": []
+  },
+  {
+    "id": 120,
+    "location": "Quebec City, QC",
+    "type": "Lakehouse",
+    "price": 404,
+    "capacity": 9,
+    "environment": "historic",
+    "features": [
+      "gym",
+      "hot tub",
+      "kitchen"
+    ],
+    "tags": [
+      "central location",
+      "remote",
+      "skiing",
+      "city view"
+    ],
+    "booked": []
+  },
+  {
+    "id": 121,
+    "location": "Ottawa, ON",
+    "type": "Villa",
+    "price": 596,
+    "capacity": 5,
+    "environment": "urban",
+    "features": [
+      "washer",
+      "dryer",
+      "bbq grill",
+      "pool"
+    ],
+    "tags": [
+      "pet friendly",
+      "beach access",
+      "romantic",
+      "luxury"
+    ],
+    "booked": []
+  },
+  {
+    "id": 122,
+    "location": "Muskoka, ON",
+    "type": "Bungalow",
+    "price": 439,
+    "capacity": 3,
+    "environment": "lake",
+    "features": [
+      "tv",
+      "bbq grill"
+    ],
+    "tags": [
+      "skiing",
+      "city view",
+      "hiking",
+      "spacious"
+    ],
+    "booked": []
+  },
+  {
+    "id": 123,
+    "location": "Kelowna, BC",
+    "type": "Villa",
+    "price": 279,
+    "capacity": 4,
+    "environment": "lake",
+    "features": [
+      "balcony",
+      "deck"
+    ],
+    "tags": [
+      "modern",
+      "romantic",
+      "family friendly",
+      "spacious",
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 124,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 708,
-    "environment": "urban",
+    "location": "Halifax, NS",
+    "type": "Guesthouse",
+    "price": 551,
+    "capacity": 7,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "wifi"
+      "mountain view",
+      "heating"
     ],
     "tags": [
-      "romantic",
-      "family-friendly",
-      "quiet",
-      "budget"
+      "beach access",
+      "hiking",
+      "quiet retreat",
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 125,
-    "location": "Los Angeles",
-    "type": "apartment",
-    "price_per_night": 238,
-    "environment": "urban",
+    "location": "Muskoka, ON",
+    "type": "Condo",
+    "price": 270,
+    "capacity": 6,
+    "environment": "lake",
     "features": [
-      "parking",
-      "hot tub",
-      "pool"
+      "kitchen",
+      "mountain view",
+      "wifi"
     ],
     "tags": [
-      "scenic views",
-      "romantic"
+      "historic",
+      "nightlife",
+      "beach access",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 126,
-    "location": "Seattle",
-    "type": "loft",
-    "price_per_night": 876,
+    "location": "Edmonton, AB",
+    "type": "Cottage",
+    "price": 304,
+    "capacity": 9,
     "environment": "urban",
     "features": [
-      "pool",
-      "wifi"
+      "fireplace",
+      "balcony",
+      "washer"
     ],
     "tags": [
-      "romantic",
-      "scenic views"
+      "central location",
+      "budget",
+      "spacious"
     ],
     "booked": []
   },
   {
     "id": 127,
-    "location": "San Francisco",
-    "type": "loft",
-    "price_per_night": 489,
-    "environment": "urban",
+    "location": "St. John\u2019s, NL",
+    "type": "Apartment",
+    "price": 164,
+    "capacity": 4,
+    "environment": "coastal",
     "features": [
-      "kitchen",
-      "hot tub",
-      "gym",
-      "fireplace"
+      "ocean view",
+      "deck"
     ],
     "tags": [
-      "luxury",
-      "budget"
+      "romantic",
+      "beach access",
+      "cozy"
     ],
     "booked": []
   },
   {
     "id": 128,
-    "location": "Reykjavik",
-    "type": "apartment",
-    "price_per_night": 116,
-    "environment": "mountain",
+    "location": "Calgary, AB",
+    "type": "House",
+    "price": 582,
+    "capacity": 9,
+    "environment": "urban",
     "features": [
-      "gym",
-      "wifi"
+      "free parking",
+      "kitchen",
+      "pet friendly"
     ],
     "tags": [
-      "luxury",
-      "modern",
+      "historic",
+      "city view",
+      "pet friendly",
+      "family friendly",
       "budget"
     ],
     "booked": []
   },
   {
     "id": 129,
-    "location": "Denver",
-    "type": "loft",
-    "price_per_night": 747,
-    "environment": "mountain",
+    "location": "St. John\u2019s, NL",
+    "type": "Guesthouse",
+    "price": 173,
+    "capacity": 4,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "pool",
-      "fireplace"
+      "bbq grill",
+      "fireplace",
+      "hot tub"
     ],
     "tags": [
-      "family-friendly",
-      "romantic",
-      "central location",
-      "scenic views"
+      "rustic",
+      "remote"
     ],
     "booked": []
   },
   {
     "id": 130,
-    "location": "Santorini",
-    "type": "villa",
-    "price_per_night": 599,
-    "environment": "beach",
+    "location": "Whistler, BC",
+    "type": "Villa",
+    "price": 350,
+    "capacity": 7,
+    "environment": "mountain",
     "features": [
-      "fireplace",
-      "balcony"
+      "kitchen",
+      "free parking",
+      "game room"
     ],
     "tags": [
-      "scenic views",
-      "central location",
-      "romantic",
-      "luxury"
+      "spacious",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 131,
-    "location": "Miami",
-    "type": "condo",
-    "price_per_night": 274,
-    "environment": "beach",
+    "location": "Jasper, AB",
+    "type": "Lakehouse",
+    "price": 446,
+    "capacity": 3,
+    "environment": "mountain",
     "features": [
-      "fireplace",
-      "kitchen"
+      "kitchen",
+      "heating",
+      "balcony",
+      "hot tub"
     ],
     "tags": [
-      "central location",
-      "scenic views",
-      "quiet",
-      "luxury",
-      "family-friendly"
+      "beach access",
+      "quiet retreat",
+      "rustic",
+      "historic"
     ],
     "booked": []
   },
   {
     "id": 132,
-    "location": "San Francisco",
-    "type": "condo",
-    "price_per_night": 137,
-    "environment": "urban",
+    "location": "Whistler, BC",
+    "type": "House",
+    "price": 287,
+    "capacity": 2,
+    "environment": "mountain",
     "features": [
-      "gym",
       "fireplace",
-      "kitchen",
-      "pool"
+      "heating"
     ],
     "tags": [
-      "luxury",
-      "romantic",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 133,
-    "location": "Austin",
-    "type": "condo",
-    "price_per_night": 637,
-    "environment": "urban",
-    "features": [
-      "pool",
-      "parking",
-      "wifi",
-      "gym"
-    ],
-    "tags": [
-      "romantic",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 134,
-    "location": "San Francisco",
-    "type": "apartment",
-    "price_per_night": 147,
-    "environment": "urban",
-    "features": [
-      "kitchen",
-      "hot tub",
-      "pool",
-      "wifi"
-    ],
-    "tags": [
-      "family-friendly",
-      "scenic views",
-      "budget",
-      "central location"
-    ],
-    "booked": []
-  },
-  {
-    "id": 135,
-    "location": "Miami",
-    "type": "villa",
-    "price_per_night": 829,
-    "environment": "beach",
-    "features": [
-      "hot tub",
-      "balcony"
-    ],
-    "tags": [
-      "luxury",
-      "family-friendly",
-      "modern",
-      "budget",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 136,
-    "location": "Hawaii",
-    "type": "cottage",
-    "price_per_night": 304,
-    "environment": "beach",
-    "features": [
-      "gym",
-      "balcony"
-    ],
-    "tags": [
-      "luxury",
-      "modern"
-    ],
-    "booked": []
-  },
-  {
-    "id": 137,
-    "location": "Toronto",
-    "type": "condo",
-    "price_per_night": 286,
-    "environment": "urban",
-    "features": [
-      "balcony",
-      "pool",
-      "gym"
-    ],
-    "tags": [
+      "beach access",
+      "hiking",
       "central location",
       "budget"
     ],
     "booked": []
   },
   {
-    "id": 138,
-    "location": "Denver",
-    "type": "loft",
-    "price_per_night": 979,
-    "environment": "mountain",
-    "features": [
-      "wifi",
-      "parking"
-    ],
-    "tags": [
-      "romantic",
-      "quiet",
-      "budget",
-      "scenic views",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 139,
-    "location": "Toronto",
-    "type": "condo",
-    "price_per_night": 647,
+    "id": 133,
+    "location": "Calgary, AB",
+    "type": "Cabin",
+    "price": 406,
+    "capacity": 10,
     "environment": "urban",
     "features": [
-      "gym",
-      "balcony"
-    ],
-    "tags": [
-      "luxury",
-      "family-friendly",
-      "scenic views",
-      "central location"
-    ],
-    "booked": []
-  },
-  {
-    "id": 140,
-    "location": "Denver",
-    "type": "cabin",
-    "price_per_night": 437,
-    "environment": "mountain",
-    "features": [
-      "hot tub",
-      "balcony"
-    ],
-    "tags": [
-      "budget",
-      "quiet",
-      "scenic views",
-      "modern",
-      "central location"
-    ],
-    "booked": []
-  },
-  {
-    "id": 141,
-    "location": "Rome",
-    "type": "apartment",
-    "price_per_night": 726,
-    "environment": "urban",
-    "features": [
+      "tv",
       "fireplace",
-      "parking",
-      "wifi",
-      "balcony"
+      "hot tub"
     ],
     "tags": [
-      "modern",
-      "family-friendly"
+      "lakefront",
+      "eco-friendly",
+      "city view",
+      "pet friendly"
     ],
     "booked": []
   },
   {
-    "id": 142,
-    "location": "Denver",
-    "type": "apartment",
-    "price_per_night": 687,
-    "environment": "mountain",
+    "id": 134,
+    "location": "Montreal, QC",
+    "type": "Cabin",
+    "price": 155,
+    "capacity": 2,
+    "environment": "urban",
     "features": [
-      "hot tub",
-      "parking",
-      "kitchen",
-      "gym"
+      "wifi",
+      "deck"
     ],
     "tags": [
-      "scenic views",
+      "quiet retreat",
+      "eco-friendly",
+      "luxury",
+      "cozy",
+      "pet friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 135,
+    "location": "Ottawa, ON",
+    "type": "Lakehouse",
+    "price": 295,
+    "capacity": 8,
+    "environment": "urban",
+    "features": [
+      "pet friendly",
+      "bbq grill"
+    ],
+    "tags": [
+      "historic",
+      "nightlife",
+      "city view",
+      "central location",
+      "skiing"
+    ],
+    "booked": []
+  },
+  {
+    "id": 136,
+    "location": "Banff, AB",
+    "type": "Cottage",
+    "price": 285,
+    "capacity": 8,
+    "environment": "mountain",
+    "features": [
+      "dryer",
+      "tv"
+    ],
+    "tags": [
+      "family friendly",
+      "lakefront",
+      "eco-friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 137,
+    "location": "Charlottetown, PEI",
+    "type": "Condo",
+    "price": 186,
+    "capacity": 4,
+    "environment": "coastal",
+    "features": [
+      "balcony",
+      "wifi",
+      "deck"
+    ],
+    "tags": [
+      "lakefront",
       "luxury"
     ],
     "booked": []
   },
   {
-    "id": 143,
-    "location": "Zurich",
-    "type": "apartment",
-    "price_per_night": 822,
-    "environment": "mountain",
+    "id": 138,
+    "location": "Montreal, QC",
+    "type": "Bungalow",
+    "price": 300,
+    "capacity": 3,
+    "environment": "urban",
     "features": [
-      "kitchen",
-      "balcony",
-      "parking"
+      "bbq grill",
+      "pool"
     ],
     "tags": [
-      "central location",
+      "nightlife",
+      "spacious"
+    ],
+    "booked": []
+  },
+  {
+    "id": 139,
+    "location": "Banff, AB",
+    "type": "Villa",
+    "price": 100,
+    "capacity": 4,
+    "environment": "mountain",
+    "features": [
+      "heating",
+      "game room"
+    ],
+    "tags": [
+      "historic",
+      "spacious",
+      "pet friendly",
+      "cozy"
+    ],
+    "booked": []
+  },
+  {
+    "id": 140,
+    "location": "Banff, AB",
+    "type": "Cabin",
+    "price": 342,
+    "capacity": 9,
+    "environment": "mountain",
+    "features": [
+      "heating",
+      "bbq grill"
+    ],
+    "tags": [
+      "eco-friendly",
+      "modern",
+      "lakefront",
+      "rustic",
+      "spacious"
+    ],
+    "booked": []
+  },
+  {
+    "id": 141,
+    "location": "Vancouver, BC",
+    "type": "Condo",
+    "price": 314,
+    "capacity": 9,
+    "environment": "urban",
+    "features": [
+      "heating",
+      "tv",
+      "free parking"
+    ],
+    "tags": [
+      "hiking",
+      "modern",
+      "family friendly",
+      "rustic",
+      "city view"
+    ],
+    "booked": []
+  },
+  {
+    "id": 142,
+    "location": "Tofino, BC",
+    "type": "Bungalow",
+    "price": 415,
+    "capacity": 2,
+    "environment": "coastal",
+    "features": [
+      "free parking",
+      "pet friendly",
+      "game room"
+    ],
+    "tags": [
       "luxury",
+      "rustic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 143,
+    "location": "Edmonton, AB",
+    "type": "Bungalow",
+    "price": 378,
+    "capacity": 4,
+    "environment": "urban",
+    "features": [
+      "ocean view",
+      "air conditioning",
+      "bbq grill"
+    ],
+    "tags": [
+      "luxury",
+      "city view",
+      "family friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 144,
+    "location": "Winnipeg, MB",
+    "type": "Bungalow",
+    "price": 244,
+    "capacity": 9,
+    "environment": "urban",
+    "features": [
+      "kitchen",
+      "game room"
+    ],
+    "tags": [
+      "historic",
+      "eco-friendly",
+      "skiing",
+      "pet friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 145,
+    "location": "Kelowna, BC",
+    "type": "Villa",
+    "price": 357,
+    "capacity": 5,
+    "environment": "lake",
+    "features": [
+      "wifi",
+      "air conditioning"
+    ],
+    "tags": [
+      "city view",
+      "nightlife",
+      "pet friendly",
+      "hiking"
+    ],
+    "booked": []
+  },
+  {
+    "id": 146,
+    "location": "Halifax, NS",
+    "type": "Cottage",
+    "price": 347,
+    "capacity": 4,
+    "environment": "coastal",
+    "features": [
+      "tv",
+      "balcony",
+      "deck",
+      "hot tub"
+    ],
+    "tags": [
+      "skiing",
+      "historic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 147,
+    "location": "Halifax, NS",
+    "type": "Apartment",
+    "price": 177,
+    "capacity": 5,
+    "environment": "coastal",
+    "features": [
+      "pool",
+      "air conditioning",
+      "tv",
+      "free parking"
+    ],
+    "tags": [
+      "budget",
+      "family friendly",
+      "central location",
+      "cozy"
+    ],
+    "booked": []
+  },
+  {
+    "id": 148,
+    "location": "Quebec City, QC",
+    "type": "Villa",
+    "price": 383,
+    "capacity": 3,
+    "environment": "historic",
+    "features": [
+      "ocean view",
+      "heating"
+    ],
+    "tags": [
+      "spacious",
+      "hiking",
+      "city view",
+      "rustic",
+      "beach access"
+    ],
+    "booked": []
+  },
+  {
+    "id": 149,
+    "location": "Whistler, BC",
+    "type": "Guesthouse",
+    "price": 406,
+    "capacity": 10,
+    "environment": "mountain",
+    "features": [
+      "heating",
+      "dryer",
+      "pet friendly"
+    ],
+    "tags": [
+      "remote",
+      "beach access",
+      "cozy",
+      "nightlife"
+    ],
+    "booked": []
+  },
+  {
+    "id": 150,
+    "location": "Muskoka, ON",
+    "type": "Cottage",
+    "price": 93,
+    "capacity": 3,
+    "environment": "lake",
+    "features": [
+      "bbq grill",
+      "wifi",
+      "pet friendly"
+    ],
+    "tags": [
       "romantic",
       "modern"
     ],
     "booked": []
   },
   {
-    "id": 144,
-    "location": "New York City",
-    "type": "apartment",
-    "price_per_night": 190,
-    "environment": "urban",
-    "features": [
-      "parking",
-      "wifi"
-    ],
-    "tags": [
-      "quiet",
-      "scenic views",
-      "romantic",
-      "central location",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 145,
-    "location": "San Francisco",
-    "type": "condo",
-    "price_per_night": 375,
-    "environment": "urban",
-    "features": [
-      "hot tub",
-      "parking"
-    ],
-    "tags": [
-      "budget",
-      "family-friendly",
-      "central location",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 146,
-    "location": "Paris",
-    "type": "loft",
-    "price_per_night": 897,
-    "environment": "urban",
-    "features": [
-      "wifi",
-      "balcony",
-      "gym",
-      "hot tub"
-    ],
-    "tags": [
-      "romantic",
-      "modern",
-      "budget",
-      "luxury"
-    ],
-    "booked": []
-  },
-  {
-    "id": 147,
-    "location": "New York City",
-    "type": "loft",
-    "price_per_night": 830,
-    "environment": "urban",
-    "features": [
-      "parking",
-      "wifi",
-      "fireplace",
-      "gym"
-    ],
-    "tags": [
-      "budget",
-      "central location"
-    ],
-    "booked": []
-  },
-  {
-    "id": 148,
-    "location": "Aspen",
-    "type": "cabin",
-    "price_per_night": 544,
-    "environment": "mountain",
-    "features": [
-      "fireplace",
-      "hot tub",
-      "balcony",
-      "pool"
-    ],
-    "tags": [
-      "modern",
-      "romantic",
-      "central location",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 149,
-    "location": "New York City",
-    "type": "apartment",
-    "price_per_night": 64,
-    "environment": "urban",
-    "features": [
-      "parking",
-      "pool",
-      "balcony"
-    ],
-    "tags": [
-      "quiet",
-      "scenic views",
-      "budget",
-      "central location",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 150,
-    "location": "Hawaii",
-    "type": "cottage",
-    "price_per_night": 288,
-    "environment": "beach",
-    "features": [
-      "pool",
-      "wifi",
-      "hot tub"
-    ],
-    "tags": [
-      "quiet",
-      "central location"
-    ],
-    "booked": []
-  },
-  {
     "id": 151,
-    "location": "Aspen",
-    "type": "villa",
-    "price_per_night": 430,
-    "environment": "mountain",
+    "location": "St. John\u2019s, NL",
+    "type": "Apartment",
+    "price": 96,
+    "capacity": 9,
+    "environment": "coastal",
     "features": [
-      "gym",
-      "hot tub",
-      "fireplace"
+      "wifi",
+      "pool",
+      "heating",
+      "mountain view"
     ],
     "tags": [
-      "budget",
-      "luxury",
-      "modern",
-      "quiet"
+      "spacious",
+      "quiet retreat",
+      "rustic",
+      "nightlife"
     ],
     "booked": []
   },
   {
     "id": 152,
-    "location": "Reykjavik",
-    "type": "apartment",
-    "price_per_night": 536,
-    "environment": "mountain",
+    "location": "Kelowna, BC",
+    "type": "Loft",
+    "price": 254,
+    "capacity": 5,
+    "environment": "lake",
     "features": [
-      "gym",
-      "kitchen"
+      "free parking",
+      "mountain view"
     ],
     "tags": [
-      "romantic",
-      "quiet",
       "central location",
-      "scenic views",
-      "family-friendly"
+      "modern",
+      "nightlife",
+      "family friendly",
+      "historic"
     ],
     "booked": []
   },
   {
     "id": 153,
-    "location": "Paris",
-    "type": "apartment",
-    "price_per_night": 833,
-    "environment": "urban",
+    "location": "Quebec City, QC",
+    "type": "Guesthouse",
+    "price": 493,
+    "capacity": 7,
+    "environment": "historic",
     "features": [
-      "pool",
-      "gym",
-      "balcony",
-      "fireplace"
+      "dryer",
+      "game room"
     ],
     "tags": [
-      "central location",
+      "pet friendly",
       "luxury"
     ],
     "booked": []
   },
   {
     "id": 154,
-    "location": "Miami",
-    "type": "condo",
-    "price_per_night": 451,
-    "environment": "beach",
+    "location": "Kelowna, BC",
+    "type": "Villa",
+    "price": 79,
+    "capacity": 7,
+    "environment": "lake",
     "features": [
-      "hot tub",
-      "kitchen",
-      "fireplace",
-      "balcony"
+      "dryer",
+      "gym",
+      "pool"
     ],
     "tags": [
-      "scenic views",
-      "modern",
-      "central location",
-      "romantic"
+      "quiet retreat",
+      "lakefront",
+      "budget",
+      "eco-friendly",
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 155,
-    "location": "Austin",
-    "type": "house",
-    "price_per_night": 161,
-    "environment": "urban",
+    "location": "Kelowna, BC",
+    "type": "Apartment",
+    "price": 353,
+    "capacity": 3,
+    "environment": "lake",
     "features": [
-      "kitchen",
-      "wifi",
-      "fireplace"
+      "hot tub",
+      "ocean view",
+      "workspace",
+      "bbq grill"
     ],
     "tags": [
-      "romantic",
-      "quiet",
+      "historic",
+      "eco-friendly",
+      "cozy",
       "luxury",
-      "family-friendly"
+      "central location"
     ],
     "booked": []
   },
   {
     "id": 156,
-    "location": "New York City",
-    "type": "loft",
-    "price_per_night": 416,
-    "environment": "urban",
+    "location": "Kelowna, BC",
+    "type": "Villa",
+    "price": 218,
+    "capacity": 10,
+    "environment": "lake",
     "features": [
-      "wifi",
       "kitchen",
-      "hot tub"
+      "heating",
+      "bbq grill"
     ],
     "tags": [
-      "quiet",
-      "modern",
-      "luxury"
+      "pet friendly",
+      "modern"
     ],
     "booked": []
   },
   {
     "id": 157,
-    "location": "Los Angeles",
-    "type": "condo",
-    "price_per_night": 559,
-    "environment": "urban",
+    "location": "Tofino, BC",
+    "type": "Loft",
+    "price": 472,
+    "capacity": 7,
+    "environment": "coastal",
     "features": [
-      "kitchen",
-      "hot tub"
+      "fireplace",
+      "gym",
+      "bbq grill"
     ],
     "tags": [
-      "scenic views",
-      "quiet",
-      "modern"
+      "modern",
+      "spacious",
+      "romantic"
     ],
     "booked": []
   },
   {
     "id": 158,
-    "location": "Rome",
-    "type": "apartment",
-    "price_per_night": 153,
-    "environment": "urban",
+    "location": "Banff, AB",
+    "type": "Guesthouse",
+    "price": 403,
+    "capacity": 8,
+    "environment": "mountain",
     "features": [
-      "gym",
-      "balcony"
+      "pet friendly",
+      "bbq grill"
     ],
     "tags": [
-      "scenic views",
-      "family-friendly"
+      "family friendly",
+      "nightlife",
+      "modern",
+      "spacious",
+      "city view"
     ],
     "booked": []
   },
   {
     "id": 159,
-    "location": "Paris",
-    "type": "apartment",
-    "price_per_night": 660,
-    "environment": "urban",
+    "location": "Jasper, AB",
+    "type": "Guesthouse",
+    "price": 179,
+    "capacity": 9,
+    "environment": "mountain",
     "features": [
       "gym",
-      "fireplace"
+      "heating"
     ],
     "tags": [
-      "romantic",
-      "luxury"
+      "beach access",
+      "luxury",
+      "city view"
     ],
     "booked": []
   },
   {
     "id": 160,
-    "location": "Paris",
-    "type": "apartment",
-    "price_per_night": 87,
+    "location": "Winnipeg, MB",
+    "type": "House",
+    "price": 594,
+    "capacity": 2,
     "environment": "urban",
     "features": [
+      "kitchen",
       "fireplace",
-      "balcony",
-      "parking"
+      "game room",
+      "balcony"
     ],
     "tags": [
-      "budget",
-      "modern",
-      "family-friendly"
+      "city view",
+      "hiking",
+      "luxury",
+      "spacious"
     ],
     "booked": []
   },
   {
     "id": 161,
-    "location": "Paris",
-    "type": "studio",
-    "price_per_night": 432,
-    "environment": "urban",
+    "location": "Kelowna, BC",
+    "type": "Lakehouse",
+    "price": 129,
+    "capacity": 7,
+    "environment": "lake",
     "features": [
-      "wifi",
-      "fireplace",
-      "pool"
+      "free parking",
+      "game room",
+      "mountain view"
     ],
     "tags": [
-      "luxury",
-      "budget",
-      "scenic views",
-      "quiet",
-      "romantic"
+      "quiet retreat",
+      "nightlife",
+      "family friendly",
+      "beach access"
     ],
     "booked": []
   },
   {
     "id": 162,
-    "location": "Paris",
-    "type": "apartment",
-    "price_per_night": 499,
+    "location": "Winnipeg, MB",
+    "type": "Apartment",
+    "price": 230,
+    "capacity": 4,
     "environment": "urban",
     "features": [
-      "gym",
-      "parking",
-      "balcony"
+      "mountain view",
+      "gym"
     ],
     "tags": [
-      "modern",
-      "family-friendly",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 163,
-    "location": "New York City",
-    "type": "loft",
-    "price_per_night": 668,
-    "environment": "urban",
-    "features": [
-      "kitchen",
-      "pool",
-      "fireplace"
-    ],
-    "tags": [
-      "quiet",
-      "central location",
-      "budget",
+      "rustic",
       "modern"
     ],
     "booked": []
   },
   {
-    "id": 164,
-    "location": "Rome",
-    "type": "studio",
-    "price_per_night": 138,
+    "id": 163,
+    "location": "Ottawa, ON",
+    "type": "House",
+    "price": 540,
+    "capacity": 10,
     "environment": "urban",
     "features": [
-      "balcony",
-      "wifi"
+      "wifi",
+      "pool"
     ],
     "tags": [
-      "family-friendly",
-      "luxury",
-      "romantic"
+      "central location",
+      "pet friendly",
+      "hiking",
+      "family friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 164,
+    "location": "Quebec City, QC",
+    "type": "House",
+    "price": 588,
+    "capacity": 5,
+    "environment": "historic",
+    "features": [
+      "air conditioning",
+      "hot tub"
+    ],
+    "tags": [
+      "beach access",
+      "hiking",
+      "budget"
     ],
     "booked": []
   },
   {
     "id": 165,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 416,
+    "location": "Montreal, QC",
+    "type": "Cottage",
+    "price": 393,
+    "capacity": 3,
     "environment": "urban",
     "features": [
-      "pool",
-      "wifi"
+      "free parking",
+      "bbq grill"
     ],
     "tags": [
-      "central location",
-      "budget",
+      "lakefront",
       "romantic"
     ],
     "booked": []
   },
   {
     "id": 166,
-    "location": "Austin",
-    "type": "condo",
-    "price_per_night": 544,
-    "environment": "urban",
+    "location": "Kelowna, BC",
+    "type": "Loft",
+    "price": 322,
+    "capacity": 2,
+    "environment": "lake",
     "features": [
-      "gym",
-      "wifi",
-      "balcony",
-      "pool"
+      "kitchen",
+      "washer",
+      "balcony"
     ],
     "tags": [
-      "scenic views",
-      "romantic",
-      "family-friendly",
-      "quiet"
+      "city view",
+      "spacious",
+      "pet friendly"
     ],
     "booked": []
   },
   {
     "id": 167,
-    "location": "Miami",
-    "type": "villa",
-    "price_per_night": 804,
-    "environment": "beach",
+    "location": "Banff, AB",
+    "type": "Condo",
+    "price": 386,
+    "capacity": 10,
+    "environment": "mountain",
     "features": [
-      "gym",
-      "hot tub",
-      "pool",
-      "parking"
+      "pet friendly",
+      "bbq grill",
+      "ocean view"
     ],
     "tags": [
-      "scenic views",
-      "budget"
+      "romantic",
+      "nightlife",
+      "central location"
     ],
     "booked": []
   },
   {
     "id": 168,
-    "location": "Santorini",
-    "type": "villa",
-    "price_per_night": 104,
-    "environment": "beach",
+    "location": "Charlottetown, PEI",
+    "type": "Condo",
+    "price": 391,
+    "capacity": 4,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "gym"
+      "deck",
+      "kitchen",
+      "hot tub",
+      "dryer"
     ],
     "tags": [
-      "budget",
-      "luxury",
-      "family-friendly",
-      "central location"
+      "quiet retreat",
+      "cozy"
     ],
     "booked": []
   },
   {
     "id": 169,
-    "location": "Santorini",
-    "type": "villa",
-    "price_per_night": 119,
-    "environment": "beach",
+    "location": "Mont-Tremblant, QC",
+    "type": "House",
+    "price": 137,
+    "capacity": 10,
+    "environment": "mountain",
     "features": [
       "hot tub",
-      "parking",
-      "kitchen",
+      "ocean view",
+      "mountain view",
       "pool"
     ],
     "tags": [
-      "budget",
-      "quiet",
-      "luxury",
-      "family-friendly"
+      "city view",
+      "eco-friendly"
     ],
     "booked": []
   },
   {
     "id": 170,
-    "location": "Seattle",
-    "type": "loft",
-    "price_per_night": 366,
-    "environment": "urban",
+    "location": "Charlottetown, PEI",
+    "type": "Apartment",
+    "price": 71,
+    "capacity": 6,
+    "environment": "coastal",
     "features": [
-      "fireplace",
-      "pool"
+      "tv",
+      "hot tub",
+      "balcony"
     ],
     "tags": [
-      "family-friendly",
       "modern",
-      "romantic",
-      "budget",
-      "quiet"
+      "beach access",
+      "historic",
+      "eco-friendly",
+      "family friendly"
     ],
     "booked": []
   },
   {
     "id": 171,
-    "location": "Rome",
-    "type": "apartment",
-    "price_per_night": 372,
-    "environment": "urban",
+    "location": "Halifax, NS",
+    "type": "Villa",
+    "price": 359,
+    "capacity": 5,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "kitchen"
+      "kitchen",
+      "pool"
     ],
     "tags": [
-      "budget",
-      "luxury",
-      "modern",
-      "family-friendly"
+      "beach access",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 172,
-    "location": "Rome",
-    "type": "apartment",
-    "price_per_night": 394,
+    "location": "Winnipeg, MB",
+    "type": "Villa",
+    "price": 81,
+    "capacity": 5,
     "environment": "urban",
     "features": [
-      "pool",
-      "kitchen"
+      "deck",
+      "mountain view"
     ],
     "tags": [
-      "scenic views",
-      "budget"
+      "remote",
+      "family friendly",
+      "central location",
+      "spacious"
     ],
     "booked": []
   },
   {
     "id": 173,
-    "location": "Austin",
-    "type": "apartment",
-    "price_per_night": 734,
-    "environment": "urban",
+    "location": "Tofino, BC",
+    "type": "Loft",
+    "price": 296,
+    "capacity": 5,
+    "environment": "coastal",
     "features": [
-      "parking",
-      "pool",
-      "hot tub",
-      "gym"
+      "fireplace",
+      "gym",
+      "ocean view",
+      "game room"
     ],
     "tags": [
-      "budget",
-      "family-friendly",
-      "quiet"
+      "rustic",
+      "lakefront",
+      "family friendly",
+      "pet friendly"
     ],
     "booked": []
   },
   {
     "id": 174,
-    "location": "Aspen",
-    "type": "villa",
-    "price_per_night": 771,
-    "environment": "mountain",
+    "location": "Quebec City, QC",
+    "type": "Villa",
+    "price": 312,
+    "capacity": 10,
+    "environment": "historic",
     "features": [
-      "kitchen",
-      "pool",
-      "balcony",
-      "hot tub"
+      "gym",
+      "kitchen"
     ],
     "tags": [
-      "romantic",
+      "rustic",
+      "luxury",
       "central location",
-      "budget",
-      "luxury"
+      "lakefront",
+      "historic"
     ],
     "booked": []
   },
   {
     "id": 175,
-    "location": "Zurich",
-    "type": "apartment",
-    "price_per_night": 440,
-    "environment": "mountain",
+    "location": "Quebec City, QC",
+    "type": "Cottage",
+    "price": 310,
+    "capacity": 10,
+    "environment": "historic",
     "features": [
-      "gym",
       "fireplace",
-      "balcony",
-      "kitchen"
-    ],
-    "tags": [
-      "scenic views",
-      "budget"
-    ],
-    "booked": []
-  },
-  {
-    "id": 176,
-    "location": "San Francisco",
-    "type": "loft",
-    "price_per_night": 619,
-    "environment": "urban",
-    "features": [
-      "hot tub",
-      "fireplace"
-    ],
-    "tags": [
-      "romantic",
-      "scenic views",
-      "budget",
-      "quiet",
-      "family-friendly"
-    ],
-    "booked": []
-  },
-  {
-    "id": 177,
-    "location": "Toronto",
-    "type": "loft",
-    "price_per_night": 257,
-    "environment": "urban",
-    "features": [
-      "hot tub",
-      "wifi",
-      "balcony"
-    ],
-    "tags": [
-      "family-friendly",
-      "luxury"
-    ],
-    "booked": []
-  },
-  {
-    "id": 178,
-    "location": "Denver",
-    "type": "loft",
-    "price_per_night": 200,
-    "environment": "mountain",
-    "features": [
-      "pool",
-      "parking",
-      "fireplace"
-    ],
-    "tags": [
-      "modern",
-      "central location",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 179,
-    "location": "Los Angeles",
-    "type": "villa",
-    "price_per_night": 361,
-    "environment": "urban",
-    "features": [
-      "balcony",
-      "kitchen",
-      "gym",
-      "wifi"
-    ],
-    "tags": [
-      "central location",
-      "modern",
-      "scenic views",
-      "budget"
-    ],
-    "booked": []
-  },
-  {
-    "id": 180,
-    "location": "Hawaii",
-    "type": "villa",
-    "price_per_night": 182,
-    "environment": "beach",
-    "features": [
-      "wifi",
-      "balcony",
-      "fireplace",
+      "game room",
+      "dryer",
       "pool"
     ],
     "tags": [
-      "scenic views",
-      "family-friendly",
-      "luxury"
-    ],
-    "booked": []
-  },
-  {
-    "id": 181,
-    "location": "Santorini",
-    "type": "villa",
-    "price_per_night": 927,
-    "environment": "beach",
-    "features": [
-      "kitchen",
-      "hot tub",
-      "gym",
-      "wifi"
-    ],
-    "tags": [
-      "family-friendly",
-      "quiet",
+      "family friendly",
+      "pet friendly",
       "romantic",
-      "budget",
-      "luxury"
-    ],
-    "booked": []
-  },
-  {
-    "id": 182,
-    "location": "Vancouver",
-    "type": "loft",
-    "price_per_night": 281,
-    "environment": "urban",
-    "features": [
-      "gym",
-      "wifi",
-      "parking"
-    ],
-    "tags": [
-      "family-friendly",
-      "budget",
-      "modern",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 183,
-    "location": "Rome",
-    "type": "loft",
-    "price_per_night": 842,
-    "environment": "urban",
-    "features": [
-      "parking",
-      "kitchen"
-    ],
-    "tags": [
-      "quiet",
-      "modern"
-    ],
-    "booked": []
-  },
-  {
-    "id": 184,
-    "location": "San Francisco",
-    "type": "apartment",
-    "price_per_night": 798,
-    "environment": "urban",
-    "features": [
-      "wifi",
-      "kitchen"
-    ],
-    "tags": [
-      "quiet",
-      "romantic",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 185,
-    "location": "Hawaii",
-    "type": "villa",
-    "price_per_night": 347,
-    "environment": "beach",
-    "features": [
-      "kitchen",
-      "pool",
-      "hot tub",
-      "wifi"
-    ],
-    "tags": [
-      "budget",
-      "luxury"
-    ],
-    "booked": []
-  },
-  {
-    "id": 186,
-    "location": "Toronto",
-    "type": "condo",
-    "price_per_night": 868,
-    "environment": "urban",
-    "features": [
-      "wifi",
-      "fireplace",
-      "hot tub"
-    ],
-    "tags": [
-      "central location",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 187,
-    "location": "Aspen",
-    "type": "chalet",
-    "price_per_night": 627,
-    "environment": "mountain",
-    "features": [
-      "wifi",
-      "fireplace",
-      "balcony"
-    ],
-    "tags": [
-      "romantic",
-      "luxury",
-      "scenic views",
-      "budget"
-    ],
-    "booked": []
-  },
-  {
-    "id": 188,
-    "location": "Seattle",
-    "type": "apartment",
-    "price_per_night": 982,
-    "environment": "urban",
-    "features": [
-      "gym",
-      "pool",
-      "kitchen",
-      "balcony"
-    ],
-    "tags": [
-      "central location",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 189,
-    "location": "Hawaii",
-    "type": "bungalow",
-    "price_per_night": 327,
-    "environment": "beach",
-    "features": [
-      "gym",
-      "balcony",
-      "hot tub",
-      "pool"
-    ],
-    "tags": [
-      "luxury",
-      "romantic"
-    ],
-    "booked": []
-  },
-  {
-    "id": 190,
-    "location": "Austin",
-    "type": "house",
-    "price_per_night": 690,
-    "environment": "urban",
-    "features": [
-      "pool",
-      "parking"
-    ],
-    "tags": [
-      "romantic",
-      "scenic views"
-    ],
-    "booked": []
-  },
-  {
-    "id": 191,
-    "location": "Seattle",
-    "type": "apartment",
-    "price_per_night": 65,
-    "environment": "urban",
-    "features": [
-      "kitchen",
-      "hot tub",
-      "pool"
-    ],
-    "tags": [
-      "romantic",
-      "modern"
-    ],
-    "booked": []
-  },
-  {
-    "id": 192,
-    "location": "Aspen",
-    "type": "cabin",
-    "price_per_night": 340,
-    "environment": "mountain",
-    "features": [
-      "balcony",
-      "wifi",
-      "kitchen"
-    ],
-    "tags": [
-      "budget",
-      "central location",
-      "quiet"
-    ],
-    "booked": []
-  },
-  {
-    "id": 193,
-    "location": "Austin",
-    "type": "apartment",
-    "price_per_night": 693,
-    "environment": "urban",
-    "features": [
-      "pool",
-      "fireplace"
-    ],
-    "tags": [
-      "quiet",
       "central location"
     ],
     "booked": []
   },
   {
-    "id": 194,
-    "location": "Reykjavik",
-    "type": "cabin",
-    "price_per_night": 909,
+    "id": 176,
+    "location": "Banff, AB",
+    "type": "Loft",
+    "price": 550,
+    "capacity": 6,
     "environment": "mountain",
     "features": [
+      "fireplace",
       "pool",
+      "tv",
+      "kitchen"
+    ],
+    "tags": [
+      "spacious",
+      "family friendly",
+      "skiing",
+      "luxury"
+    ],
+    "booked": []
+  },
+  {
+    "id": 177,
+    "location": "Montreal, QC",
+    "type": "Villa",
+    "price": 478,
+    "capacity": 10,
+    "environment": "urban",
+    "features": [
+      "dryer",
+      "gym",
+      "heating",
+      "free parking"
+    ],
+    "tags": [
+      "modern",
+      "pet friendly",
+      "remote",
+      "city view"
+    ],
+    "booked": []
+  },
+  {
+    "id": 178,
+    "location": "Montreal, QC",
+    "type": "Cottage",
+    "price": 386,
+    "capacity": 7,
+    "environment": "urban",
+    "features": [
+      "tv",
+      "game room"
+    ],
+    "tags": [
+      "family friendly",
+      "lakefront",
+      "romantic"
+    ],
+    "booked": []
+  },
+  {
+    "id": 179,
+    "location": "Edmonton, AB",
+    "type": "Bungalow",
+    "price": 487,
+    "capacity": 5,
+    "environment": "urban",
+    "features": [
+      "tv",
+      "kitchen"
+    ],
+    "tags": [
+      "spacious",
+      "luxury"
+    ],
+    "booked": []
+  },
+  {
+    "id": 180,
+    "location": "Winnipeg, MB",
+    "type": "Cabin",
+    "price": 293,
+    "capacity": 5,
+    "environment": "urban",
+    "features": [
+      "tv",
+      "hot tub",
+      "game room"
+    ],
+    "tags": [
+      "nightlife",
+      "quiet retreat",
+      "spacious",
+      "beach access"
+    ],
+    "booked": []
+  },
+  {
+    "id": 181,
+    "location": "Halifax, NS",
+    "type": "Cottage",
+    "price": 90,
+    "capacity": 8,
+    "environment": "coastal",
+    "features": [
+      "heating",
+      "workspace",
+      "dryer"
+    ],
+    "tags": [
+      "rustic",
+      "nightlife",
+      "beach access"
+    ],
+    "booked": []
+  },
+  {
+    "id": 182,
+    "location": "Banff, AB",
+    "type": "Lakehouse",
+    "price": 268,
+    "capacity": 5,
+    "environment": "mountain",
+    "features": [
+      "workspace",
+      "ocean view",
+      "free parking",
+      "deck"
+    ],
+    "tags": [
+      "budget",
+      "remote",
+      "beach access",
+      "quiet retreat",
+      "nightlife"
+    ],
+    "booked": []
+  },
+  {
+    "id": 183,
+    "location": "Calgary, AB",
+    "type": "Villa",
+    "price": 221,
+    "capacity": 7,
+    "environment": "urban",
+    "features": [
+      "hot tub",
+      "game room"
+    ],
+    "tags": [
+      "city view",
+      "eco-friendly",
+      "cozy"
+    ],
+    "booked": []
+  },
+  {
+    "id": 184,
+    "location": "Kelowna, BC",
+    "type": "Guesthouse",
+    "price": 325,
+    "capacity": 5,
+    "environment": "lake",
+    "features": [
+      "gym",
+      "ocean view",
+      "workspace",
+      "bbq grill"
+    ],
+    "tags": [
+      "romantic",
+      "rustic",
+      "city view"
+    ],
+    "booked": []
+  },
+  {
+    "id": 185,
+    "location": "St. John\u2019s, NL",
+    "type": "Guesthouse",
+    "price": 416,
+    "capacity": 8,
+    "environment": "coastal",
+    "features": [
+      "game room",
+      "pool"
+    ],
+    "tags": [
+      "spacious",
+      "cozy"
+    ],
+    "booked": []
+  },
+  {
+    "id": 186,
+    "location": "Niagara, ON",
+    "type": "Apartment",
+    "price": 416,
+    "capacity": 2,
+    "environment": "rural",
+    "features": [
+      "tv",
+      "gym",
+      "heating",
+      "pool"
+    ],
+    "tags": [
+      "family friendly",
+      "remote",
+      "city view"
+    ],
+    "booked": []
+  },
+  {
+    "id": 187,
+    "location": "Toronto, ON",
+    "type": "Bungalow",
+    "price": 309,
+    "capacity": 7,
+    "environment": "urban",
+    "features": [
+      "bbq grill",
+      "heating",
+      "kitchen"
+    ],
+    "tags": [
+      "family friendly",
+      "hiking",
+      "eco-friendly",
+      "romantic",
+      "remote"
+    ],
+    "booked": []
+  },
+  {
+    "id": 188,
+    "location": "Edmonton, AB",
+    "type": "Guesthouse",
+    "price": 570,
+    "capacity": 2,
+    "environment": "urban",
+    "features": [
+      "fireplace",
+      "bbq grill",
+      "deck"
+    ],
+    "tags": [
+      "budget",
+      "nightlife",
+      "beach access",
+      "lakefront",
+      "eco-friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 189,
+    "location": "Vancouver, BC",
+    "type": "House",
+    "price": 77,
+    "capacity": 4,
+    "environment": "urban",
+    "features": [
+      "bbq grill",
+      "washer",
+      "kitchen"
+    ],
+    "tags": [
+      "modern",
+      "rustic",
+      "budget",
+      "eco-friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 190,
+    "location": "Charlottetown, PEI",
+    "type": "Guesthouse",
+    "price": 67,
+    "capacity": 2,
+    "environment": "coastal",
+    "features": [
+      "ocean view",
+      "gym",
+      "free parking",
+      "heating"
+    ],
+    "tags": [
+      "cozy",
+      "historic",
+      "skiing"
+    ],
+    "booked": []
+  },
+  {
+    "id": 191,
+    "location": "Banff, AB",
+    "type": "Cabin",
+    "price": 76,
+    "capacity": 8,
+    "environment": "mountain",
+    "features": [
+      "workspace",
+      "wifi",
       "hot tub"
     ],
     "tags": [
-      "luxury",
-      "quiet",
-      "modern"
+      "beach access",
+      "lakefront",
+      "pet friendly",
+      "family friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 192,
+    "location": "Kelowna, BC",
+    "type": "Loft",
+    "price": 314,
+    "capacity": 4,
+    "environment": "lake",
+    "features": [
+      "air conditioning",
+      "heating",
+      "pet friendly",
+      "balcony"
+    ],
+    "tags": [
+      "eco-friendly",
+      "pet friendly"
+    ],
+    "booked": []
+  },
+  {
+    "id": 193,
+    "location": "Toronto, ON",
+    "type": "Bungalow",
+    "price": 172,
+    "capacity": 10,
+    "environment": "urban",
+    "features": [
+      "ocean view",
+      "heating"
+    ],
+    "tags": [
+      "romantic",
+      "cozy",
+      "city view",
+      "quiet retreat",
+      "beach access"
+    ],
+    "booked": []
+  },
+  {
+    "id": 194,
+    "location": "Saskatoon, SK",
+    "type": "Cottage",
+    "price": 441,
+    "capacity": 4,
+    "environment": "urban",
+    "features": [
+      "pool",
+      "dryer"
+    ],
+    "tags": [
+      "historic",
+      "romantic",
+      "central location"
     ],
     "booked": []
   },
   {
     "id": 195,
-    "location": "Santorini",
-    "type": "studio",
-    "price_per_night": 911,
-    "environment": "beach",
+    "location": "Ottawa, ON",
+    "type": "Bungalow",
+    "price": 61,
+    "capacity": 2,
+    "environment": "urban",
     "features": [
-      "fireplace",
-      "gym"
+      "washer",
+      "tv",
+      "free parking",
+      "hot tub"
     ],
     "tags": [
-      "budget",
-      "family-friendly",
-      "luxury",
-      "central location",
+      "skiing",
       "romantic"
     ],
     "booked": []
   },
   {
     "id": 196,
-    "location": "Austin",
-    "type": "apartment",
-    "price_per_night": 472,
-    "environment": "urban",
+    "location": "Banff, AB",
+    "type": "Cabin",
+    "price": 359,
+    "capacity": 9,
+    "environment": "mountain",
     "features": [
-      "fireplace",
-      "kitchen"
+      "kitchen",
+      "game room"
     ],
     "tags": [
-      "scenic views",
-      "budget",
-      "romantic",
+      "beach access",
+      "family friendly",
+      "remote",
       "central location"
     ],
     "booked": []
   },
   {
     "id": 197,
-    "location": "Hawaii",
-    "type": "cottage",
-    "price_per_night": 798,
-    "environment": "beach",
+    "location": "Montreal, QC",
+    "type": "Loft",
+    "price": 250,
+    "capacity": 3,
+    "environment": "urban",
     "features": [
-      "hot tub",
-      "balcony"
+      "heating",
+      "wifi",
+      "tv",
+      "pet friendly"
     ],
     "tags": [
-      "modern",
-      "luxury",
-      "budget",
-      "family-friendly"
+      "pet friendly",
+      "remote",
+      "skiing"
     ],
     "booked": []
   },
   {
     "id": 198,
-    "location": "San Francisco",
-    "type": "apartment",
-    "price_per_night": 725,
+    "location": "Vancouver, BC",
+    "type": "Cottage",
+    "price": 208,
+    "capacity": 4,
     "environment": "urban",
     "features": [
-      "gym",
-      "fireplace",
-      "balcony"
+      "bbq grill",
+      "free parking",
+      "wifi",
+      "tv"
     ],
     "tags": [
-      "quiet",
-      "family-friendly",
-      "luxury",
-      "modern"
+      "historic",
+      "eco-friendly",
+      "spacious",
+      "rustic",
+      "hiking"
     ],
     "booked": []
   },
   {
     "id": 199,
-    "location": "Seattle",
-    "type": "loft",
-    "price_per_night": 929,
-    "environment": "urban",
+    "location": "Whistler, BC",
+    "type": "Loft",
+    "price": 183,
+    "capacity": 8,
+    "environment": "mountain",
     "features": [
-      "balcony",
-      "gym"
+      "deck",
+      "workspace",
+      "tv",
+      "air conditioning"
     ],
     "tags": [
-      "romantic",
-      "scenic views",
-      "quiet",
-      "budget",
-      "central location"
+      "city view",
+      "spacious",
+      "skiing",
+      "modern",
+      "budget"
     ],
     "booked": []
   },
   {
     "id": 200,
-    "location": "Miami",
-    "type": "villa",
-    "price_per_night": 451,
-    "environment": "beach",
+    "location": "Niagara, ON",
+    "type": "Guesthouse",
+    "price": 506,
+    "capacity": 7,
+    "environment": "rural",
     "features": [
-      "kitchen",
-      "pool",
-      "parking",
-      "wifi"
+      "deck",
+      "fireplace",
+      "mountain view",
+      "bbq grill"
     ],
     "tags": [
-      "family-friendly",
-      "luxury",
-      "quiet"
+      "budget",
+      "central location",
+      "historic",
+      "remote"
     ],
     "booked": []
   }
