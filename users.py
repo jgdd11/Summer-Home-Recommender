@@ -293,6 +293,23 @@ class UserManager:
             if self.find_user(username):
                 print("Username already taken. Try another.")
                 continue
+            break 
+        
+        while True: 
+            email = input("Enter your email: ") 
+            if not User.is_valid_email(email): 
+                print("Invalid email format.") 
+                continue 
+            if any(u.email == email for u in self.userdb): 
+                print("Email already in use. Try another.") 
+                continue 
+            break 
+        user = User(username=username, password="", name=name, email=email, preferences={}) #add a dictionary of weights 
+        user.set_password() 
+        user.set_preferences() 
+        self.userdb.append(user) 
+        self.save_users() 
+        print(f"Account successfully created for '{username}'")
     
     def login(self):
         print("Welcome to [INSERT CLEVER APP NAME HERE]!")
