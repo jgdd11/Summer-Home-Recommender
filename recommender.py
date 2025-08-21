@@ -1,6 +1,5 @@
 import pandas as pd
-from datetime import date, timedelta
-from properties import PropertiesController
+from datetime import datetime, date, timedelta
 
 # create date range generator
 def daterange(start_date: date, end_date: date):
@@ -20,8 +19,8 @@ def recommendation_logic(properties,user_req):
     #load user requirement
     user_location = user_req["location"]
     group_size = user_req["group_size"]
-    start_date = user_req["start_date"] 
-    end_date = user_req["end_date"]
+    start_date = datetime.strptime(user_req["start_date"], "%Y-%m-%d").date() 
+    end_date = datetime.strptime(user_req["end_date"], "%Y-%m-%d").date()
     budget = user_req["budget"]
     user_features = user_req["features"]
     user_environment = user_req["environment"]
@@ -29,13 +28,13 @@ def recommendation_logic(properties,user_req):
 
     #load and normalize weights of each attribute
     total_wt = user_req["budget_wt"] + user_req["enviro_wt"] + user_req["feature_wt"] + user_req["tags_wt"]
-    norm_budget_wt = user_req["budget_wt"] / total_wt
-    norm_enviro_wt = user_req["enviro_wt"] / total_wt
-    norm_feature_wt = user_req["feature_wt"] / total_wt
-    norm_tag_wt = user_req["tags_wt"] / total_wt
+    norm_budget_wt = round(user_req["budget_wt"] / total_wt,3)
+    norm_enviro_wt = round(user_req["enviro_wt"] / total_wt,3)
+    norm_feature_wt = round(user_req["feature_wt"] / total_wt,3)
+    norm_tag_wt = round(user_req["tags_wt"] / total_wt,3)
 
     # drop properties that don't match location or group size
-    df = df[df["location"] == user_location] 
+    df = df[df["location"].str.contains(user_location, na=False)]
     df = df[df["capacity"] >= group_size] 
 
     # get days that need to be booked
@@ -44,7 +43,7 @@ def recommendation_logic(properties,user_req):
         travel_dates.append(day)
     
     # drop rows that are unavailable during the travel_dates
-    df = df[df["unavailable_dates"].apply(
+    df = df[df["booked"].apply(
         lambda u: set(u).isdisjoint(set(travel_dates))
     )]
 
@@ -55,7 +54,7 @@ def recommendation_logic(properties,user_req):
     for idx, row in df.iterrows():
         score = 0
 
-        if row["price_per_night"] <= budget:
+        if row["price"] <= budget:
             score += 1 * norm_budget_wt
         if row["environment"] == user_environment:
             score += 1 * norm_enviro_wt
@@ -76,51 +75,36 @@ def recommendation_logic(properties,user_req):
         else: 
             score += 1 * norm_tag_wt
 
-        df.at[idx, "score"] = score
+        df.at[idx, "score"] = round(score,3)
 
     #rank property by property score
     df = df.sort_values(by="score", ascending=False)
 
-    df = df[["id", "score", "price_per_night", "features", "environment", "tags"]]
+    df = df[["id", "score", "price", "features", "environment", "tags"]]
     df = df.reset_index(drop=True)
 
     #display top 10
     print(df.head(10))
 
-user_req = {'location': 'Charlottetown PEI', 
-            'environment': 'beach', 
-            'group_size': 7, 
-            'budget': 500, 
-            'features': ['balcony'], 
-            'start_date': '2023-08-20', 
-            'end_date': '2023-08-23', 
-            'dates': ['2023-08-20', 
-                      '2023-08-21', 
-                      '2023-08-22', 
-                      '2023-08-23'], 
-            'tags': [], 
-            'price_max': 500, 
-            'price_min': 0, 
-            'budget_wt': 0.3448275862068966, 
-            'enviro_wt': 0.20689655172413793, 
-            'feature_wt': 0.2413793103448276, 
-            'tags_wt': 0.20689655172413793}
 
 # below is for testing
-# if __name__ == "__main__":
-#     df = pd.read_json("properties.json")
-#     user_req = {
-#         "location": "New York City",
-#         "group_size": 4,
-#         "start_date": date(2023, 6, 1),
-#         "end_date": date(2023, 6, 10),
-#         "budget": 3000,
-#         "features": ["pool", "wifi"],
-#         "environment": "urban",
-#         "tags": ["family", "luxury"],
-#         "budget_wt": 0.4,
-#         "enviro_wt": 0.3,
-#         "feature_wt": 0.2,
-#         "tags_wt": 0.1
-#     }
-#     recommendation_logic(df, user_req)
+if __name__ == "__main__":
+    df = pd.read_json("properties.json")
+    user_req = {'location': 'Toronto',
+            'environment': 'urban',
+            'group_size': 5,
+            'budget': 300,
+            'start_date': '2023-08-20',
+            'end_date': '2023-08-23',
+            'features': ['luxury', 'loft'],
+            'tags': ['city center'],
+            'dates': ['2023-08-20', '2023-08-21', '2023-08-22', '2023-08-23'],
+            'price_max': 300,
+            'price_min': 0,
+            'budget_wt': 0.3448275862068966,
+            'enviro_wt': 0.20689655172413793,
+            'feature_wt': 0.2413793103448276,
+            'tags_wt': 0.20689655172413793
+        }
+
+    recommendation_logic(df, user_req)
