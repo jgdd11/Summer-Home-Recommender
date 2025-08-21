@@ -38,5 +38,33 @@
             "tags_wt": 0.42105263157894735
         },
         "attempts": 0
+    },
+    {
+        "username": "Gabrielle",
+        "password": "d4272118b718deed9c0dac719d0610376e90214e891fb2cd96af6b67f823b433",
+        "name": "Gabrielle",
+        "email": "Gabrielle@mail.com",
+        "reservations": [],
+        "preferences": {
+            "budget_wt": 0.4,
+            "enviro_wt": 0.12,
+            "feature_wt": 0.08,
+            "tags_wt": 0.4
+        },
+        "attempts": 0
+    },
+    {
+        "username": "Jeff",
+        "password": "03c0c5de2e2aa2fb3890cc331866d16b365c62abecf074c9e68de88e8ff4575c",
+        "name": "Jeff",
+        "email": "Jeff@qq.com",
+        "reservations": [],
+        "preferences": {
+            "budget_wt": 0.0,
+            "enviro_wt": 0.0625,
+            "feature_wt": 0.625,
+            "tags_wt": 0.3125
+        },
+        "attempts": 0
     }
 ]
