@@ -310,6 +310,9 @@ class UserManager:
         self.userdb.append(user) 
         self.save_users() 
         print(f"Account successfully created for '{username}'")
+
+    def delete_user(self):
+        pass
     
     def login(self):
         print("Welcome to [INSERT CLEVER APP NAME HERE]!")
