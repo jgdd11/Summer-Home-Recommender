@@ -22,26 +22,26 @@ SYSTEM_PROMPT = (
     "Return ONLY a Python dictionary, not a JSON string."
 )
 
-def parse_date(input_str: str):
-    """Converts a string like 'Aug 20' or 'YYYY-MM-DD' to a datetime object, defaulting year 2025."""
+def parse_date_safe(input_str: str, default_year=2025):
+    if not input_str or not isinstance(input_str, str):
+        return None
     for fmt in ("%Y-%m-%d", "%b %d %Y", "%B %d %Y"):
         try:
             if "%Y" not in fmt:
-                input_str_full = f"{input_str} 2025"
+                input_full = f"{input_str} {default_year}"
             else:
-                input_str_full = input_str
-            return datetime.strptime(input_str_full, fmt)
+                input_full = input_str
+            return datetime.strptime(input_full, fmt).date()
         except ValueError:
             continue
     return None
 
 def expand_dates(start: str, end: str):
-    """Returns list of date strings YYYY-MM-DD from start to end."""
-    start_dt = parse_date(start)
-    end_dt = parse_date(end)
+    start_dt = parse_date_safe(start)
+    end_dt = parse_date_safe(end)
     if not start_dt or not end_dt or end_dt < start_dt:
-        raise ValueError("Invalid start or end date.")
-    return [(start_dt + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((end_dt - start_dt).days)]
+        return []
+    return [(start_dt + timedelta(days=i)).isoformat() for i in range((end_dt - start_dt).days + 1)]
 
 def llm_parse(model=MODEL, temperature=0.7):
     api_key = input("Enter API key: ").strip()
@@ -67,7 +67,7 @@ def llm_parse(model=MODEL, temperature=0.7):
     data = r.json()
     content = (data.get("choices") or [{}])[0].get("message", {}).get("content", "")
 
-    # Parse LLM output safely
+    # Safely evaluate LLM output
     parsed = {}
     try:
         parsed = eval(content) if content else {}
@@ -76,39 +76,66 @@ def llm_parse(model=MODEL, temperature=0.7):
     except:
         parsed = {}
 
-    # Prompt user for missing required fields
+    # Prompt for required fields if missing
     if not parsed.get("location"):
         parsed["location"] = input("Bot: What location are you interested in? ").strip()
-
     if not parsed.get("environment"):
         parsed["environment"] = input("Bot: What type of environment do you prefer (e.g., beach, urban, forest)? ").strip()
-
     if not parsed.get("group_size"):
         try:
             parsed["group_size"] = int(input("Bot: How many people will be traveling? ").strip())
         except ValueError:
             parsed["group_size"] = 1
 
-    # Dates
-    if not parsed.get("start_date") or not parsed.get("end_date"):
-        start = input("Bot: What is your start date? (YYYY-MM-DD or 'Aug 20') ").strip()
-        end = input("Bot: What is your end date? (YYYY-MM-DD or 'Aug 23') ").strip()
-        parsed["start_date"] = parse_date(start).strftime("%Y-%m-%d")
-        parsed["end_date"] = parse_date(end).strftime("%Y-%m-%d")
+    # Budget handling: ask if missing
+    if parsed.get("budget") is None and parsed.get("price_min") is None and parsed.get("price_max") is None:
+        budget_input = input("Bot: What is your budget? (You can enter a single number or a range like '100-250'): ").strip()
+        if "-" in budget_input:
+            try:
+                low, high = map(int, budget_input.split("-"))
+                parsed["price_min"] = low
+                parsed["price_max"] = high
+                parsed["budget"] = high
+            except:
+                value = int(re.sub("[^0-9]", "", budget_input)) if budget_input.isdigit() else 0
+                parsed["price_min"] = 0
+                parsed["price_max"] = value
+                parsed["budget"] = value
+        else:
+            try:
+                value = int(re.sub("[^0-9]", "", budget_input))
+                parsed["price_max"] = value
+                parsed["price_min"] = 0
+                parsed["budget"] = value
+            except:
+                parsed["price_max"] = 0
+                parsed["price_min"] = 0
+                parsed["budget"] = 0
+
+    parsed["price_min"] = parsed.get("price_min", 0)
+    parsed["price_max"] = parsed.get("price_max", parsed.get("budget", 0))
+    parsed["budget"] = parsed.get("budget", parsed.get("price_max", 0))
+
+    # Parse or prompt for dates
+    start = parsed.get("start_date") or input("Bot: What is your start date? (YYYY-MM-DD or 'Aug 20') ").strip()
+    end = parsed.get("end_date") or input("Bot: What is your end date? (YYYY-MM-DD or 'Aug 23') ").strip()
+
+    start_dt = parse_date_safe(start)
+    end_dt = parse_date_safe(end)
+
+    if not start_dt or not end_dt:
+        print("Error: Could not parse dates, using defaults.")
+        start_dt = datetime.today().date()
+        end_dt = start_dt + timedelta(days=1)
+
+    parsed["start_date"] = start_dt.isoformat()
+    parsed["end_date"] = end_dt.isoformat()
     parsed["dates"] = expand_dates(parsed["start_date"], parsed["end_date"])
-    # Features and tags (optional)
+
+    # Optional fields
     parsed["features"] = parsed.get("features") or []
     parsed["tags"] = parsed.get("tags") or []
 
-    # Budget handling
-    if parsed.get("budget") is not None:
-        parsed["price_max"] = parsed["budget"]
-        parsed["price_min"] = 0
-    parsed["price_min"] = parsed.get("price_min", 0)
-    parsed["price_max"] = parsed.get("price_max", parsed.get("budget", 0))
-
     print("Bot: LLM returned the following dictionary:")
     print(parsed)
-
     return parsed
-

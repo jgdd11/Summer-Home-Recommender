@@ -315,7 +315,7 @@ class UserManager:
         pass
     
     def login(self):
-        print("Welcome to [INSERT CLEVER APP NAME HERE]!")
+        print("Welcome to All Rentals In Kind (ARIK)!")
         
         while True:
             username = input("Enter your username: ").strip()
