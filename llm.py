@@ -41,7 +41,7 @@ def expand_dates(start: str, end: str):
     end_dt = parse_date(end)
     if not start_dt or not end_dt or end_dt < start_dt:
         raise ValueError("Invalid start or end date.")
-    return [(start_dt + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((end_dt - start_dt).days + 1)]
+    return [(start_dt + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((end_dt - start_dt).days)]
 
 def llm_parse(model=MODEL, temperature=0.7):
     api_key = input("Enter API key: ").strip()
