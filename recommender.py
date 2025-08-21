@@ -88,23 +88,23 @@ def recommendation_logic(properties,user_req):
 
 
 # below is for testing
-if __name__ == "__main__":
-    df = pd.read_json("properties.json")
-    user_req = {'location': 'Toronto',
-            'environment': 'urban',
-            'group_size': 5,
-            'budget': 300,
-            'start_date': '2023-08-20',
-            'end_date': '2023-08-23',
-            'features': ['luxury', 'loft'],
-            'tags': ['city center'],
-            'dates': ['2023-08-20', '2023-08-21', '2023-08-22', '2023-08-23'],
-            'price_max': 300,
-            'price_min': 0,
-            'budget_wt': 0.3448275862068966,
-            'enviro_wt': 0.20689655172413793,
-            'feature_wt': 0.2413793103448276,
-            'tags_wt': 0.20689655172413793
-        }
+# if __name__ == "__main__":
+#     df = pd.read_json("properties.json")
+#     user_req = {'location': 'Toronto',
+#             'environment': 'urban',
+#             'group_size': 5,
+#             'budget': 300,
+#             'start_date': '2023-08-20',
+#             'end_date': '2023-08-23',
+#             'features': ['luxury', 'loft'],
+#             'tags': ['city center'],
+#             'dates': ['2023-08-20', '2023-08-21', '2023-08-22', '2023-08-23'],
+#             'price_max': 300,
+#             'price_min': 0,
+#             'budget_wt': 0.3448275862068966,
+#             'enviro_wt': 0.20689655172413793,
+#             'feature_wt': 0.2413793103448276,
+#             'tags_wt': 0.20689655172413793
+#         }
 
     recommendation_logic(df, user_req)
