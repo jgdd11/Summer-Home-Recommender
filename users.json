@@ -66,5 +66,19 @@
             "tags_wt": 0.3125
         },
         "attempts": 0
+    },
+    {
+        "username": "Gongxi",
+        "password": "7d6a5134226e1133537fc36e6c7e4318888187b578a1b6401d5fff8222b6ddcd",
+        "name": "Gongxi",
+        "email": "Gongxi@gmail.com",
+        "reservations": [],
+        "preferences": {
+            "budget_wt": 0.25,
+            "enviro_wt": 0.25,
+            "feature_wt": 0.25,
+            "tags_wt": 0.25
+        },
+        "attempts": 0
     }
 ]
