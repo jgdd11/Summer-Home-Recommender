@@ -62,11 +62,11 @@ class Property:
 
     def add_dates(self, start_date: date, end_date: date):
         """Add all dates from start_date to end_date to self.booked."""
-        for i in range((end_date - start_date).days + 1):
+        for i in range((end_date - start_date).days):
             day = start_date + timedelta(days=i)
             if day not in self.booked:
                 self.booked.append(day)
-        print(f"Booked dates added: {[start_date + timedelta(days=i) for i in range((end_date - start_date).days + 1)]}")
+        print(f"Booked dates added: {[start_date + timedelta(days=i) for i in range((end_date - start_date).days)]}")
 
     def delete_dates(self, start_date: date, end_date: date):
         """Remove all dates in the given range from self.booked."""
