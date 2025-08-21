@@ -4,7 +4,13 @@
         "password": "c7a5b0dc26bd713dd067d356efb3a776f3e11e5e29e1c39134e3c039a7b58c43",
         "name": "John",
         "email": "jdion@email.com",
-        "reservations": [],
+        "reservations": [
+            {
+                "id": 2,
+                "start": "2023-08-20",
+                "end": "2023-08-23"
+            }
+        ],
         "preferences": {
             "budget_wt": 0.3448275862068966,
             "enviro_wt": 0.20689655172413793,
@@ -18,7 +24,11 @@
         "password": "c7a5b0dc26bd713dd067d356efb3a776f3e11e5e29e1c39134e3c039a7b58c43",
         "name": "john",
         "email": "john@email.com",
-        "reservations": [],
+        "reservations": [
+            {
+
+            }
+        ],
         "preferences": {
             "budget_wt": 0.10526315789473684,
             "enviro_wt": 0.2631578947368421,
