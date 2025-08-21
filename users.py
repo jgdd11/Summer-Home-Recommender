@@ -304,7 +304,7 @@ class UserManager:
                 print("Email already in use. Try another.") 
                 continue 
             break 
-        user = User(username=username, password="", name=name, email=email, preferences={}) #add a dictionary of weights 
+        user = User(username=username, password="", name=name, email=email, preferences=[]) #add a dictionary of weights 
         user.set_password() 
         user.set_preferences() 
         self.userdb.append(user) 
