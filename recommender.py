@@ -1,5 +1,9 @@
 import pandas as pd
+import json
 from datetime import datetime, date, timedelta
+from typing import Union
+from properties import Property
+
 
 # create date range generator
 def daterange(start_date: date, end_date: date):
@@ -7,16 +11,32 @@ def daterange(start_date: date, end_date: date):
     for n in range(days):
         yield start_date + timedelta(n)
 
-def recommendation_logic(properties,user_req):
+
+def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: dict):
     """
     Recommendation logic
     """
 
-   
-    df = pd.DataFrame(properties)
+    if isinstance(properties, str): # filename
+        df = pd.read_json(properties)
+    elif isinstance(properties, list) and all(isinstance(p, Property) for p in properties):
+        df = pd.DataFrame([p.to_dict() for p in properties])
+    elif isinstance(properties, pd.DataFrame):
+        df = properties
+    else:
+        raise ValueError("Invalid properties input. Must be a list of Property objects, a DataFrame, or a JSON file path.")
+
     print(f"There are {df.shape[0]} properties in the database.") #print number of rows in the data frame, can be used to check if properties that don't match have been removed
 
-    #load user requirement
+    # load user requirement
+    required_keys = [
+        "location", "group_size", "start_date", "end_date", "budget",
+        "budget_wt", "enviro_wt", "feature_wt", "tags_wt"
+    ]
+    for key in required_keys:
+        if key not in user_req:
+            raise KeyError(f"Missing required user requirement key: '{key}'")
+
     user_location = user_req["location"]
     group_size = user_req["group_size"]
     start_date = datetime.strptime(user_req["start_date"], "%Y-%m-%d").date() 
@@ -26,12 +46,12 @@ def recommendation_logic(properties,user_req):
     user_environment = user_req["environment"]
     user_tags = user_req["tags"]
 
-    #load and normalize weights of each attribute
+    # load and normalize weights of each attribute
     total_wt = user_req["budget_wt"] + user_req["enviro_wt"] + user_req["feature_wt"] + user_req["tags_wt"]
-    norm_budget_wt = round(user_req["budget_wt"] / total_wt,3)
-    norm_enviro_wt = round(user_req["enviro_wt"] / total_wt,3)
-    norm_feature_wt = round(user_req["feature_wt"] / total_wt,3)
-    norm_tag_wt = round(user_req["tags_wt"] / total_wt,3)
+    norm_budget_wt = round(user_req["budget_wt"] / total_wt, 3)
+    norm_enviro_wt = round(user_req["enviro_wt"] / total_wt, 3)
+    norm_feature_wt = round(user_req["feature_wt"] / total_wt, 3)
+    norm_tag_wt = round(user_req["tags_wt"] / total_wt, 3)
 
     # drop properties that don't match location or group size
     df = df[df["location"].str.contains(user_location, na=False)]
@@ -87,9 +107,15 @@ def recommendation_logic(properties,user_req):
     print(df.head(10))
 
 
-# below is for testing
+# # below is for testing
 # if __name__ == "__main__":
-#     df = pd.read_json("properties.json")
+
+#     # input = "properties.json"
+#     # input = pd.read_json("properties.json")
+#     with open("properties.json", "r", encoding="utf-8") as f:
+#         data = json.load(f)
+#         input = [Property.from_dict(p) for p in data]
+
 #     user_req = {'location': 'Toronto',
 #             'environment': 'urban',
 #             'group_size': 5,
@@ -107,4 +133,4 @@ def recommendation_logic(properties,user_req):
 #             'tags_wt': 0.20689655172413793
 #         }
 
-    recommendation_logic(df, user_req)
+#     recommendation_logic(input, user_req)
