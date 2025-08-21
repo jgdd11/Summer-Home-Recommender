@@ -61,8 +61,9 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     travel_dates = []
     for day in daterange(start_date, end_date):
         travel_dates.append(day)
-    
+
     # drop rows that are unavailable during the travel_dates
+    df["booked"] = df["booked"].apply(lambda dates: [pd.to_datetime(d).date() for d in dates])
     df = df[df["booked"].apply(
         lambda u: set(u).isdisjoint(set(travel_dates))
     )]
@@ -97,17 +98,17 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
 
         df.at[idx, "score"] = round(score,3)
 
-    #rank property by property score
+    # rank property by property score
     df = df.sort_values(by="score", ascending=False)
 
     df = df[["id", "score", "price", "features", "environment", "tags"]]
     df = df.reset_index(drop=True)
 
-    #display top 10
+    # display top 10
     print(df.head(10))
 
 
-# # below is for testing
+# below is for testing
 # if __name__ == "__main__":
 
 #     # input = "properties.json"
