@@ -24,12 +24,14 @@ class Property:
         self.tags = tags
         self.booked = booked or []
 
+    # easy for printing, and debugging
     def __repr__(self):
         return (f"Property(id={self.id}, location='{self.location}', "
                 f"type='{self.type}', price={self.price}, capacity={self.capacity}, "
                 f"environment='{self.environment}', features={self.features}, "
                 f"tags={self.tags}, booked={self.booked})")
-
+   
+  
     def to_dict(self):
         """Convert to dict for JSON serialization."""
         return {
@@ -85,6 +87,7 @@ class PropertiesController:
         self.json_file = "properties.json"
         self.properties = self.load_properties()
 
+    # load all properties from json_file which store record of all properties
     def load_properties(self) -> List[Property]:
         try:
             with open(self.json_file, "r", encoding="utf-8") as f:
@@ -93,15 +96,18 @@ class PropertiesController:
         except (FileNotFoundError, json.JSONDecodeError):
             return []
 
+    # get all properties in a list
     def get_all(self) -> List[Property]:
         return self.properties
 
+    # select properties based on id
     def find_by_id(self, property_id: int) -> Optional[Property]:
         for prop in self.properties:
             if prop.id == property_id:
                 return prop
         return None
-
+        
+    # save properties into the json file
     def save_properties(self):
         with open(self.json_file, "w", encoding="utf-8") as f:
             json.dump([prop.to_dict() for prop in self.properties], f, indent=4)
