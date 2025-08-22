@@ -18,10 +18,12 @@ class User:
         self.preferences = preferences or {}
         self.attempts = attempts
 
+    # crypt user's pwd, since cannot store plain text of pwd in database
     @staticmethod
     def hash_password(password):
         return hashlib.sha256(password.encode()).hexdigest()
 
+    # verify if user set a strong pwd
     @staticmethod
     def is_strong_password(password):
         if len(password) < 8:
@@ -36,16 +38,17 @@ class User:
         pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
         return re.match(pattern, email) is not None
 
+    # set user pwd
     def set_password(self):
         while True:
             password = pwinput.pwinput(
                 "Create a password (8 chars, 1 capital, 1 number, 1 special): ", mask="*"
             )
-            if not User.is_strong_password(password):
+            if not User.is_strong_password(password):  # check if is strong pwd
                 print("Password does not meet requirements.")
                 continue
             confirm = pwinput.pwinput("Confirm your password: ", mask="*")
-            if password != confirm:
+            if password != confirm:  # check if two times input are the same
                 print("Passwords do not match.")
                 continue
             break
@@ -105,6 +108,7 @@ class User:
             total = 4
             budget = enviro = feature = tag = 1
 
+        # setting preference as ratio percentage
         self.preferences = {
             "budget_wt": budget / total,
             "enviro_wt": enviro / total,
@@ -131,7 +135,8 @@ class User:
         for reservation in self.reservations:
             print(reservation)
         return self.reservations
-    
+
+    # connect to recommender.py and properties.py, to get recommended properties
     def get_recommendations(self, user_manager):
         # Get LLM output
         llm_output = llm_parse()
@@ -333,7 +338,7 @@ class UserManager:
             user.attempts = getattr(user, "attempts", 0)
             
             while True:
-                if user.attempts >= 5:
+                if user.attempts >= 5:  # if incorrect pwd input more than 5, preventing further trying
                     print("Exceeded password attempts.")
                     email = input("Enter your email to reset password or 1 to return: ").strip()
                     if email == "1":
