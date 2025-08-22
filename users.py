@@ -143,7 +143,7 @@ class User:
         # Get recommended properties
         pc = PropertiesController()
         properties = pc.load_properties()
-        recommendation_logic(properties, combined_input)
+        recommendations = recommendation_logic(properties, combined_input)
         
         while True:
             reserve = input("Bot: Would you like to make a reservation for any of these? (Y/N): ").strip().lower()
@@ -152,7 +152,7 @@ class User:
             print("Bot: Please enter Y, N, Yes, or No.")
 
         if reserve in {"y", "yes"}:
-            self.make_reservation(properties, llm_output["start_date"], llm_output["end_date"], pc, user_manager)
+            self.make_reservation(recommendations, llm_output["start_date"], llm_output["end_date"], pc, user_manager)
 
     def make_reservation(self, recommended_properties, start_date, end_date, controller: PropertiesController, user_manager):
         decision = input("Please enter the ID of the property you would like to reserve: ").strip()

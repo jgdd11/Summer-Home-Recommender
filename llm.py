@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import re
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+# OPENROUTER_URL = "https://api.openai.com/v1/chat/completions"
 MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = (

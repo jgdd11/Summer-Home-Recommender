@@ -106,6 +106,25 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
 
     # display top 10
     print(df.head(10))
+    recommended_df = df.head(10)
+    recommended_properties = []
+
+    for _, row in recommended_df.iterrows():
+        recommended_properties.append(
+            Property(
+                id=int(row["id"]),
+                location=row.get("location", ""),
+                type=row.get("type", ""),
+                price=float(row["price"]),
+                capacity=int(row.get("capacity", 0)),
+                environment=row.get("environment", ""),
+                features=list(row.get("features", [])),
+                tags=list(row.get("tags", [])),
+                booked=[d if isinstance(d, date) else pd.to_datetime(d).date() for d in row.get("booked", [])]
+            )
+        )
+
+    return recommended_properties
 
 
 # below is for testing
