@@ -3,10 +3,14 @@ import requests
 from datetime import datetime, timedelta
 import re
 
+# API endpoint for OpenRouter (or OpenAI if you switch URLs)
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 # OPENROUTER_URL = "https://api.openai.com/v1/chat/completions"
 MODEL = "gpt-4o-mini"
 
+# System prompt: tells the LLM how to format its output
+# The assistant should return only a Python dictionary with these fields:
+#   - location, environment, group_size, budget, price_min, price_max, features, tags, start_date, end_date
 SYSTEM_PROMPT = (
     "You are an assistant for an Airbnb-like vacation property search. "
     "Parse a USER REQUEST into Python dict fields: "
@@ -38,6 +42,10 @@ def parse_date_safe(input_str: str, default_year=2025):
     return None
 
 def expand_dates(start: str, end: str):
+    """
+    Generate a list of ISO-format dates between start and end (inclusive).
+    Returns [] if dates are invalid or end < start.
+    """
     start_dt = parse_date_safe(start)
     end_dt = parse_date_safe(end)
     if not start_dt or not end_dt or end_dt < start_dt:
@@ -45,6 +53,10 @@ def expand_dates(start: str, end: str):
     return [(start_dt + timedelta(days=i)).isoformat() for i in range((end_dt - start_dt).days + 1)]
 
 def llm_parse(model=MODEL, temperature=0.7):
+    """
+    Interact with the user and the LLM to parse a vacation property request
+    into a structured Python dictionary with required fields.
+    """
     api_key = input("Enter API key: ").strip()
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
 
@@ -52,6 +64,7 @@ def llm_parse(model=MODEL, temperature=0.7):
     if not user_prompt:
         return {"error": "No input provided"}
 
+    # Construct request payload for OpenRouter/OpenAI API
     payload = {
         "model": model,
         "messages": [
@@ -65,6 +78,7 @@ def llm_parse(model=MODEL, temperature=0.7):
     if r.status_code != 200:
         return {"error": f"HTTP {r.status_code}", "details": r.text}
 
+    # Extract content from API response
     data = r.json()
     content = (data.get("choices") or [{}])[0].get("message", {}).get("content", "")
 
