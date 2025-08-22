@@ -5,6 +5,8 @@ from properties import PropertiesController
 def main():
     manager = UserManager()
     logged_in_user = manager.login()
+
+    # If login failed, exit the program
     if not logged_in_user:
         print("No user logged in.")
         return
@@ -18,9 +20,13 @@ def main():
             print("2. Account Manager")
             print("3. Logout")
             choice1 = input("Choose an option: ").strip()
+            
+            # ---------------- Reservation Manager ----------------
             if choice1 == "1":
                 print("Here is a list of your current reservations:")
                 logged_in_user.view_reservations()
+
+                # Reservation management submenu
                 print("Please choose from the following options:")
                 print("1. Make reservation")
                 print("2. Delete Reservation")
@@ -41,6 +47,7 @@ def main():
                 else:
                     print("Invalid choice. Try again.")
 
+            # ---------------- Account Manager ----------------
             elif choice1 == "2":
                 print("Please choose from the following options:")
                 print("1: View account details")
@@ -79,6 +86,8 @@ def main():
                     break
                 else:
                     print("Invalid choice. Try again.")
+
+            # ---------------- Logout (from main menu) ----------------
             elif choice1 == "3":
                 logout = True
                 break
