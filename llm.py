@@ -92,36 +92,95 @@ def normalize_env_and_type(parsed, api_key):
     return parsed
 
 # ---------- Location & Environment ----------
-def map_location_to_db(location, all_locations, requested_env=None):
-    """Map location to DB city; resolve environment conflicts with user input."""
-    # Closest match
-    match = get_close_matches(location, all_locations, n=1, cutoff=0.75)
-    mapped_loc = match[0] if match else location
-    loc_envs = {p.environment for p in properties if p.location == mapped_loc}
+def map_location_to_db(location, all_locations, requested_env=None, api_key=None):
+    """
+    Map location and environment to DB.
+    Cases:
+    1. Location given, no environment → validate location against DB. 
+       If missing, ask LLM to resolve to closest DB location.
+    2. Environment given, no location → pick from DB locations with that environment.
+       If multiple candidates, prompt user to choose.
+    3. Both given → validate compatibility (keep your existing logic).
+    """
 
-    if requested_env and requested_env not in loc_envs:
-        choice = input(
-            f"Your requested location '{mapped_loc}' does not have any properties with the '{requested_env}' environment.\n"
-            "Which is more important? Type 'location' to keep location, or 'environment' to prioritize environment: "
-        ).strip().lower()
-        if choice == "location":
-            # Keep location, pick any environment available
-            mapped_env = next(iter(loc_envs))
-            print(f"Bot: Keeping location '{mapped_loc}'. Environment set to '{mapped_env}'.")
-            return mapped_loc, mapped_env
+    # --- CASE 1: Location given, no environment ---
+    if location and not requested_env:
+        if location in all_locations:
+            # Use as is
+            loc_envs = {p.environment for p in properties if p.location == location}
+            return location, next(iter(loc_envs))  # pick any env available
         else:
-            # Keep environment, find closest city with requested environment
-            candidate_locs = sorted({p.location for p in properties if p.environment.lower() == requested_env.lower()})
-            if candidate_locs:
-                mapped_loc = candidate_locs[0]
-                print(f"Bot: Keeping environment '{requested_env}'. Location set to '{mapped_loc}'.")
-                return mapped_loc, requested_env
+            # Ask LLM to pick closest match from DB
+            prompt = (
+                f"The user asked for '{location}' as a vacation location. "
+                f"My database contains these valid cities/regions: {all_locations}. "
+                "Which one is the closest real-world match? Return ONLY the city/region name."
+            )
+            alt = llm_call(prompt, api_key=api_key, sys_prompt="You are a location resolver.")
+            if alt and alt in all_locations:
+                loc_envs = {p.environment for p in properties if p.location == alt}
+                print(f"Bot: Using closest location '{alt}' instead of '{location}'.")
+                return alt, next(iter(loc_envs))
             else:
-                # fallback to any environment at original location
+                # fallback: fuzzy match
+                match = get_close_matches(location, all_locations, n=1, cutoff=0.65)
+                if match:
+                    loc_envs = {p.environment for p in properties if p.location == match[0]}
+                    print(f"Bot: Approximated '{location}' as '{match[0]}'.")
+                    return match[0], next(iter(loc_envs))
+                else:
+                    print(f"Bot: Could not resolve location '{location}'.")
+                    return location, None
+
+    # --- CASE 2: Environment given, no location ---
+    if requested_env and not location:
+        candidate_locs = sorted({p.location for p in properties if p.environment.lower() == requested_env.lower()})
+        if not candidate_locs:
+            print(f"Bot: No cities found with environment '{requested_env}'.")
+            return None, requested_env
+        elif len(candidate_locs) == 1:
+            return candidate_locs[0], requested_env
+        else:
+            print(f"Bot: Multiple cities have environment '{requested_env}':")
+            for i, loc in enumerate(candidate_locs, 1):
+                print(f"{i}. {loc}")
+            choice = input("Please choose a city by number: ").strip()
+            try:
+                idx = int(choice) - 1
+                return candidate_locs[idx], requested_env
+            except:
+                return candidate_locs[0], requested_env  # fallback first
+
+    # --- CASE 3: Both given (keep your old conflict resolution logic) ---
+    if location and requested_env:
+        match = get_close_matches(location, all_locations, n=1, cutoff=0.75)
+        mapped_loc = match[0] if match else location
+        loc_envs = {p.environment for p in properties if p.location == mapped_loc}
+
+        if requested_env not in loc_envs:
+            choice = input(
+                f"Your requested location '{mapped_loc}' does not have any properties with the '{requested_env}' environment.\n"
+                "Which is more important? Type 'location' to keep location, or 'environment' to prioritize environment: "
+            ).strip().lower()
+            if choice == "location":
                 mapped_env = next(iter(loc_envs))
-                print(f"Bot: No cities found with '{requested_env}'. Keeping location '{mapped_loc}' with environment '{mapped_env}'.")
+                print(f"Bot: Keeping location '{mapped_loc}'. Environment set to '{mapped_env}'.")
                 return mapped_loc, mapped_env
-    return mapped_loc, requested_env or next(iter(loc_envs))
+            else:
+                candidate_locs = sorted({p.location for p in properties if p.environment.lower() == requested_env.lower()})
+                if candidate_locs:
+                    mapped_loc = candidate_locs[0]
+                    print(f"Bot: Keeping environment '{requested_env}'. Location set to '{mapped_loc}'.")
+                    return mapped_loc, requested_env
+                else:
+                    mapped_env = next(iter(loc_envs))
+                    print(f"Bot: No cities found with '{requested_env}'. Keeping location '{mapped_loc}' with environment '{mapped_env}'.")
+                    return mapped_loc, mapped_env
+
+        return mapped_loc, requested_env
+
+    return None, None
+
 
 # ---------- LLM Date Parsing ----------
 def llm_parse_date(user_input, api_key, model=MODEL, default_year=None):
