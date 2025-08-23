@@ -2,6 +2,10 @@
 import requests
 from datetime import datetime, timedelta
 import re
+from properties import PropertiesController
+
+pc = PropertiesController()
+properties = pc.load_properties()
 
 # API endpoint for OpenRouter (or OpenAI if you switch URLs)
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"

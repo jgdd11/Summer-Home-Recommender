@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Chalet",
         "price": 1196.85,
         "capacity": 9,
@@ -38,7 +38,7 @@
     },
     {
         "id": 3,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Villa",
         "price": 254.94,
         "capacity": 4,
@@ -75,7 +75,7 @@
     },
     {
         "id": 5,
-        "location": "Maui, HI",
+        "location": "Honolulu, HI",
         "type": "Townhouse",
         "price": 957.18,
         "capacity": 10,
@@ -95,7 +95,7 @@
     },
     {
         "id": 6,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Chalet",
         "price": 1316.48,
         "capacity": 10,
@@ -112,7 +112,7 @@
     },
     {
         "id": 7,
-        "location": "Vermont, VT",
+        "location": "New York, NY",
         "type": "House",
         "price": 190.53,
         "capacity": 6,
@@ -132,7 +132,7 @@
     },
     {
         "id": 8,
-        "location": "Richmond, VA",
+        "location": "New York, NY",
         "type": "Townhouse",
         "price": 1020.69,
         "capacity": 7,
@@ -153,7 +153,7 @@
     },
     {
         "id": 9,
-        "location": "Tuscany, Italy",
+        "location": "San Francisco, CA",
         "type": "Bungalow",
         "price": 592.7,
         "capacity": 5,
@@ -190,7 +190,7 @@
     },
     {
         "id": 11,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Loft",
         "price": 983.94,
         "capacity": 10,
@@ -210,7 +210,7 @@
     },
     {
         "id": 12,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Cottage",
         "price": 868.27,
         "capacity": 8,
@@ -231,7 +231,7 @@
     },
     {
         "id": 13,
-        "location": "Lake Placid, NY",
+        "location": "Lake Tahoe, CA",
         "type": "Cabin",
         "price": 368.58,
         "capacity": 12,
@@ -304,7 +304,7 @@
     },
     {
         "id": 17,
-        "location": "Bora Bora, French Polynesia",
+        "location": "Honolulu, HI",
         "type": "Apartment",
         "price": 221.66,
         "capacity": 11,
@@ -324,7 +324,7 @@
     },
     {
         "id": 18,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Townhouse",
         "price": 1139.27,
         "capacity": 9,
@@ -361,7 +361,7 @@
     },
     {
         "id": 20,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Loft",
         "price": 189.18,
         "capacity": 3,
@@ -496,7 +496,7 @@
     },
     {
         "id": 27,
-        "location": "Vermont, VT",
+        "location": "New York, NY",
         "type": "Cabin",
         "price": 1249.1,
         "capacity": 3,
@@ -538,7 +538,7 @@
     },
     {
         "id": 29,
-        "location": "Maui, HI",
+        "location": "Honolulu, HI",
         "type": "Villa",
         "price": 516.71,
         "capacity": 4,
@@ -560,7 +560,7 @@
     },
     {
         "id": 30,
-        "location": "Richmond, VA",
+        "location": "New York, NY",
         "type": "Apartment",
         "price": 276.13,
         "capacity": 7,
@@ -620,7 +620,7 @@
     },
     {
         "id": 33,
-        "location": "Lake Placid, NY",
+        "location": "Lake Tahoe, CA",
         "type": "Townhouse",
         "price": 201.43,
         "capacity": 5,
@@ -681,7 +681,7 @@
     },
     {
         "id": 36,
-        "location": "Tuscany, Italy",
+        "location": "San Francisco, CA",
         "type": "Cabin",
         "price": 939.15,
         "capacity": 3,
@@ -753,7 +753,7 @@
     },
     {
         "id": 40,
-        "location": "Tuscany, Italy",
+        "location": "San Francisco, CA",
         "type": "Penthouse",
         "price": 492.0,
         "capacity": 10,
@@ -856,7 +856,7 @@
     },
     {
         "id": 45,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Apartment",
         "price": 462.88,
         "capacity": 8,
@@ -873,7 +873,7 @@
     },
     {
         "id": 46,
-        "location": "Santorini, Greece",
+        "location": "San Diego, CA",
         "type": "Villa",
         "price": 319.49,
         "capacity": 5,
@@ -911,7 +911,7 @@
     },
     {
         "id": 48,
-        "location": "Lake Placid, NY",
+        "location": "Lake Tahoe, CA",
         "type": "Penthouse",
         "price": 966.41,
         "capacity": 11,
@@ -933,7 +933,7 @@
     },
     {
         "id": 49,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Townhouse",
         "price": 595.68,
         "capacity": 12,
@@ -972,7 +972,7 @@
     },
     {
         "id": 51,
-        "location": "Palo Alto, CA",
+        "location": "New York, NY",
         "type": "Cabin",
         "price": 1052.3,
         "capacity": 12,
@@ -991,7 +991,7 @@
     },
     {
         "id": 52,
-        "location": "Lake Michigan, MI",
+        "location": "Lake Tahoe, CA",
         "type": "Bungalow",
         "price": 1153.06,
         "capacity": 9,
@@ -1008,7 +1008,7 @@
     },
     {
         "id": 53,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Cabin",
         "price": 761.57,
         "capacity": 11,
@@ -1045,7 +1045,7 @@
     },
     {
         "id": 55,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Cottage",
         "price": 1324.24,
         "capacity": 3,
@@ -1067,7 +1067,7 @@
     },
     {
         "id": 56,
-        "location": "Santorini, Greece",
+        "location": "San Diego, CA",
         "type": "Villa",
         "price": 913.25,
         "capacity": 12,
@@ -1088,7 +1088,7 @@
     },
     {
         "id": 57,
-        "location": "Iowa, IA",
+        "location": "Chicago, IL",
         "type": "House",
         "price": 687.21,
         "capacity": 2,
@@ -1108,7 +1108,7 @@
     },
     {
         "id": 58,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Chalet",
         "price": 1036.1,
         "capacity": 7,
@@ -1130,7 +1130,7 @@
     },
     {
         "id": 59,
-        "location": "Lake Placid, NY",
+        "location": "Lake Tahoe, CA",
         "type": "Chalet",
         "price": 224.29,
         "capacity": 12,
@@ -1149,7 +1149,7 @@
     },
     {
         "id": 60,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "House",
         "price": 948.83,
         "capacity": 3,
@@ -1170,7 +1170,7 @@
     },
     {
         "id": 61,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Bungalow",
         "price": 525.66,
         "capacity": 3,
@@ -1209,7 +1209,7 @@
     },
     {
         "id": 63,
-        "location": "Richmond, VA",
+        "location": "New York, NY",
         "type": "Villa",
         "price": 1378.33,
         "capacity": 3,
@@ -1269,7 +1269,7 @@
     },
     {
         "id": 66,
-        "location": "Santorini, Greece",
+        "location": "San Diego, CA",
         "type": "House",
         "price": 118.98,
         "capacity": 3,
@@ -1291,7 +1291,7 @@
     },
     {
         "id": 67,
-        "location": "Richmond, VA",
+        "location": "New York, NY",
         "type": "Townhouse",
         "price": 1447.16,
         "capacity": 8,
@@ -1313,7 +1313,7 @@
     },
     {
         "id": 68,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "House",
         "price": 536.98,
         "capacity": 9,
@@ -1334,7 +1334,7 @@
     },
     {
         "id": 69,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Cabin",
         "price": 882.52,
         "capacity": 7,
@@ -1355,7 +1355,7 @@
     },
     {
         "id": 70,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Villa",
         "price": 1280.26,
         "capacity": 2,
@@ -1431,7 +1431,7 @@
     },
     {
         "id": 74,
-        "location": "Iowa, IA",
+        "location": "Chicago, IL",
         "type": "Villa",
         "price": 214.97,
         "capacity": 8,
@@ -1470,7 +1470,7 @@
     },
     {
         "id": 76,
-        "location": "Bora Bora, French Polynesia",
+        "location": "Honolulu, HI",
         "type": "Loft",
         "price": 1487.81,
         "capacity": 5,
@@ -1487,7 +1487,7 @@
     },
     {
         "id": 77,
-        "location": "Saskatchewan, Canada",
+        "location": "Calgary, Canada",
         "type": "Chalet",
         "price": 297.53,
         "capacity": 1,
@@ -1544,7 +1544,7 @@
     },
     {
         "id": 80,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "House",
         "price": 232.64,
         "capacity": 4,
@@ -1565,7 +1565,7 @@
     },
     {
         "id": 81,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "House",
         "price": 1099.66,
         "capacity": 5,
@@ -1583,7 +1583,7 @@
     },
     {
         "id": 82,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Bungalow",
         "price": 804.68,
         "capacity": 6,
@@ -1658,7 +1658,7 @@
     },
     {
         "id": 86,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Townhouse",
         "price": 1346.93,
         "capacity": 5,
@@ -1696,7 +1696,7 @@
     },
     {
         "id": 88,
-        "location": "Santorini, Greece",
+        "location": "San Diego, CA",
         "type": "Cottage",
         "price": 1166.87,
         "capacity": 4,
@@ -1734,7 +1734,7 @@
     },
     {
         "id": 90,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "House",
         "price": 1170.19,
         "capacity": 4,
@@ -1755,7 +1755,7 @@
     },
     {
         "id": 91,
-        "location": "Tuscany, Italy",
+        "location": "San Francisco, CA",
         "type": "Loft",
         "price": 277.61,
         "capacity": 7,
@@ -1775,7 +1775,7 @@
     },
     {
         "id": 92,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Townhouse",
         "price": 538.55,
         "capacity": 9,
@@ -1833,7 +1833,7 @@
     },
     {
         "id": 95,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Bungalow",
         "price": 289.38,
         "capacity": 4,
@@ -1871,7 +1871,7 @@
     },
     {
         "id": 97,
-        "location": "Saskatchewan, Canada",
+        "location": "Calgary, Canada",
         "type": "Apartment",
         "price": 661.71,
         "capacity": 6,
@@ -1890,7 +1890,7 @@
     },
     {
         "id": 98,
-        "location": "Saskatchewan, Canada",
+        "location": "Calgary, Canada",
         "type": "Villa",
         "price": 1047.59,
         "capacity": 3,
@@ -1910,7 +1910,7 @@
     },
     {
         "id": 99,
-        "location": "Vermont, VT",
+        "location": "New York, NY",
         "type": "Townhouse",
         "price": 1462.49,
         "capacity": 6,
@@ -1948,7 +1948,7 @@
     },
     {
         "id": 101,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "House",
         "price": 1212.8,
         "capacity": 10,
@@ -1990,7 +1990,7 @@
     },
     {
         "id": 103,
-        "location": "Tuscany, Italy",
+        "location": "San Francisco, CA",
         "type": "Cabin",
         "price": 1176.26,
         "capacity": 9,
@@ -2030,7 +2030,7 @@
     },
     {
         "id": 105,
-        "location": "Richmond, VA",
+        "location": "New York, NY",
         "type": "Cabin",
         "price": 1056.29,
         "capacity": 6,
@@ -2048,7 +2048,7 @@
     },
     {
         "id": 106,
-        "location": "Vermont, VT",
+        "location": "New York, NY",
         "type": "Bungalow",
         "price": 99.54,
         "capacity": 7,
@@ -2066,7 +2066,7 @@
     },
     {
         "id": 107,
-        "location": "Lake Placid, NY",
+        "location": "Lake Tahoe, CA",
         "type": "Apartment",
         "price": 600.29,
         "capacity": 6,
@@ -2149,7 +2149,7 @@
     },
     {
         "id": 111,
-        "location": "Vermont, VT",
+        "location": "New York, NY",
         "type": "Cabin",
         "price": 1449.74,
         "capacity": 11,
@@ -2193,7 +2193,7 @@
     },
     {
         "id": 113,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Villa",
         "price": 143.73,
         "capacity": 10,
@@ -2232,7 +2232,7 @@
     },
     {
         "id": 115,
-        "location": "Maui, HI",
+        "location": "Honolulu, HI",
         "type": "Apartment",
         "price": 1351.51,
         "capacity": 2,
@@ -2311,7 +2311,7 @@
     },
     {
         "id": 119,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Apartment",
         "price": 901.27,
         "capacity": 4,
@@ -2348,7 +2348,7 @@
     },
     {
         "id": 121,
-        "location": "Iowa, IA",
+        "location": "Chicago, IL",
         "type": "Villa",
         "price": 275.53,
         "capacity": 10,
@@ -2367,7 +2367,7 @@
     },
     {
         "id": 122,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Cabin",
         "price": 1280.46,
         "capacity": 8,
@@ -2443,7 +2443,7 @@
     },
     {
         "id": 126,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Bungalow",
         "price": 1163.82,
         "capacity": 3,
@@ -2464,7 +2464,7 @@
     },
     {
         "id": 127,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "Loft",
         "price": 1402.79,
         "capacity": 5,
@@ -2524,7 +2524,7 @@
     },
     {
         "id": 130,
-        "location": "Vermont, VT",
+        "location": "New York, NY",
         "type": "Cabin",
         "price": 1352.66,
         "capacity": 3,
@@ -2542,7 +2542,7 @@
     },
     {
         "id": 131,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Cottage",
         "price": 420.93,
         "capacity": 10,
@@ -2642,7 +2642,7 @@
     },
     {
         "id": 136,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Cabin",
         "price": 934.72,
         "capacity": 10,
@@ -2695,7 +2695,7 @@
     },
     {
         "id": 139,
-        "location": "Richmond, VA",
+        "location": "New York, NY",
         "type": "House",
         "price": 1448.9,
         "capacity": 1,
@@ -2753,7 +2753,7 @@
     },
     {
         "id": 142,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "Loft",
         "price": 829.31,
         "capacity": 6,
@@ -2812,7 +2812,7 @@
     },
     {
         "id": 145,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Chalet",
         "price": 216.42,
         "capacity": 1,
@@ -2834,7 +2834,7 @@
     },
     {
         "id": 146,
-        "location": "Lake Michigan, MI",
+        "location": "Lake Tahoe, CA",
         "type": "Chalet",
         "price": 818.69,
         "capacity": 10,
@@ -2853,7 +2853,7 @@
     },
     {
         "id": 147,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Penthouse",
         "price": 574.06,
         "capacity": 10,
@@ -2906,7 +2906,7 @@
     },
     {
         "id": 150,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Loft",
         "price": 1036.67,
         "capacity": 3,
@@ -2924,7 +2924,7 @@
     },
     {
         "id": 151,
-        "location": "Santorini, Greece",
+        "location": "San Diego, CA",
         "type": "Cottage",
         "price": 590.62,
         "capacity": 4,
@@ -2941,7 +2941,7 @@
     },
     {
         "id": 152,
-        "location": "Santorini, Greece",
+        "location": "San Diego, CA",
         "type": "Townhouse",
         "price": 748.24,
         "capacity": 1,
@@ -2999,7 +2999,7 @@
     },
     {
         "id": 155,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Chalet",
         "price": 442.37,
         "capacity": 12,
@@ -3016,7 +3016,7 @@
     },
     {
         "id": 156,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Villa",
         "price": 88.26,
         "capacity": 5,
@@ -3056,7 +3056,7 @@
     },
     {
         "id": 158,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Loft",
         "price": 750.02,
         "capacity": 2,
@@ -3077,7 +3077,7 @@
     },
     {
         "id": 159,
-        "location": "Saskatchewan, Canada",
+        "location": "Calgary, Canada",
         "type": "Villa",
         "price": 939.51,
         "capacity": 9,
@@ -3099,7 +3099,7 @@
     },
     {
         "id": 160,
-        "location": "Lake Placid, NY",
+        "location": "Lake Tahoe, CA",
         "type": "Loft",
         "price": 741.0,
         "capacity": 12,
@@ -3118,7 +3118,7 @@
     },
     {
         "id": 161,
-        "location": "Palo Alto, CA",
+        "location": "New York, NY",
         "type": "Penthouse",
         "price": 1212.51,
         "capacity": 11,
@@ -3176,7 +3176,7 @@
     },
     {
         "id": 164,
-        "location": "Las Vegas, NV",
+        "location": "New York, NY",
         "type": "Penthouse",
         "price": 484.88,
         "capacity": 12,
@@ -3196,7 +3196,7 @@
     },
     {
         "id": 165,
-        "location": "Lake Michigan, MI",
+        "location": "Lake Tahoe, CA",
         "type": "Cottage",
         "price": 1468.6,
         "capacity": 11,
@@ -3215,7 +3215,7 @@
     },
     {
         "id": 166,
-        "location": "Richmond, VA",
+        "location": "New York, NY",
         "type": "Apartment",
         "price": 1475.53,
         "capacity": 4,
@@ -3277,7 +3277,7 @@
     },
     {
         "id": 169,
-        "location": "Lake Placid, NY",
+        "location": "Lake Tahoe, CA",
         "type": "Apartment",
         "price": 938.26,
         "capacity": 5,
@@ -3295,7 +3295,7 @@
     },
     {
         "id": 170,
-        "location": "Tuscany, Italy",
+        "location": "San Francisco, CA",
         "type": "Villa",
         "price": 1045.95,
         "capacity": 7,
@@ -3335,7 +3335,7 @@
     },
     {
         "id": 172,
-        "location": "Bora Bora, French Polynesia",
+        "location": "Honolulu, HI",
         "type": "Apartment",
         "price": 1383.5,
         "capacity": 3,
@@ -3412,7 +3412,7 @@
     },
     {
         "id": 176,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Bungalow",
         "price": 411.22,
         "capacity": 3,
@@ -3451,7 +3451,7 @@
     },
     {
         "id": 178,
-        "location": "Iowa, IA",
+        "location": "Chicago, IL",
         "type": "Penthouse",
         "price": 1133.37,
         "capacity": 2,
@@ -3546,7 +3546,7 @@
     },
     {
         "id": 183,
-        "location": "Iowa, IA",
+        "location": "Chicago, IL",
         "type": "Penthouse",
         "price": 1281.67,
         "capacity": 5,
@@ -3585,7 +3585,7 @@
     },
     {
         "id": 185,
-        "location": "Palo Alto, CA",
+        "location": "New York, NY",
         "type": "Villa",
         "price": 442.11,
         "capacity": 11,
@@ -3606,7 +3606,7 @@
     },
     {
         "id": 186,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "Cottage",
         "price": 1071.18,
         "capacity": 8,
@@ -3625,7 +3625,7 @@
     },
     {
         "id": 187,
-        "location": "Smoky Mountains, TN",
+        "location": "Denver, CO",
         "type": "Bungalow",
         "price": 1495.84,
         "capacity": 7,
@@ -3661,7 +3661,7 @@
     },
     {
         "id": 189,
-        "location": "Mississauga, Canada",
+        "location": "Toronto, Canada",
         "type": "Loft",
         "price": 700.69,
         "capacity": 9,
@@ -3681,7 +3681,7 @@
     },
     {
         "id": 190,
-        "location": "Palo Alto, CA",
+        "location": "New York, NY",
         "type": "Cottage",
         "price": 1219.14,
         "capacity": 10,
@@ -3701,7 +3701,7 @@
     },
     {
         "id": 191,
-        "location": "Kentucky, KY",
+        "location": "Nashville, TN",
         "type": "Townhouse",
         "price": 505.26,
         "capacity": 8,
@@ -3718,7 +3718,7 @@
     },
     {
         "id": 192,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "House",
         "price": 544.88,
         "capacity": 11,
@@ -3797,7 +3797,7 @@
     },
     {
         "id": 196,
-        "location": "Saskatchewan, Canada",
+        "location": "Calgary, Canada",
         "type": "Villa",
         "price": 1346.37,
         "capacity": 6,
@@ -3832,7 +3832,7 @@
     },
     {
         "id": 198,
-        "location": "Provence, France",
+        "location": "Los Angeles, CA",
         "type": "Loft",
         "price": 746.71,
         "capacity": 11,
@@ -3853,7 +3853,7 @@
     },
     {
         "id": 199,
-        "location": "Palo Alto, CA",
+        "location": "New York, NY",
         "type": "Cabin",
         "price": 146.49,
         "capacity": 10,
@@ -3872,7 +3872,7 @@
     },
     {
         "id": 200,
-        "location": "Lake Michigan, MI",
+        "location": "Lake Tahoe, CA",
         "type": "Apartment",
         "price": 94.43,
         "capacity": 1,
