@@ -75,8 +75,9 @@ def main():
                     logged_in_user.set_preferences()
                     manager.save_users
                 elif choice3 == "6":
-                    deleted = manager.delete_user(logged_in_user)
+                    deleted = logged_in_user.delete_user(manager)
                     if deleted:
+                        logout = True
                         break
                 elif choice3 == "7":
                     break
