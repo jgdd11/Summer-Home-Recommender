@@ -27,7 +27,7 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
         raise ValueError("Invalid properties input. Must be a list of Property objects, a DataFrame, or a JSON file path.")
 
     print(f"There are {df.shape[0]} properties in the database.") #print number of rows in the data frame, can be used to check if properties that don't match have been removed
-
+    print(df.columns)
     # load user requirement
     required_keys = [
         "location", "group_size", "start_date", "end_date", "budget",
