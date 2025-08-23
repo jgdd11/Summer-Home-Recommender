@@ -72,6 +72,7 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     print(f"There are {df.shape[0]} properties that match your travel location, group size, and travel dates.")
 
     # calculate property score
+    df["score"] = 0.0
     for idx, row in df.iterrows():
         score = 0
 
