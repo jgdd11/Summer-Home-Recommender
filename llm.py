@@ -85,10 +85,12 @@ def normalize_features_and_tags(parsed, api_key):
 def normalize_env_and_type(parsed, api_key):
     if parsed.get("environment") and parsed["environment"] not in ALL_ENVIRONMENTS:
         alt, auto = llm_normalize_term(parsed["environment"], ALL_ENVIRONMENTS, "environment", api_key=api_key)
-        if alt and auto: parsed["environment"] = alt
+        if alt and auto:
+            parsed["environment"] = alt
     if parsed.get("type") and parsed["type"] not in ALL_TYPES:
         alt, auto = llm_normalize_term(parsed["type"], ALL_TYPES, "property type", api_key=api_key)
-        if alt and auto: parsed["type"] = alt
+        if alt and auto:
+            parsed["type"] = alt
     return parsed
 
 # ---------- Location & Environment ----------
@@ -96,19 +98,15 @@ def map_location_to_db(location, all_locations, requested_env=None, api_key=None
     """
     Map location and environment to DB.
     Cases:
-    1. Location given, no environment → validate location against DB. 
-       If missing, ask LLM to resolve to closest DB location.
+    1. Location given, no environment → validate location against DB. Do NOT auto-fill environment.
     2. Environment given, no location → pick from DB locations with that environment.
-       If multiple candidates, prompt user to choose.
-    3. Both given → validate compatibility (keep your existing logic).
+    3. Both given → validate compatibility (with conflict resolution).
     """
 
     # --- CASE 1: Location given, no environment ---
     if location and not requested_env:
         if location in all_locations:
-            # Use as is
-            loc_envs = {p.environment for p in properties if p.location == location}
-            return location, next(iter(loc_envs))  # pick any env available
+            return location, None
         else:
             # Ask LLM to pick closest match from DB
             prompt = (
@@ -118,16 +116,14 @@ def map_location_to_db(location, all_locations, requested_env=None, api_key=None
             )
             alt = llm_call(prompt, api_key=api_key, sys_prompt="You are a location resolver.")
             if alt and alt in all_locations:
-                loc_envs = {p.environment for p in properties if p.location == alt}
                 print(f"Bot: Using closest location '{alt}' instead of '{location}'.")
-                return alt, next(iter(loc_envs))
+                return alt, None
             else:
                 # fallback: fuzzy match
                 match = get_close_matches(location, all_locations, n=1, cutoff=0.65)
                 if match:
-                    loc_envs = {p.environment for p in properties if p.location == match[0]}
                     print(f"Bot: Approximated '{location}' as '{match[0]}'.")
-                    return match[0], next(iter(loc_envs))
+                    return match[0], None
                 else:
                     print(f"Bot: Could not resolve location '{location}'.")
                     return location, None
@@ -151,7 +147,7 @@ def map_location_to_db(location, all_locations, requested_env=None, api_key=None
             except:
                 return candidate_locs[0], requested_env  # fallback first
 
-    # --- CASE 3: Both given (keep your old conflict resolution logic) ---
+    # --- CASE 3: Both given ---
     elif location and requested_env:
         match = get_close_matches(location, all_locations, n=1, cutoff=0.75)
         mapped_loc = match[0] if match else location
@@ -163,9 +159,8 @@ def map_location_to_db(location, all_locations, requested_env=None, api_key=None
                 "Which is more important? Type 'location' to keep location, or 'environment' to prioritize environment: "
             ).strip().lower()
             if choice == "location":
-                mapped_env = next(iter(loc_envs))
-                print(f"Bot: Keeping location '{mapped_loc}'. Environment set to '{mapped_env}'.")
-                return mapped_loc, mapped_env
+                print(f"Bot: Keeping location '{mapped_loc}', environment left blank.")
+                return mapped_loc, None
             else:
                 candidate_locs = sorted({p.location for p in properties if p.environment.lower() == requested_env.lower()})
                 if candidate_locs:
@@ -173,14 +168,12 @@ def map_location_to_db(location, all_locations, requested_env=None, api_key=None
                     print(f"Bot: Keeping environment '{requested_env}'. Location set to '{mapped_loc}'.")
                     return mapped_loc, requested_env
                 else:
-                    mapped_env = next(iter(loc_envs))
-                    print(f"Bot: No cities found with '{requested_env}'. Keeping location '{mapped_loc}' with environment '{mapped_env}'.")
-                    return mapped_loc, mapped_env
+                    print(f"Bot: No cities found with '{requested_env}'. Keeping location '{mapped_loc}' and leaving environment blank.")
+                    return mapped_loc, None
 
         return mapped_loc, requested_env
 
     return None, None
-
 
 # ---------- LLM Date Parsing ----------
 def llm_parse_date(user_input, api_key, model=MODEL, default_year=None):
@@ -224,31 +217,41 @@ def validate_and_reprompt(parsed):
 def llm_parse(model=MODEL, temperature=0.7):
     api_key = input("Enter API key: ").strip()
     user_prompt = input("Bot: What kind of property are you looking for? ").strip()
-    if not user_prompt: return {"error": "No input provided"}
+    if not user_prompt:
+        return {"error": "No input provided"}
 
     # Initial LLM parse
     payload = {"model": model, "messages": [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_prompt}], "temperature": temperature}
     r = requests.post(OPENROUTER_URL, headers={"Authorization": f"Bearer {api_key}"}, json=payload, timeout=60)
-    if r.status_code != 200: return {"error": f"HTTP {r.status_code}", "details": r.text}
+    if r.status_code != 200:
+        return {"error": f"HTTP {r.status_code}", "details": r.text}
     data = r.json()
     content = (data.get("choices") or [{}])[0].get("message", {}).get("content", "")
-    try: parsed = eval(content) if content else {}
-    except: parsed = {}
+    try:
+        parsed = eval(content) if content else {}
+    except:
+        parsed = {}
 
     if not parsed.get("location"):
         parsed["location"] = input("Bot: Please specify a location: ").strip()
 
     # Map location to DB & resolve environment conflicts
-    parsed["location"], parsed["environment"] = map_location_to_db(
+    mapped_loc, mapped_env = map_location_to_db(
         parsed["location"], ALL_LOCATIONS, parsed.get("environment")
     )
+    if mapped_loc:
+        parsed["location"] = mapped_loc
+    if mapped_env is not None:  # don’t overwrite with None
+        parsed["environment"] = mapped_env
 
     # Group size
     if not parsed.get("group_size"):
-        try: parsed["group_size"] = int(input("Bot: How many people? ").strip())
-        except: parsed["group_size"] = 1
+        try:
+            parsed["group_size"] = int(input("Bot: How many people? ").strip())
+        except:
+            parsed["group_size"] = 1
 
     # Budget
     if parsed.get("budget") is None and parsed.get("price_max") is None:
@@ -257,12 +260,14 @@ def llm_parse(model=MODEL, temperature=0.7):
             try:
                 low, high = map(int, budget_input.split("-"))
                 parsed["price_min"], parsed["price_max"], parsed["budget"] = low, high, high
-            except: pass
+            except:
+                pass
         else:
             try:
                 value = int(re.sub("[^0-9]", "", budget_input))
                 parsed["price_min"], parsed["price_max"], parsed["budget"] = 0, value, value
-            except: pass
+            except:
+                pass
 
     # Dates via LLM
     start_input = parsed.get("start_date") or input("Bot: Start date? (e.g. Aug 25): ").strip()
@@ -281,8 +286,10 @@ def llm_parse(model=MODEL, temperature=0.7):
         end_dt = start_dt + timedelta(days=1)
 
     today = datetime.today().date()
-    if not start_dt: start_dt = today + timedelta(days=1)
-    if not end_dt: end_dt = start_dt + timedelta(days=1)
+    if not start_dt:
+        start_dt = today + timedelta(days=1)
+    if not end_dt:
+        end_dt = start_dt + timedelta(days=1)
 
     parsed["start_date"], parsed["end_date"] = start_dt.isoformat(), end_dt.isoformat()
     parsed["dates"] = [(start_dt + timedelta(days=i)).isoformat() for i in range((end_dt - start_dt).days + 1)]
