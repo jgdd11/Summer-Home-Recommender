@@ -215,25 +215,48 @@ def validate_and_reprompt(parsed):
 
 # ---------- Main Parser ----------
 def llm_parse(model=MODEL, temperature=0.7):
+    import json, re
+    
     api_key = input("Enter API key: ").strip()
     user_prompt = input("Bot: What kind of property are you looking for? ").strip()
     if not user_prompt:
         return {"error": "No input provided"}
 
     # Initial LLM parse
-    payload = {"model": model, "messages": [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": user_prompt}], "temperature": temperature}
-    r = requests.post(OPENROUTER_URL, headers={"Authorization": f"Bearer {api_key}"}, json=payload, timeout=60)
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt}
+        ],
+        "temperature": temperature
+    }
+    r = requests.post(
+        OPENROUTER_URL,
+        headers={"Authorization": f"Bearer {api_key}"},
+        json=payload,
+        timeout=60
+    )
     if r.status_code != 200:
         return {"error": f"HTTP {r.status_code}", "details": r.text}
+
     data = r.json()
     content = (data.get("choices") or [{}])[0].get("message", {}).get("content", "")
+
+    # --- Safe JSON parse ---
     try:
-        parsed = eval(content) if content else {}
-    except:
+        match = re.search(r"\{.*\}", content, re.DOTALL)
+        parsed = json.loads(match.group(0)) if match else {}
+    except Exception as e:
+        print(f"Parse error: {e}")
         parsed = {}
 
+    # --- Environment filter: only keep if user explicitly typed it ---
+    user_text_lower = user_prompt.lower()
+    if "environment" not in user_text_lower:
+        parsed["environment"] = None
+
+    # Location
     if not parsed.get("location"):
         parsed["location"] = input("Bot: Please specify a location: ").strip()
 
@@ -281,7 +304,13 @@ def llm_parse(model=MODEL, temperature=0.7):
     if end_dt:
         if end_dt <= start_dt:
             # If parsed earlier or same, shift to next year
-            end_dt = end_dt.replace(year=start_dt.year if end_dt.month > start_dt.month or (end_dt.month == start_dt.month and end_dt.day > start_dt.day) else start_dt.year + 1)
+            end_dt = end_dt.replace(
+                year=start_dt.year
+                if end_dt.month > start_dt.month or (
+                    end_dt.month == start_dt.month and end_dt.day > start_dt.day
+                )
+                else start_dt.year + 1
+            )
     else:
         end_dt = start_dt + timedelta(days=1)
 
@@ -292,7 +321,10 @@ def llm_parse(model=MODEL, temperature=0.7):
         end_dt = start_dt + timedelta(days=1)
 
     parsed["start_date"], parsed["end_date"] = start_dt.isoformat(), end_dt.isoformat()
-    parsed["dates"] = [(start_dt + timedelta(days=i)).isoformat() for i in range((end_dt - start_dt).days + 1)]
+    parsed["dates"] = [
+        (start_dt + timedelta(days=i)).isoformat()
+        for i in range((end_dt - start_dt).days + 1)
+    ]
 
     # Normalize features, tags, environment, type
     parsed = normalize_features_and_tags(parsed, api_key)
