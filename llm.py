@@ -133,7 +133,7 @@ def map_location_to_db(location, all_locations, requested_env=None, api_key=None
                     return location, None
 
     # --- CASE 2: Environment given, no location ---
-    if requested_env and not location:
+    elif requested_env and not location:
         candidate_locs = sorted({p.location for p in properties if p.environment.lower() == requested_env.lower()})
         if not candidate_locs:
             print(f"Bot: No cities found with environment '{requested_env}'.")
@@ -152,7 +152,7 @@ def map_location_to_db(location, all_locations, requested_env=None, api_key=None
                 return candidate_locs[0], requested_env  # fallback first
 
     # --- CASE 3: Both given (keep your old conflict resolution logic) ---
-    if location and requested_env:
+    elif location and requested_env:
         match = get_close_matches(location, all_locations, n=1, cutoff=0.75)
         mapped_loc = match[0] if match else location
         loc_envs = {p.environment for p in properties if p.location == mapped_loc}
