@@ -271,13 +271,18 @@ class User:
         password = pwinput.pwinput("Enter your password to confirm: ", mask="*").strip()
         if not self.check_password(password):
             print("Incorrect password. Account deletion aborted.")
-            return
+            return False
 
         confirm = input(f"Are you sure you want to delete the account '{self.username}'? (Y/N): ").strip().lower()
         if confirm != "y":
             print("Account deletion cancelled.")
-            return
+            return False
 
+        # Delete all reservations first
+        for reservation in self.reservations[:]: 
+            self.delete_reservation(reservation)
+
+        # Remove user from database
         user_manager.userdb.remove(self)
         user_manager.save_users()
         print(f"Account '{self.username}' has been deleted.")
