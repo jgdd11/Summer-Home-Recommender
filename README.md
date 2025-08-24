@@ -2,7 +2,7 @@
 
 ## About
 
-**All Rentals In Kind** is a user reservation management system that aims to provide a user-friendly interface for managing user accounts and reservations. Users can log in, view, and modify their reservations, update account details, and delete their accounts via our management system.
+**All Rentals In Kind** is a user reservation management system that aims to provide a user-friendly interface for managing user accounts and reservations. Users can create, login, update and delete their account profiles, then view, add and modify their reservations via our management system.
 
 ## Features
 
@@ -19,7 +19,6 @@
 - Logout functionality
 - **AI-powered property search assistance** using OpenRouter/OpenAI API
 
-
 ## How We Recommend
 
 The system includes a recommendation engine that suggests properties based on user preferences and requirements. Here's an overview:
@@ -27,7 +26,7 @@ The system includes a recommendation engine that suggests properties based on us
 - **Property Database**: Properties which may be recommended will be saved in JSON file, our management system parses them as a list of `Property` objects, or a DataFrame.
 - **User Requirements**: Users are needed to specify location, group size, travel dates, budget, features, environment, and tags.
 - **Filtering**:
-  - Location, availability, and capacity are hard requirements. If a property does not match those two conditions, it will not be recommended.
+  - Location, availability, and capacity are hard requirements. If a property does not match these three conditions, it will not be recommended.
   - We will calculate a score based on the weights defined by users for the remaining factors, includes:
     - Budget compatibility
     - Environmental match
@@ -56,14 +55,12 @@ This AI-assisted process simplifies complex user inputs and enhances the search 
 ## Requirements
 
 - Python 3.x
-- pandas
-- requests
+- OpenRouter or OpenAI API Key
 
 ## Installation
 
 1. Clone this repository or download the code files.
 2. Install required packages:
 ```bash
-pip install pandas
-pip install requests
+pip install -r requirements.txt
 ```

@@ -4,6 +4,8 @@ from datetime import datetime, date, timedelta
 from typing import Union
 from properties import Property
 
+RECOMMEND_TOP_N = 10
+
 
 # create date range generator
 def daterange(start_date: date, end_date: date):
@@ -26,12 +28,11 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     else:
         raise ValueError("Invalid properties input. Must be a list of Property objects, a DataFrame, or a JSON file path.")
 
-    print(f"There are {df.shape[0]} properties in the database.") #print initial number of properties in the database
-    #print(df.columns) 
+    print(f"There are {df.shape[0]} properties in the database.")
 
     # load user requirement
     required_keys = [
-        "location", "group_size", "start_date", "end_date", "budget",
+        "location", "group_size", "start_date", "end_date",
         "budget_wt", "enviro_wt", "feature_wt", "tags_wt"
     ]
     for key in required_keys:
@@ -44,7 +45,9 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     group_size = user_req["group_size"]
     start_date = datetime.strptime(user_req["start_date"], "%Y-%m-%d").date() 
     end_date = datetime.strptime(user_req["end_date"], "%Y-%m-%d").date()
-    budget = user_req["budget"]
+    budget = user_req.get("budget", user_req.get("price_max"))
+    if not budget:
+        raise KeyError("Missing required user requirement key: 'budget' or 'price_max'")
     user_features = user_req.get("features")
     user_environment = user_req.get("environment")
     user_tags = user_req.get("tags")
@@ -59,7 +62,7 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     # drop properties that don't match location
     location_pattern = "|".join([str(loc) for loc in user_location])
     df = df[df["location"].str.contains(location_pattern, na=False, case=False)]
-    
+
     # drop properties that don't match group size
     df = df[df["capacity"] >= group_size]
 
@@ -74,8 +77,6 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
         lambda u: set(u).isdisjoint(set(travel_dates))
     )]
 
-    
-    
     #prompt user if no property in database matches their requirements
     if df.shape[0] == 0:
         print("No properties available that match your requirements.")
@@ -84,25 +85,21 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     # If properties are found, print the number of matching properties and calculate the score of the properties
     else:
         print(f"There are {df.shape[0]} properties that match your travel location, group size, and travel dates.")
-        
-        """
-        calculate property score
-        """
 
-        #initialize score to 0
+        # initialize property score to 0
         df["score"] = 0.0
         for idx, row in df.iterrows():
             score = 0
 
-        # full score if within budget, otherwise 0
+            # full score if within budget, otherwise 0
             if row["price"] <= budget: # full score if within budget, otherwise 0
                 score += 1 * norm_budget_wt
 
-        # full score if no specific environment is requested or environment matches
+            # full score if no specific environment is requested or environment matches
             if user_environment is None or row["environment"] == user_environment: # full score if no specific environment is requested or environment matches
                 score += 1 * norm_enviro_wt
 
-        # full score if no specific features are requested, otherwise partial score based on matching features
+            # full score if no specific features are requested, otherwise partial score based on matching features
             if user_features is not None and len(user_features) > 0:
                 user_features_lower = {f.lower() for f in user_features}
                 property_features_lower = {f.lower() for f in row["features"]}
@@ -111,7 +108,7 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
             else: 
                 score += 1 * norm_feature_wt
 
-        # full score if no specific tags are requested, otherwise partial score based on matching tags
+            # full score if no specific tags are requested, otherwise partial score based on matching tags
             if user_tags is not None and len(user_tags) > 0:
                 user_tags_lower = {f.lower() for f in user_tags}
                 property_tags_lower = {f.lower() for f in row["tags"]}
@@ -120,7 +117,7 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
             else: 
                 score += 1 * norm_tag_wt
         
-        # update the score in the dataframe
+            # update the score in the dataframe
             df.at[idx, "score"] = round(score,3)
 
         # rank property by property score
@@ -129,9 +126,9 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
         df = df[["id", "score", "price", "features", "environment", "tags"]]
         df = df.reset_index(drop=True)
 
-        # display top 10
-        print(df.head(10))
-        recommended_df = df.head(10)
+        # display top N
+        print(df.head(RECOMMEND_TOP_N))
+        recommended_df = df.head(RECOMMEND_TOP_N)
         recommended_properties = []
 
         for _, row in recommended_df.iterrows():

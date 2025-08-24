@@ -16,8 +16,8 @@ ALL_FEATURES = sorted(set(f for p in properties for f in p.features))
 ALL_TAGS = sorted(set(t for p in properties for t in p.tags))
 
 # API endpoint
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-#OPENROUTER_URL = "https://api.openai.com/v1/chat/completions" # Added another endpoint to open AI
+API_ENDPOINT_URL = "https://openrouter.ai/api/v1/chat/completions" # OpenRouter
+#API_ENDPOINT_URL = "https://api.openai.com/v1/chat/completions" # OpenAI
 MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = (
@@ -47,7 +47,7 @@ def llm_call(prompt, role="user", model=MODEL, api_key=None, sys_prompt=None):
         messages.append({"role": "system", "content": sys_prompt})
     messages.append({"role": role, "content": prompt})
     payload = {"model": model, "messages": messages, "temperature": 0.0}
-    r = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=60)
+    r = requests.post(API_ENDPOINT_URL, headers=headers, json=payload, timeout=60)
     if r.status_code != 200:
         return None
     data = r.json()
@@ -233,7 +233,7 @@ def llm_parse(model=MODEL, temperature=0.7):
         "temperature": temperature
     }
     r = requests.post(
-        OPENROUTER_URL,
+        API_ENDPOINT_URL,
         headers={"Authorization": f"Bearer {api_key}"},
         json=payload,
         timeout=60
