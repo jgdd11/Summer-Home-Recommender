@@ -112,3 +112,23 @@ flowchart TD
 
     %% Logout leads back to login screen
     Z --> B
+
+
+
+
+    ```mermaid
+    flowchart TD
+    A[Open App] --> B[Login Screen]
+    B --> C{Login Successful?}
+    C -- No --> Z1[Exit Program]
+    C -- Yes --> D[Main Menu]
+
+    D --> E{Choose Option}
+    E -- Reservation Manager --> F[Manage Reservations]
+    E -- Account Manager --> G[Manage Account]
+    E -- Logout --> Z[Logout and Return to Login]
+
+    F --> D
+    G --> D
+    Z --> B
+
