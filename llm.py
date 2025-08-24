@@ -17,6 +17,7 @@ ALL_TAGS = sorted(set(t for p in properties for t in p.tags))
 
 # API endpoint
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+#OPENROUTER_URL = "https://api.openai.com/v1/chat/completions" # Added another endpoint to open AI
 MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = (

@@ -26,8 +26,9 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     else:
         raise ValueError("Invalid properties input. Must be a list of Property objects, a DataFrame, or a JSON file path.")
 
-    print(f"There are {df.shape[0]} properties in the database.") #print number of rows in the data frame, can be used to check if properties that don't match have been removed
-    print(df.columns)
+    print(f"There are {df.shape[0]} properties in the database.") #print initial number of properties in the database
+    #print(df.columns) 
+
     # load user requirement
     required_keys = [
         "location", "group_size", "start_date", "end_date", "budget",
@@ -38,13 +39,15 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
             raise KeyError(f"Missing required user requirement key: '{key}'")
 
     user_location = user_req["location"]
+    if isinstance(user_location, str):
+        user_location = [user_location]
     group_size = user_req["group_size"]
     start_date = datetime.strptime(user_req["start_date"], "%Y-%m-%d").date() 
     end_date = datetime.strptime(user_req["end_date"], "%Y-%m-%d").date()
     budget = user_req["budget"]
-    user_features = user_req["features"]
-    user_environment = user_req["environment"]
-    user_tags = user_req["tags"]
+    user_features = user_req.get("features")
+    user_environment = user_req.get("environment")
+    user_tags = user_req.get("tags")
 
     # load and normalize weights of each attribute
     total_wt = user_req["budget_wt"] + user_req["enviro_wt"] + user_req["feature_wt"] + user_req["tags_wt"]
@@ -53,9 +56,12 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
     norm_feature_wt = round(user_req["feature_wt"] / total_wt, 3)
     norm_tag_wt = round(user_req["tags_wt"] / total_wt, 3)
 
-    # drop properties that don't match location or group size
-    df = df[df["location"].str.contains(user_location, na=False)]
-    df = df[df["capacity"] >= group_size] 
+    # drop properties that don't match location
+    location_pattern = "|".join([str(loc) for loc in user_location])
+    df = df[df["location"].str.contains(location_pattern, na=False, case=False)]
+    
+    # drop properties that don't match group size
+    df = df[df["capacity"] >= group_size]
 
     # get days that need to be booked
     travel_dates = []
@@ -68,90 +74,79 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
         lambda u: set(u).isdisjoint(set(travel_dates))
     )]
 
-    # print number of rows in the data frame again, number should be less than the original row num, showing some rows have been dropped
-    print(f"There are {df.shape[0]} properties that match your travel location, group size, and travel dates.")
+    
+    
+    #prompt user if no property in database matches their requirements
+    if df.shape[0] == 0:
+        print("No properties available that match your requirements.")
+        return []
 
-    # calculate property score
-    df["score"] = 0.0
-    for idx, row in df.iterrows():
-        score = 0
-
-        if row["price"] <= budget:
-            score += 1 * norm_budget_wt
-        if row["environment"] == user_environment:
-            score += 1 * norm_enviro_wt
+    # If properties are found, print the number of matching properties and calculate the score of the properties
+    else:
+        print(f"There are {df.shape[0]} properties that match your travel location, group size, and travel dates.")
         
-        if len(user_features) > 0:
-            user_features_lower = {f.lower() for f in user_features}
-            property_features_lower = {f.lower() for f in row["features"]}
-            feature_score = len(user_features_lower.intersection(property_features_lower)) / len(user_features)
-            score += feature_score * norm_feature_wt
-        else: 
-            score += 1 * norm_feature_wt
+        """
+        calculate property score
+        """
 
-        if len(user_tags) > 0:
-            user_tags_lower = {f.lower() for f in user_tags}
-            property_tags_lower = {f.lower() for f in row["tags"]}
-            tag_score = len(user_tags_lower.intersection(property_tags_lower)) / len(user_tags)
-            score += tag_score * norm_tag_wt
-        else: 
-            score += 1 * norm_tag_wt
+        #initialize score to 0
+        df["score"] = 0.0
+        for idx, row in df.iterrows():
+            score = 0
 
-        df.at[idx, "score"] = round(score,3)
+        # full score if within budget, otherwise 0
+            if row["price"] <= budget: # full score if within budget, otherwise 0
+                score += 1 * norm_budget_wt
 
-    # rank property by property score
-    df = df.sort_values(by="score", ascending=False)
+        # full score if no specific environment is requested or environment matches
+            if user_environment is None or row["environment"] == user_environment: # full score if no specific environment is requested or environment matches
+                score += 1 * norm_enviro_wt
 
-    df = df[["id", "score", "price", "features", "environment", "tags"]]
-    df = df.reset_index(drop=True)
+        # full score if no specific features are requested, otherwise partial score based on matching features
+            if user_features is not None and len(user_features) > 0:
+                user_features_lower = {f.lower() for f in user_features}
+                property_features_lower = {f.lower() for f in row["features"]}
+                feature_score = len(user_features_lower.intersection(property_features_lower)) / len(user_features)
+                score += feature_score * norm_feature_wt
+            else: 
+                score += 1 * norm_feature_wt
 
-    # display top 10
-    print(df.head(10))
-    recommended_df = df.head(10)
-    recommended_properties = []
+        # full score if no specific tags are requested, otherwise partial score based on matching tags
+            if user_tags is not None and len(user_tags) > 0:
+                user_tags_lower = {f.lower() for f in user_tags}
+                property_tags_lower = {f.lower() for f in row["tags"]}
+                tag_score = len(user_tags_lower.intersection(property_tags_lower)) / len(user_tags)
+                score += tag_score * norm_tag_wt
+            else: 
+                score += 1 * norm_tag_wt
+        
+        # update the score in the dataframe
+            df.at[idx, "score"] = round(score,3)
 
-    for _, row in recommended_df.iterrows():
-        recommended_properties.append(
-            Property(
-                id=int(row["id"]),
-                location=row.get("location", ""),
-                type=row.get("type", ""),
-                price=float(row["price"]),
-                capacity=int(row.get("capacity", 0)),
-                environment=row.get("environment", ""),
-                features=list(row.get("features", [])),
-                tags=list(row.get("tags", [])),
-                booked=[d if isinstance(d, date) else pd.to_datetime(d).date() for d in row.get("booked", [])]
+        # rank property by property score
+        df = df.sort_values(by="score", ascending=False)
+
+        df = df[["id", "score", "price", "features", "environment", "tags"]]
+        df = df.reset_index(drop=True)
+
+        # display top 10
+        print(df.head(10))
+        recommended_df = df.head(10)
+        recommended_properties = []
+
+        for _, row in recommended_df.iterrows():
+            recommended_properties.append(
+                Property(
+                    id=int(row["id"]),
+                    location=row.get("location", ""),
+                    type=row.get("type", ""),
+                    price=float(row["price"]),
+                    capacity=int(row.get("capacity", 0)),
+                    environment=row.get("environment", ""),
+                    features=list(row.get("features", [])),
+                    tags=list(row.get("tags", [])),
+                    booked=[d if isinstance(d, date) else pd.to_datetime(d).date() for d in row.get("booked", [])]
+                )
             )
-        )
 
-    return recommended_properties
-
-
-# below is for testing
-# if __name__ == "__main__":
-
-#     # input = "properties.json"
-#     # input = pd.read_json("properties.json")
-#     with open("properties.json", "r", encoding="utf-8") as f:
-#         data = json.load(f)
-#         input = [Property.from_dict(p) for p in data]
-
-#     user_req = {'location': 'Toronto',
-#             'environment': 'urban',
-#             'group_size': 5,
-#             'budget': 300,
-#             'start_date': '2023-08-20',
-#             'end_date': '2023-08-23',
-#             'features': ['luxury', 'loft'],
-#             'tags': ['city center'],
-#             'dates': ['2023-08-20', '2023-08-21', '2023-08-22', '2023-08-23'],
-#             'price_max': 300,
-#             'price_min': 0,
-#             'budget_wt': 0.3448275862068966,
-#             'enviro_wt': 0.20689655172413793,
-#             'feature_wt': 0.2413793103448276,
-#             'tags_wt': 0.20689655172413793
-#         }
-
-#     recommendation_logic(input, user_req)
+        return recommended_properties
