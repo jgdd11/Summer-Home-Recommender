@@ -70,16 +70,27 @@ pip install -r requirements.txt
     flowchart TD
     A[Open App] --> B[Login Screen]
     B --> C{Login Successful?}
-    C -- No --> Z1[Exit Program]
-    C -- Yes --> D[Main Menu]
 
-    D --> E{Choose Option}
-    E -- Reservation Manager --> F[Manage Reservations]
-    E -- Account Manager --> G[Manage Account]
-    E -- Logout --> Z[Logout and Return to Login]
+    %% If login fails
+    C -- No --> D{Reason?}
+    D -- Wrong Password --> E[Retry Login]
+    E --> C
+    E -- Too Many Failures --> F[Lock Account]
 
-    F --> D
-    G --> D
-    Z --> B
+    D -- User Not Found --> G[Create Account]
+    G --> B
+
+    %% If login succeeds
+    C -- Yes --> H[Main Menu]
+
+    H --> I{Choose Option}
+    I -- Reservation Manager --> J[Manage Reservations]
+    I -- Account Manager --> K[Manage Account]
+    I -- Logout --> L[Logout and Return to Login]
+
+    J --> H
+    K --> H
+    L --> B
+
 
 
