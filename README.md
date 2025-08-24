@@ -67,56 +67,6 @@ pip install -r requirements.txt
 
 
 ```mermaid
-flowchart TD
-    A[Open App] --> B[Show Login Screen]
-    B --> C{Login Successful?}
-    C -- No --> Z1[Exit Program]
-    C -- Yes --> D[Show Main Menu]
-
-    D --> E{Main Menu Options}
-
-    %% Reservation Manager
-    E -- 1. Reservation Manager --> F[Show Current Reservations]
-    F --> G[Show Reservation Management Submenu]
-    G --> H{Reservation Management Options}
-    H -- 1. Make reservation --> I[Suggest Listings and Reserve]
-    H -- 2. Delete Reservation --> J[Delete Reservation]
-    H -- 3. Go Back --> D
-    H -- 4. Logout --> Z[Logout and Return to Login Screen]
-    H -- Others --> G
-
-    %% Account Manager
-    E -- 2. Account Manager --> K[Show Account Management Submenu]
-    K --> L{Account Management Options}
-    L -- 1. View account details --> M[Show Account Information]
-    M --> K
-    L -- 2. Change username --> N[Change Username and Save]
-    N --> K
-    L -- 3. Change email --> O[Change Email and Save]
-    O --> K
-    L -- 4. Change password --> P[Change Password and Save]
-    P --> K
-    L -- 5. Change preferences --> Q[Change Preferences and Save]
-    Q --> K
-    L -- 6. Delete account --> R{Confirm Deletion?}
-    R -- Yes --> S[Delete Account]
-    S --> Z[Logout and Return to Login Screen]
-    R -- No --> K
-    L -- 7. Go Back --> D
-    L -- 8. Logout --> Z[Logout and Return to Login Screen]
-    L -- Others --> K
-
-    %% Logout directly from main menu
-    E -- 3. Logout --> Z[Logout and Return to Login Screen]
-    E -- Others --> D
-
-    %% Logout leads back to login screen
-    Z --> B
-
-
-
-
-  
     flowchart TD
     A[Open App] --> B[Login Screen]
     B --> C{Login Successful?}
@@ -131,4 +81,5 @@ flowchart TD
     F --> D
     G --> D
     Z --> B
+
 
