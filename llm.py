@@ -262,10 +262,15 @@ def llm_parse(model=MODEL, temperature=0.7):
 
     # Map location to DB & resolve environment conflicts
     mapped_loc, mapped_env = map_location_to_db(
-        parsed["location"], ALL_LOCATIONS, parsed.get("environment")
+        parsed["location"], ALL_LOCATIONS, parsed.get("environment"), api_key=api_key
     )
-    if mapped_loc:
-        parsed["location"] = mapped_loc
+
+    # ---- NEW: restart process if location could not be resolved ----
+    if not mapped_loc or mapped_loc not in ALL_LOCATIONS:
+        print("Bot: Sorry, I couldn't resolve that location. Let's try again from the beginning.\n")
+        return llm_parse(model=model, temperature=temperature)
+
+    parsed["location"] = mapped_loc
     if mapped_env is not None:  # don’t overwrite with None
         parsed["environment"] = mapped_env
 
@@ -303,7 +308,6 @@ def llm_parse(model=MODEL, temperature=0.7):
     end_dt = llm_parse_date(end_input, api_key)
     if end_dt:
         if end_dt <= start_dt:
-            # If parsed earlier or same, shift to next year
             end_dt = end_dt.replace(
                 year=start_dt.year
                 if end_dt.month > start_dt.month or (
@@ -334,3 +338,4 @@ def llm_parse(model=MODEL, temperature=0.7):
     print("Bot: Final request dictionary:")
     print(parsed)
     return parsed
+
