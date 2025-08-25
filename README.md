@@ -52,19 +52,7 @@ The `llm.py` script integrates with an LLM API (OpenRouter or OpenAI) to interpr
 
 This AI-assisted process simplifies complex user inputs and enhances the search experience by understanding natural language descriptions.
 
-## Requirements
-
-- Python 3.x
-- OpenRouter or OpenAI API Key
-
-## Installation
-
-1. Clone this repository or download the code files.
-2. Install required packages:
-```bash
-pip install -r requirements.txt
-```
-
+## Control Flow Chart
 
 ```mermaid
     flowchart TD
@@ -91,6 +79,4 @@ pip install -r requirements.txt
     J --> H
     K --> H
     L --> B
-
-
-
+```
