@@ -61,27 +61,35 @@ def main():
 
                 choice3 = input("Choose an option: ").strip()
                 if choice3 == "1":
+                    print('*'*100)
                     logged_in_user.view_account_details()
                 elif choice3 == "2":
+                    print('*'*100)
                     logged_in_user.set_username(manager.userdb)
                     manager.save_users()
                 elif choice3 == "3":
+                    print('*'*100)
                     logged_in_user.set_email(manager.userdb)
                     manager.save_users()
                 elif choice3 == "4":
+                    print('*'*100)
                     logged_in_user.set_password()
                     manager.save_users()
                 elif choice3 == "5":
+                    print('*'*100)
                     logged_in_user.set_preferences()
                     manager.save_users
                 elif choice3 == "6":
+                    print('*'*100)
                     deleted = logged_in_user.delete_user(manager)
                     if deleted:
                         logout = True
                         break
                 elif choice3 == "7":
+                    print('*'*100)
                     break
                 elif choice3 == "8":
+                    print('*'*100)
                     print("Logging out...")
                     logout = True
                     break
