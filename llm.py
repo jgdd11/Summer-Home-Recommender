@@ -193,7 +193,7 @@ def validate_and_reprompt(parsed):
 def llm_parse(model=MODEL, temperature=0.7):
     import json
 
-    api_key ='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'
+    api_key = input("Enter API key: ").strip()
     user_prompt = input("Bot: What kind of property are you looking for? ").strip()
     if not user_prompt:
         return {"error": "No input provided"}
