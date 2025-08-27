@@ -95,7 +95,7 @@ class User:
 
         print("We're just going to ask a few questions to get to know you better.")
         print("Please enter a number, 0-10, for how important each feature is.")
-        print("0 means not important at all and 10 means this preference is a must-have.")
+        print("0 means not important at all and 10 means this preference is a very good-to-have.")
 
         budget = get_weight("How important is budget to you? ")
         enviro = get_weight("How important is environment to you? ")
