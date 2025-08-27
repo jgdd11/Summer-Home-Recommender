@@ -60,5 +60,19 @@
             "tags_wt": 1.0
         },
         "attempts": 0
+    },
+    {
+        "username": "Jeff",
+        "password": "03c0c5de2e2aa2fb3890cc331866d16b365c62abecf074c9e68de88e8ff4575c",
+        "name": "Jeff",
+        "email": "eee@we.com",
+        "reservations": [],
+        "preferences": {
+            "budget_wt": 1.0,
+            "enviro_wt": 1.0,
+            "feature_wt": 1.0,
+            "tags_wt": 1.0
+        },
+        "attempts": 0
     }
 ]
