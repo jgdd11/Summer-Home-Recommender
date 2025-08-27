@@ -23,6 +23,7 @@ def main():
             
             # ---------------- Reservation Manager ----------------
             if choice1 == "1":
+                print('*'*100)
                 print("Here is a list of your current reservations:")
                 logged_in_user.view_reservations()
 
@@ -35,12 +36,16 @@ def main():
 
                 choice2 = input("Choose an option: ").strip()
                 if choice2 == "1":
+                    print('*'*100)
                     logged_in_user.get_recommendations(manager)
                 elif choice2 == "2":
+                    print('*'*100)
                     logged_in_user.delete_reservation(manager)
                 elif choice2 == "3":
+                    print('*'*100)
                     break
                 elif choice2 == "4":
+                    print('*'*100)
                     print("Logging out...")
                     logout = True
                     break
@@ -49,6 +54,7 @@ def main():
 
             # ---------------- Account Manager ----------------
             elif choice1 == "2":
+                print('*'*100)
                 print("Please choose from the following options:")
                 print("1: View account details")
                 print("2. Change username")
@@ -98,6 +104,7 @@ def main():
 
             # ---------------- Logout (from main menu) ----------------
             elif choice1 == "3":
+                print('*'*100)
                 logout = True
                 break
             else:

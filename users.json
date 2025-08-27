@@ -46,45 +46,5 @@
             "tags_wt": 0.25
         },
         "attempts": 0
-    },
-    {
-        "username": "Jeff",
-        "password": "03c0c5de2e2aa2fb3890cc331866d16b365c62abecf074c9e68de88e8ff4575c",
-        "name": "Jeff",
-        "email": "Jeff@email.com",
-        "reservations": [
-            {
-                "id": 15,
-                "start": "2025-01-01",
-                "end": "2025-01-25"
-            }
-        ],
-        "preferences": {
-            "budget_wt": 0.25,
-            "enviro_wt": 0.25,
-            "feature_wt": 0.25,
-            "tags_wt": 0.25
-        },
-        "attempts": 0
-    },
-    {
-        "username": "Zhou",
-        "password": "76287dc6f284aee3fe35cd8c7f521778f3272c6cf016e6c4de015222a0d3a983",
-        "name": "Zhou",
-        "email": "zhou@email.com",
-        "reservations": [
-            {
-                "id": 1,
-                "start": "2025-09-05",
-                "end": "2025-09-11"
-            }
-        ],
-        "preferences": {
-            "budget_wt": 0.5625,
-            "enviro_wt": 0.3125,
-            "feature_wt": 0.0625,
-            "tags_wt": 0.0625
-        },
-        "attempts": 0
     }
 ]

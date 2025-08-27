@@ -118,7 +118,7 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
                 score += 1 * norm_tag_wt
         
             # update the score in the dataframe
-            df.at[idx, "score"] = round(score,3)
+            df.at[idx, "score"] = round(score,3)*100
 
         # rank property by property score
         df = df.sort_values(by="score", ascending=False)

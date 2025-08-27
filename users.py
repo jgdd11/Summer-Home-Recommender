@@ -110,10 +110,10 @@ class User:
 
         # setting preference as ratio percentage
         self.preferences = {
-            "budget_wt": budget / total,
-            "enviro_wt": enviro / total,
-            "feature_wt": feature / total,
-            "tags_wt": tag / total
+            "budget_wt": budget,
+            "enviro_wt": enviro,
+            "feature_wt": feature,
+            "tags_wt": tag
         }
 
         print("Preferences set.")
