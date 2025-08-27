@@ -219,7 +219,7 @@ def llm_parse(model=MODEL, temperature=0.7):
     import json, re
     
     api_key ='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'
-    user_prompt = input("Bot: What kind of property are you looking for? (Type of property, Location, #people, Budget, Features, Environment)").strip()
+    user_prompt = input("Bot: What kind of property are you looking for? (Type of property, Location, #people, Budget, Features, Environment, Date)").strip()
     if not user_prompt:
         return {"error": "No input provided"}
 
