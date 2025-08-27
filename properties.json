@@ -116,19 +116,17 @@
     },
     {
         "id": 7,
-        "location": "New York, NY",
+        "location": "Toronto, Canada",
         "type": "House",
         "price": 190.53,
         "capacity": 6,
-        "environment": "Rural",
+        "environment": "Urban",
         "features": [
             "Air Conditioning",
             "Kitchen",
             "Pool"
         ],
         "tags": [
-            "Beachfront",
-            "Ski",
             "Business",
             "Remote"
         ],
@@ -253,13 +251,13 @@
     },
     {
         "id": 14,
-        "location": "Lake Louise, Canada",
-        "type": "Penthouse",
-        "price": 1079.35,
-        "capacity": 11,
-        "environment": "Lake",
+        "location": "Los Angeles, CA",
+        "type": "House",
+        "price": 411.35,
+        "capacity": 7,
+        "environment": "Beach",
         "features": [
-            "Wheelchair Accessible",
+            "Air Conditioning",
             "Heating"
         ],
         "tags": [
