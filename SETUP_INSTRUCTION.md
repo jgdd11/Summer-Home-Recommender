@@ -4,7 +4,8 @@
 
 - Download or clone this project
 - Python 3.8+
-- An LLM API key (OpenRouter/OpenAI)
+- An LLM API key to LLM model gpt-4o-mini (OpenRouter/OpenAI)
+
 
 ## Setup Python Virtual Environment
 
