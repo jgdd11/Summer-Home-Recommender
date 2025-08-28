@@ -35,6 +35,8 @@ def recommendation_logic(properties: Union[str, list, pd.DataFrame], user_req: d
         "location", "group_size", "start_date", "end_date",
         "budget_wt", "enviro_wt", "feature_wt", "tags_wt"
     ]
+
+    # prompt user if their input is missing required fields
     for key in required_keys:
         if key not in user_req:
             raise KeyError(f"Missing required user requirement key: '{key}'")

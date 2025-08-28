@@ -17,6 +17,7 @@ ALL_TAGS = sorted(set(t for p in properties for t in p.tags))
 
 # API endpoint
 API_ENDPOINT_URL = "https://openrouter.ai/api/v1/chat/completions" # OpenRouter
+#API_ENDPOINT_URL = "https://api.openai.com/v1/chat/completions" # OpenAI
 MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = (
@@ -265,7 +266,7 @@ def llm_parse(model=MODEL, temperature=0.7):
     start_input = parsed.get("start_date") or input("Bot: Start date? (e.g. Aug 25): ").strip()
     end_input = parsed.get("end_date") or input("Bot: End date? (e.g. Aug 30): ").strip()
     start_dt = llm_parse_date(start_input, api_key, default_year=2025)
-    end_dt = llm_parse_date(end_input, api_key)
+    end_dt = llm_parse_date(end_input, api_key, default_year=2025)
 
     if not start_dt:
         start_dt = datetime.today().date() + timedelta(days=1)

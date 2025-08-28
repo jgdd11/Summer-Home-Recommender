@@ -39,7 +39,7 @@ This process helps users find the most suitable properties aligned with their pr
 
 ## AI-Powered Property Search Assistance (`llm.py`)
 
-The `llm.py` script integrates with an LLM API (OpenRouter or OpenAI) to interpret natural language user requests into structured search parameters. Here's how it works:
+The `llm.py` script integrates with an LLM API (gpt-4o-mini via OpenRouter) to interpret natural language user requests into structured search parameters. Here's how it works:
 
 - **User Prompt**: Asks the user to describe the desired property in natural language.
 - **API Interaction**: Sends the prompt to the LLM API with a system prompt emphasizing output format.
