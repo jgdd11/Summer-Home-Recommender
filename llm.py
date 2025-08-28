@@ -24,7 +24,7 @@ SYSTEM_PROMPT = (
     "You are an assistant for an Airbnb-like vacation property search. "
     "Parse a USER REQUEST into Python dict fields: "
     "- location (str, city or region), "
-    "- environment (str, e.g., mountains, beach, urban), "
+    "- environment (str, e.g., mountains, beach, urban etc. if no environment input, set environment empety, do not asign any environment), "
     "- type (str, e.g., Chalet, Condo), "
     "- group_size (int, number of guests), "
     "- budget (int, optional), "

@@ -66,7 +66,28 @@
         "password": "03c0c5de2e2aa2fb3890cc331866d16b365c62abecf074c9e68de88e8ff4575c",
         "name": "Jeff",
         "email": "eee@we.com",
-        "reservations": [],
+        "reservations": [
+            {
+                "id": 26,
+                "start": "2025-08-25",
+                "end": "2025-08-26"
+            },
+            {
+                "id": 7,
+                "start": "2025-09-20",
+                "end": "2025-09-21"
+            },
+            {
+                "id": 7,
+                "start": "2025-08-12",
+                "end": "2025-08-13"
+            },
+            {
+                "id": 26,
+                "start": "2023-08-01",
+                "end": "2023-08-09"
+            }
+        ],
         "preferences": {
             "budget_wt": 1.0,
             "enviro_wt": 1.0,
