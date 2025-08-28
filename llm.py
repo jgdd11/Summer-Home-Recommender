@@ -263,8 +263,8 @@ def llm_parse(model=MODEL, temperature=0.7):
                 pass
 
     # Dates
-    start_input = parsed.get("start_date") or input("Bot: Start date? (e.g. Aug 25): ").strip()
-    end_input = parsed.get("end_date") or input("Bot: End date? (e.g. Aug 30): ").strip()
+    start_input = parsed.get("start_date") or input("Bot: Start date? (e.g. 2025 Aug 25): ").strip()
+    end_input = parsed.get("end_date") or input("Bot: End date? (e.g. 2025 Aug 30): ").strip()
     start_dt = llm_parse_date(start_input, api_key, default_year=2025)
     end_dt = llm_parse_date(end_input, api_key, default_year=2025)
 
